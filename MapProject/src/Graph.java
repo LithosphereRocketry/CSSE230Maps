@@ -1,31 +1,26 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Graph {
-	GraphNode start;
+	private HashMap<String, GraphNode> nodes;
 	
 	//Graph Basic Constructor
 	public Graph() {
-		start = null;
+		nodes = new HashMap<>();
 	}
 	
-	/**
-	 * insert a new node to the graph
-	 * @param name of the new planet
-	 * @return true if insert successfully, false otherwise
-	 */
-	public boolean insert(String name) {
-		if(name == null) throw new IllegalArgumentException();
-		
-		if(this.start == null) {
-			
-		}
-		
-		MyBoolean b = new MyBoolean();
-		this.start = this.start.insert(name, b);
-		
-		return b.b;
+	public boolean addNode(String name) {
+		//depending on if we want to be able to update the planty's info
+//		if(nodes.containsKey(name)) return false;
+		nodes.put(name, new GraphNode(name));
+		return true;
 	}
 
+	public boolean addEdge(String n1, String n2, int timeCost, int distanceCost) {
+		if(!this.nodes.containsKey(n1) && !this.nodes.containsKey(n2)) return false;
+		nodes.get(n1).addEdge(n2, timeCost, distanceCost);
+		return true;
+	}
 	
 	/**
 	 * GraphNode class
@@ -34,23 +29,23 @@ public class Graph {
 	 */
 	public class GraphNode{
 		String name;
-		ArrayList<GraphNode> neighbors;
-		ArrayList<Edge> edges;
+		ArrayList<Edge> neighbors;
 		
 		//Node Basic Constructor
 		public GraphNode(String name) {
 			this.name = name;
 			neighbors = new ArrayList<>();
-			edges = new ArrayList<>();
 		}
 		
-		//insert a new vertex
-		//need to determine where to insert it
-		public GraphNode insert(String n, MyBoolean b) {
+		/**
+		 * insert a new edge from current node to the node with element e
+		 * @param e element of the node that will be connected to
+		 */
+		public void addEdge(String name, int timeCost, int distanceCost) {
 			
-			
-			
-			return this;
+			GraphNode otherNode = nodes.get(name);
+			this.neighbors.add(new Edge(otherNode, timeCost, distanceCost));
+
 		}
 		
 	}
@@ -65,23 +60,21 @@ public class Graph {
 		int dCost; 		//distance cost of the edge
 		int tCost; 		//time cost of the edge
 		
-		GraphNode[] ends;		//two ends of the edge. can be modified if the use separated nodes needed
+		private GraphNode otherEnd;		//two ends of the edge. can be modified if the use separated nodes needed
 		
 		
 		//Edge Basic Constructor
-		public Edge(GraphNode start, GraphNode end) {
+		public Edge(GraphNode end, int time, int distance) {
 			dCost = 0;
 			tCost = 0;
-			ends = new GraphNode[2];
-			ends[0] = start;
-			ends[1] = end;
+			otherEnd = end;
 		}
 		
 	}
 	
 	
 	/**
-	 * MyBoolean class
+	 * MyBoolean class (in case needed)
 	 * @author Andrea
 	 *
 	 */
