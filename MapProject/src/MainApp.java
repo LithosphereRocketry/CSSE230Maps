@@ -19,7 +19,11 @@ import javax.swing.JScrollPane;
 
 public class MainApp {
 	static JFrame frame = new JFrame("Hyerspace Route");
-
+	
+	MainApp() {
+		
+	}
+	
 	/**
 	 * Launch the application.
 	 */
@@ -93,29 +97,29 @@ public class MainApp {
 		tabbedPane.add("Trip Advisor", tabPanel2);
 
 	}
-}
-
-class ImagePanel extends JPanel {
-
-	private Image img;
 	
+	class ImagePanel extends JPanel {
 
-	public ImagePanel(String img) {
-		this(new ImageIcon(img).getImage());
-	}
+		private Image img;
+		
 
-	public ImagePanel(Image img) {
-		this.img = img;
-		Dimension size = new Dimension(img.getWidth(null) / 100, img.getHeight(null) / 100);
-		setPreferredSize(size);
-		setMinimumSize(size);
-		setMaximumSize(size);
-		setSize(size);
-		setLayout(null);
-	}
+		public ImagePanel(String img) {
+			this(new ImageIcon(img).getImage());
+		}
 
-	public void paintComponent(Graphics g) {
-		g.drawImage(img, -200, -200, null);
+		public ImagePanel(Image img) {
+			this.img = img;
+			Dimension size = new Dimension(img.getWidth(null) / 100, img.getHeight(null) / 100);
+			setPreferredSize(size);
+			setMinimumSize(size);
+			setMaximumSize(size);
+			setSize(size);
+			setLayout(null);
+		}
+
+		public void paintComponent(Graphics g) {
+			g.drawImage(img, -200, -200, null);
+		}
+		
 	}
-	
 }
