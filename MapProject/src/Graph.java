@@ -6,22 +6,32 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Hashtable;
 
-public class Graph {
-	private HashMap<String, GraphNode> nodes= new HashMap<>();
+public class Graph{
+	private Hashtable<String, GraphNode> nodes = new Hashtable<String, GraphNode>();
 	
-	public Graph() {super();}
+	public Graph() {
+
+	}
+	
+	public void setNodes(Hashtable<String, GraphNode> nodes) {
+		this.nodes = nodes;
+	}
+
+
 
 	/**
 	 * Add a new node to the graph
 	 * @param name of the planet
 	 * @return true if the node is added successfully, false otherwise
+	 * @throws Exception 
 	 */
-	public boolean addNode(String name){
+	public boolean addNode(String name) throws Exception{
 		if(nodes.containsKey(name)) return false;
 		GraphNode temp = new GraphNode(name);
 		nodes.put(name, temp);
+		write(nodes, "graph.xml");
 		return true;
 	}
 
@@ -56,6 +66,25 @@ public class Graph {
 		return true;
 	}
 	
+	public static void write(Hashtable<String, GraphNode> l, String filename) throws Exception{
+	    XMLEncoder encoder =
+	        new XMLEncoder(
+	            new BufferedOutputStream(
+	                new FileOutputStream(filename)));
+	    encoder.writeObject(l);
+	    encoder.close();
+	}
+	
+	 public static Hashtable<String, GraphNode> read(String filename) throws Exception {
+	        XMLDecoder decoder = 
+	        	new XMLDecoder(
+	        			new BufferedInputStream(
+	        					new FileInputStream(filename)));
+	        Hashtable<String, GraphNode> ll = (Hashtable<String, GraphNode>) decoder.readObject();
+	        decoder.close();
+	        return ll;
+	    }
+	
 	public String toString() {
 		String s = "";
 		for(String key: nodes.keySet()) {
@@ -64,7 +93,12 @@ public class Graph {
 		return s;
 	}
 	
-	public ArrayList<GraphNode> getNodes() {
+	public Hashtable<String, GraphNode> getNodes() {
+		
+		return nodes;
+	}
+	
+	public ArrayList<GraphNode> getNodeList() {
 		ArrayList<GraphNode> s = new ArrayList<>();
 		for(String key: nodes.keySet()) {
 			s.add(nodes.get(key));
@@ -72,13 +106,15 @@ public class Graph {
 		return s;
 	}
 
-	public class GraphNode {
-		String name;
-		ArrayList<Edge> neighbors;
-		int hValue;
+	public class GraphNode implements Serializable{
+		private String name;
+		private ArrayList<Edge> neighbors;
+		private int hValue;
 		
 		public GraphNode() {
-			super();
+			name = "";
+			this.neighbors = new ArrayList<>();
+			hValue = 0;
 		}
 		
 		//Node Basic Constructor
@@ -100,9 +136,26 @@ public class Graph {
 			this.neighbors.add(temp);
 		}
 		
-		public String getPlanetName() {
+		public String getName() {
 			return this.name;
 		}
+		
+		public void setName(String name) {
+			this.name = name;
+		}
+		
+		public int gethValue() {
+			return hValue;
+		}
+
+		public void sethValue(int hValue) {
+			this.hValue = hValue;
+		}
+
+		public void setNeighbors(ArrayList<Edge> neighbors) {
+			this.neighbors = neighbors;
+		}
+
 		
 		public ArrayList<GraphNode> getNeighbors(){
 			ArrayList<GraphNode> temp = new ArrayList<>();
@@ -114,11 +167,11 @@ public class Graph {
 			return neighbors;
 		}
 		
-		public int getH() {
+		public int geth() {
 			return hValue;
 		}
 		
-		public void setH(int h) {
+		public void seth(int h) {
 			hValue = h;
 		}
 		
@@ -140,12 +193,12 @@ public class Graph {
 	 *
 	 */
 	public class Edge{
-		int dCost; 		//distance cost of the edge
-		int tCost; 		//time cost of the edge
+		private int dCost; 		//distance cost of the edge
+		private int tCost; 		//time cost of the edge
 		
 		private GraphNode otherEnd;		//two ends of the edge. can be modified if the use separated nodes needed
 			
-		public Edge() {super();}
+		public Edge() {}
 		
 		
 		//Edge Basic Constructor
@@ -165,14 +218,36 @@ public class Graph {
 			return otherEnd;
 		}
 		
-		public int getDistance() {
+		public int getdCost() {
 			return dCost;
 		}
-		
-		public int getTime() {
+
+
+		public void setdCost(int dCost) {
+			this.dCost = dCost;
+		}
+
+
+		public int gettCost() {
 			return tCost;
 		}
-		
+
+
+		public void settCost(int tCost) {
+			this.tCost = tCost;
+		}
+
+
+		public GraphNode getOtherEnd() {
+			return otherEnd;
+		}
+
+
+		public void setOtherEnd(GraphNode otherEnd) {
+			this.otherEnd = otherEnd;
+		}
+
+
 		public String toString() {
 			String s = "";
 			s += "Time: " + tCost + "\n";
