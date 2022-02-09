@@ -1,7 +1,6 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import Graph.Edge;
 
 public class GraphNode implements Serializable{
 		private String name;
@@ -27,9 +26,8 @@ public class GraphNode implements Serializable{
 		 * @param timeCost of the edge
 		 * @param distanceCost of the edge
 		 */
-		private void addEdge(String name, int timeCost, int distanceCost){
-			GraphNode otherNode = nodes.get(name);
-			Edge temp = new Edge(otherNode, timeCost, distanceCost);
+		public void addEdge(GraphNode o, int timeCost, int distanceCost){
+			Edge temp = new Edge(o, timeCost, distanceCost);
 			this.neighbors.add(temp);
 		}
 		
@@ -52,18 +50,10 @@ public class GraphNode implements Serializable{
 		public void setNeighbors(ArrayList<Edge> neighbors) {
 			this.neighbors = neighbors;
 		}
-
 		
-		public ArrayList<GraphNode> getNeighbors(){
-			ArrayList<GraphNode> temp = new ArrayList<>();
-			for(Edge i: neighbors) temp.add(i.otherEnd);
-			return temp;
-		}
-		
-		public ArrayList<Edge> getEdges(){
+		public ArrayList<Edge> getNeighbors(){
 			return neighbors;
 		}
-		
 		public int geth() {
 			return hValue;
 		}
@@ -77,8 +67,10 @@ public class GraphNode implements Serializable{
 			s += "    Planet: " + name + "\n" + "       Edges\n\n";
 			for(Edge e: neighbors) {
 				s += e;
-				s += "From " + this.name + " to " + e.otherEnd.name + "\n\n";
+				s += "From " + this.name + " to " + e.getOtherEnd().name + "\n\n";
 			}
 			return s;
 		}
 	}
+	
+	

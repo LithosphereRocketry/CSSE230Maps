@@ -48,8 +48,9 @@ public class MainApp {
 	 * The main creates new instance of MainApp
 	 * 
 	 * @param args
+	 * @throws Exception 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		MainApp mainApp = new MainApp();
 		mainApp.runApp();
 	} // main
