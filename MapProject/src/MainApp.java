@@ -15,6 +15,8 @@ import java.awt.GridBagConstraints;
 import javax.swing.JTabbedPane;
 
 import java.awt.Insets;
+import java.util.Hashtable;
+
 import javax.swing.JScrollPane;
 
 public class MainApp {

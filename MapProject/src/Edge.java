@@ -14,15 +14,7 @@
 			tCost = time;
 			otherEnd = end;
 		}
-			
-		public Edge(GraphNode end) {
-			dCost = 0;
-			tCost = 0;
-			otherEnd = end;
-		}
-			
-		public GraphNode getEnd() {return otherEnd;}
-			
+		
 		public int getDCost() {return dCost;}
 
 		public void setDCost(int dCost) {this.dCost = dCost;}

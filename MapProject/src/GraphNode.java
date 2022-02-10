@@ -54,20 +54,13 @@ public class GraphNode implements Serializable{
 		public ArrayList<Edge> getNeighbors(){
 			return neighbors;
 		}
-		public int geth() {
-			return hValue;
-		}
-		
-		public void seth(int h) {
-			hValue = h;
-		}
 		
 		public String toString() {
 			String s = "";
-			s += "    Planet: " + name + "\n" + "       Edges\n\n";
+			s += "    Planet: " + name + "\n\n" + "       Edges\n";
 			for(Edge e: neighbors) {
-				s += e;
 				s += "From " + this.name + " to " + e.getOtherEnd().name + "\n\n";
+				s += e;
 			}
 			return s;
 		}
