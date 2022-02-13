@@ -6,6 +6,7 @@ public class VisibleNode{
 	private ArrayList<VisibleEdge> n;
 	private int x;
 	private int y;
+	private String name;
 	
 	public VisibleNode(){
 		
@@ -16,10 +17,11 @@ public class VisibleNode{
 	 * @param x position of the node
 	 * @param y position of the node
 	 */
-	public VisibleNode(int x, int y) {
+	public VisibleNode(int x, int y, String name) {
 		n = new ArrayList<>();
 		this.x = x;
 		this.y = y;
+		this.name = name;
 	}
 	
 	/**
@@ -36,6 +38,8 @@ public class VisibleNode{
 	 * @param color of the node
 	 */
 	public void drawOn(Graphics2D g2d, Color color) {
+		g2d.setColor(Color.BLUE);
+		g2d.drawString(name, x + 5, + 5);
 		g2d.setColor(color);
 		g2d.fillOval(x - 3, y - 3, 6, 6);
 		for(VisibleEdge v: n) {
@@ -43,6 +47,14 @@ public class VisibleNode{
 		}
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public ArrayList<VisibleEdge> getN() {
 		return n;
 	}
@@ -68,10 +80,10 @@ public class VisibleNode{
 	}
 
 	public String toString() {
-		String s = "";
-		s += "Current location (" + x + ", " + y + ")\n";
+		String s = name;
+		s += "\nCurrent location (" + x + ", " + y + ")\n";
 		for(VisibleEdge e: n) {
-			s += "From current location to " + e + "\n";
+			s += "From " + name + " to " + e + "\n";
 		}
 		return s;
 	}

@@ -1,38 +1,33 @@
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GraphNode implements Serializable, Comparable<GraphNode> {
-	GraphNode prevNode;
-	String name;
-	ArrayList<Edge> neighbors;
-	double hValue;
+	private GraphNode lastNode;
+	private String name;
+	private HashMap<String,Edge> neighbors;
+	private double hValue;
 	
 	public GraphNode() {
 		name = "";
-		this.neighbors = new ArrayList<>();
+		this.neighbors = new HashMap<>();
 		hValue = 0;
 	}
 	
 	//Node Basic Constructor
 	public GraphNode(String name) {
-		this.prevNode = null;
+		lastNode = null;
 		this.name = name;
-		this.neighbors = new ArrayList<>();
+		this.neighbors = new HashMap<>();
 		hValue = 0;
 	}
 	
-	public ArrayList<Edge> getEdges(){
-		return neighbors;
-	}
-	
-	public double getH() {
-		return hValue;
-	}
-	
-	public void setH(double h) {
-		hValue = h;
+	public GraphNode getLastNode() {
+		return lastNode;
 	}
 
+	public void setLastNode(GraphNode lastNode) {
+		this.lastNode = lastNode;
+	}
 	
 	/**
 	 * insert a new edge between current node and another node
@@ -40,9 +35,31 @@ public class GraphNode implements Serializable, Comparable<GraphNode> {
 	 * @param timeCost of the edge
 	 * @param distanceCost of the edge
 	 */
-	public void addEdge(GraphNode o, double timeCost, double distanceCost){
-		Edge temp = new Edge(o, timeCost, distanceCost);
-		this.neighbors.add(temp);
+	public boolean addEdge(GraphNode o, double timeCost, double distanceCost){
+		if(neighbors.containsKey(o.name)) return false;
+		this.neighbors.put(o.name, new Edge(o, timeCost, distanceCost));
+		return true;
+	}
+	
+	/**
+	 * update the edge's info
+	 * @param name of the other end of the edge
+	 * @param time cost of the edge
+	 * @param dis cost of the edge
+	 * @return
+	 */
+	public boolean updateEdge(String name, int time, int dis) {
+		if(!neighbors.containsKey(name)) return false;
+		neighbors.get(name).setTCost(time);
+		neighbors.get(name).setDCost(dis);
+		return true;
+	}
+
+	public void setNeighbors(HashMap<String, Edge> neighbors) {
+		this.neighbors = neighbors;
+	}
+	public HashMap<String, Edge> getNeighbors() {
+		return neighbors;
 	}
 	
 	public String getName() {
@@ -57,20 +74,12 @@ public class GraphNode implements Serializable, Comparable<GraphNode> {
 		return hValue;
 	}
 
-	public void sethValue(int hValue) {
+	public void sethValue(double hValue) {
 		this.hValue = hValue;
-	}
-
-	public void setNeighbors(ArrayList<Edge> neighbors) {
-		this.neighbors = neighbors;
-	}
-	
-	public ArrayList<Edge> getNeighbors(){
-		return neighbors;
 	}
 	
 	public String toString() {
-		String s = "";
+		String s = ""; // commented some stuff because the toString being this long makes it really unreadable for debugging
 		s += "    Planet: " + name +" H: "+hValue/*+ "\n" + "       Edges\n\n"*/;
 /*		for(Edge e: neighbors) {
 			s += e;

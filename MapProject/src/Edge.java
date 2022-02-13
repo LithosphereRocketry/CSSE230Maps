@@ -1,5 +1,7 @@
-public class Edge {
-	double dCost; 		//distance cost of the edge
+import java.io.Serializable;
+
+public class Edge implements Serializable {
+	private double dCost; 		//distance cost of the edge
 	private double tCost; 		//time cost of the edge
 	
 	GraphNode otherEnd;		//two ends of the edge. can be modified if the use separated nodes needed

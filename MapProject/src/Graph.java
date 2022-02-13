@@ -4,16 +4,16 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 import java.util.Stack;
 
-public class Graph{
+public class Graph {
 	protected HashMap<String, GraphNode> nodes;
 	
 	public Graph() throws Exception {
-		nodes = read();
+		nodes = new HashMap<>();
+	//	nodes = read(); // for some reason, this makes distances all read zero for my test case, not sure how to fix - don't know Serializable very well
 	}
 
 	/**
@@ -40,10 +40,10 @@ public class Graph{
 	 */
 	public boolean addEdge(String name1, String name2, double timeCost, double distanceCost) throws Exception{
 		if(!this.nodes.containsKey(name1) || !this.nodes.containsKey(name2)) return false;
-		nodes.get(name1).addEdge(nodes.get(name2), timeCost, distanceCost);
-		nodes.get(name2).addEdge(nodes.get(name1), timeCost, distanceCost);
+		boolean temp1 = nodes.get(name1).addEdge(nodes.get(name2), timeCost, distanceCost);
+		boolean temp2 = nodes.get(name2).addEdge(nodes.get(name1), timeCost, distanceCost);
 		write(nodes);
-		return true;
+		return temp1 && temp2;
 	}
 	
 	/**
@@ -56,12 +56,21 @@ public class Graph{
 	public boolean updateNodeName(String oldName, String newName) throws Exception{
 		if(!nodes.containsKey(oldName) || nodes.containsKey(newName)) return false;
 		GraphNode temp = nodes.get(oldName);
-		temp.name = newName;
+		temp.setName(newName);
 		nodes.remove(oldName);
 		nodes.put(newName, temp);
 		write(nodes);
 		return true;
 	}
+	
+	public boolean updateEdgeInfo(String name1, String name2, int time, int dis) throws Exception{
+		if(!nodes.get(name1).updateEdge(name2, time, dis) && !nodes.get(name2).updateEdge(name1, time, dis)) {
+			return false;
+		}
+		write(nodes);
+		return true;
+	}
+	
 	
 	/**
 	 * erase all data in xml file
@@ -115,36 +124,36 @@ public class Graph{
 	
 	public Path pathBetweenDist(String start, String end) {
 		for(GraphNode n : nodes.values()) {
-			n.hValue = Double.POSITIVE_INFINITY;
+			n.sethValue(Double.POSITIVE_INFINITY);
 		}
 		
 		GraphNode startNode = nodes.get(start);
 		GraphNode endNode = nodes.get(end);
 		
-		startNode.prevNode = null;
-		startNode.hValue = startNode.heuristicDist(endNode);
+		startNode.setLastNode(null);
+		startNode.sethValue(startNode.heuristicDist(endNode));
 		PriorityQueue<GraphNode> queue = new PriorityQueue<>();
 		
 		queue.add(startNode);
 		do {
 			GraphNode current = queue.poll();
-			current.hValue -= current.heuristicDist(endNode);
-			for(Edge e : current.neighbors) {
+			current.sethValue(current.gethValue() - current.heuristicDist(endNode));
+			for(Edge e : current.getNeighbors().values()) {
 				GraphNode n = e.otherEnd;
-				double newH = current.hValue+n.heuristicDist(endNode)+e.dCost;
-				if(newH < n.hValue) {
-					n.hValue = newH;
-					n.prevNode = current;
+				double newH = current.gethValue()+n.heuristicDist(endNode)+e.getDCost();
+				if(newH < n.gethValue()) {
+					n.sethValue(newH);
+					n.setLastNode(current);
 					queue.add(n);
 				}
 			}
 		} while(!queue.isEmpty() && queue.peek() != endNode);
 		Path p = new Path();
-		p.cost = endNode.hValue;
+		p.cost = endNode.gethValue();
 		p.push(endNode);
 		GraphNode retrace = endNode;
-		while(retrace.prevNode != null) {
-			retrace = retrace.prevNode;
+		while(retrace.getLastNode() != null) {
+			retrace = retrace.getLastNode();
 			p.push(retrace);
 		}
 		return p;

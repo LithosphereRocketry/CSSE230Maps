@@ -8,7 +8,8 @@
      <string>0</string>
     </void>
     <void property="neighbors">
-     <void method="add">
+     <void method="put">
+      <string>1</string>
       <object class="Edge">
        <void property="otherEnd">
         <object class="GraphNode" id="GraphNode1">
@@ -16,7 +17,16 @@
           <string>1</string>
          </void>
          <void property="neighbors">
-          <void method="add">
+          <void method="put">
+           <string>0</string>
+           <object class="Edge">
+            <void property="otherEnd">
+             <object idref="GraphNode0"/>
+            </void>
+           </object>
+          </void>
+          <void method="put">
+           <string>2</string>
            <object class="Edge">
             <void property="otherEnd">
              <object class="GraphNode" id="GraphNode2">
@@ -24,14 +34,16 @@
                <string>2</string>
               </void>
               <void property="neighbors">
-               <void method="add">
+               <void method="put">
+                <string>1</string>
                 <object class="Edge">
                  <void property="otherEnd">
                   <object idref="GraphNode1"/>
                  </void>
                 </object>
                </void>
-               <void method="add">
+               <void method="put">
+                <string>3</string>
                 <object class="Edge">
                  <void property="otherEnd">
                   <object class="GraphNode" id="GraphNode3">
@@ -39,14 +51,16 @@
                     <string>3</string>
                    </void>
                    <void property="neighbors">
-                    <void method="add">
+                    <void method="put">
+                     <string>2</string>
                      <object class="Edge">
                       <void property="otherEnd">
                        <object idref="GraphNode2"/>
                       </void>
                      </object>
                     </void>
-                    <void method="add">
+                    <void method="put">
+                     <string>4</string>
                      <object class="Edge">
                       <void property="otherEnd">
                        <object class="GraphNode" id="GraphNode4">
@@ -54,17 +68,19 @@
                          <string>4</string>
                         </void>
                         <void property="neighbors">
-                         <void method="add">
-                          <object class="Edge">
-                           <void property="otherEnd">
-                            <object idref="GraphNode3"/>
-                           </void>
-                          </object>
-                         </void>
-                         <void method="add">
+                         <void method="put">
+                          <string>0</string>
                           <object class="Edge">
                            <void property="otherEnd">
                             <object idref="GraphNode0"/>
+                           </void>
+                          </object>
+                         </void>
+                         <void method="put">
+                          <string>3</string>
+                          <object class="Edge">
+                           <void property="otherEnd">
+                            <object idref="GraphNode3"/>
                            </void>
                           </object>
                          </void>
@@ -83,19 +99,13 @@
             </void>
            </object>
           </void>
-          <void method="add">
-           <object class="Edge">
-            <void property="otherEnd">
-             <object idref="GraphNode0"/>
-            </void>
-           </object>
-          </void>
          </void>
         </object>
        </void>
       </object>
      </void>
-     <void method="add">
+     <void method="put">
+      <string>4</string>
       <object class="Edge">
        <void property="otherEnd">
         <object idref="GraphNode4"/>
