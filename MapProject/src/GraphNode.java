@@ -149,12 +149,11 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 	
 
 	public double heuristicDist(GraphNode dest) {
-		// TODO: write this
-		return 4; // scuffed heuristic for testing
+		double straightLineDistance = Math.sqrt(Math.pow(this.x-dest.x, 2) + Math.pow(this.y - dest.y, 2));
+		return straightLineDistance;
 	}
 	public double heuristicTime(GraphNode dest) {
-		// TODO: write this
-		return 1000;
+		return Math.sqrt(this.heuristicDist(dest));
 	}
 
 }
