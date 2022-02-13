@@ -9,9 +9,13 @@ import java.util.Hashtable;
 
 public class Graph{
 	protected Hashtable<String, GraphNode> nodes;
+	protected GraphNode start;
+	protected GraphNode destination;
 	
 	public Graph() throws Exception {
 		nodes = read();
+		start = null;
+		destination = null;
 	}
 
 	/**
@@ -61,12 +65,8 @@ public class Graph{
 		return true;
 	}
 	
-	public boolean updateEdgeInfo(String name1, String name2, int time, int dis) throws Exception{
-		if(!nodes.get(name1).updateEdge(name2, time, dis) && !nodes.get(name2).updateEdge(name1, time, dis)) {
-			return false;
-		}
-		write(nodes);
-		return true;
+	public void setStart(String s) {
+		start = nodes.get(s);
 	}
 	
 	

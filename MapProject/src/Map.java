@@ -53,12 +53,28 @@ public class Map{
 	 * @return true if insert successfully, false otherwise
 	 * @throws Exception ignore it
 	 */
-	public boolean addEdge(String name1, String name2, int time, int distance) throws Exception {
-		if(!g.addEdge(name1, name2, time, distance)) return false;
+	public boolean addEdge(String name1, String name2) throws Exception {
+		if(!(gNodes.contains(name1) && gNodes.contains(name2))) return false;
+		int dis = calDis(name1, name2);
+		if(!g.addEdge(name1, name2, calTime(dis), dis)) return false;
 		gNodes.get(name1).addVEdge(gNodes.get(name2));
 		gNodes.get(name2).addVEdge(gNodes.get(name1));
 		write(gNodes);
 		return true;
+	}
+	
+	private int calDis(String name1, String name2) {
+		double x1 = gNodes.get(name1).getX();
+		double y1 = gNodes.get(name1).getY();
+		
+		double x2 = gNodes.get(name2).getX();
+		double y2 = gNodes.get(name2).getY();
+		
+		return (int)Math.sqrt(Math.pow(Math.abs(x2-x1), 2)+ Math.pow(Math.abs(y2-y1), 2));
+	}
+	
+	private int calTime(int dis) {
+		return (int)Math.sqrt(dis);
 	}
 	
 	/**
@@ -75,15 +91,6 @@ public class Map{
 		temp.setName(newName);
 		gNodes.remove(oldName);
 		gNodes.put(newName, temp);
-		return true;
-	}
-	
-	/**
-	 * not completed
-	 * @return
-	 */
-	public boolean updateEdge(String name1, String name2, int time, int distance) {
-		
 		return true;
 	}
 	
