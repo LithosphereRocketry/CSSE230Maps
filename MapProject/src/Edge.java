@@ -3,7 +3,7 @@
 		private int dCost; 		//distance cost of the edge
 		private int tCost; 		//time cost of the edge
 		
-		private GraphNode otherEnd;		//two ends of the edge. can be modified if the use separated nodes needed
+		GraphNode otherEnd;		//two ends of the edge. can be modified if the use separated nodes needed
 				
 		public Edge() {}
 			
@@ -29,8 +29,8 @@
 
 		public String toString() {
 			String s = "";
-			s += "Time: " + tCost + "\n";
-			s += "Distance: " + dCost + "\n";
+			s += "      Time: " + tCost + "\n";
+			s += "      Distance: " + dCost + "\n";
 			return s;
 		}
 	}

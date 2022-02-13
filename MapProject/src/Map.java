@@ -10,12 +10,10 @@ import java.util.Hashtable;
 
 public class Map{
 	private Graph g;
-	private Hashtable<String, VisibleNode> gNodes;
 	
 	//Basic Constructor
 	public Map() throws Exception{
 		g = new Graph();
-		gNodes = read();
 	}
 	
 	/**
@@ -23,8 +21,8 @@ public class Map{
 	 * @param g2d used to draw all nodes and edges
 	 */
 	public void drawOn(Graphics2D g2d) {
-		for(String key: gNodes.keySet()) {
-			gNodes.get(key).drawOn(g2d, Color.BLACK);
+		for(GraphNode g: g.getNodeList()) {
+			g.drawOn(g2d, Color.BLACK);
 		}
 	}
 	
@@ -36,12 +34,8 @@ public class Map{
 	 * @return true if insert successfully, false otherwise
 	 * @throws Exception ignore it
 	 */
-	public boolean addNode(String name, int x, int y) throws Exception {
-		if(!g.addNode(name)) return false;
-		
-		gNodes.put(name, new VisibleNode(x, y, name));
-		write(gNodes);
-		return true;
+	public void addNode(String name, int x, int y) throws Exception {
+		if(!g.addNode(name, x, y)) System.out.println(name + " is already in the graph");
 	}
 	
 	/**
@@ -53,30 +47,11 @@ public class Map{
 	 * @return true if insert successfully, false otherwise
 	 * @throws Exception ignore it
 	 */
-	public boolean addEdge(String name1, String name2) throws Exception {
-		if(!(gNodes.contains(name1) && gNodes.contains(name2))) return false;
-		int dis = calDis(name1, name2);
-		if(!g.addEdge(name1, name2, calTime(dis), dis)) return false;
-		gNodes.get(name1).addVEdge(gNodes.get(name2));
-		gNodes.get(name2).addVEdge(gNodes.get(name1));
-		write(gNodes);
-		return true;
+	public void addEdge(String name1, String name2) throws Exception {
+		if(! g.addEdge(name1, name2)) System.out.println(name1 + " and " + name2 + " are already linked");
 	}
 	
-	private int calDis(String name1, String name2) {
-		double x1 = gNodes.get(name1).getX();
-		double y1 = gNodes.get(name1).getY();
-		
-		double x2 = gNodes.get(name2).getX();
-		double y2 = gNodes.get(name2).getY();
-		
-		return (int)Math.sqrt(Math.pow(Math.abs(x2-x1), 2)+ Math.pow(Math.abs(y2-y1), 2));
-	}
-	
-	private int calTime(int dis) {
-		return (int)Math.sqrt(dis);
-	}
-	
+
 	/**
 	 * update the name of a node
 	 * @param oldName of the node
@@ -85,13 +60,11 @@ public class Map{
 	 * @throws Exception
 	 */
 	public boolean updateNodeName(String oldName, String newName)throws Exception {
-		if(!g.updateNodeName(oldName, newName)) return false;
-		
-		VisibleNode temp = gNodes.get(oldName);
-		temp.setName(newName);
-		gNodes.remove(oldName);
-		gNodes.put(newName, temp);
-		return true;
+		return g.updateNodeName(oldName, newName);
+	}
+	
+	public boolean updateNodePos(String name, int x, int y) throws Exception{
+		return g.updateNodePos(name,x, y);
 	}
 	
 	/**
@@ -99,9 +72,7 @@ public class Map{
 	 * @throws Exception ignore it
 	 */
 	public void clear() throws Exception {
-		gNodes = new Hashtable<String, VisibleNode>();
 		g.clear();
-		write(gNodes);
 	}
 	
 	/**
@@ -110,7 +81,8 @@ public class Map{
 	 * @param g2d used to change the color of selected node and its edges
 	 */
 	public void chooseStart(String name, Graphics2D g2d) {
-		gNodes.get(name).drawOn(g2d, Color.red);
+		GraphNode temp = g.setStart(name);
+		temp.drawOn(g2d, Color.RED);
 	}
 	
 	/**
@@ -119,45 +91,12 @@ public class Map{
 	 * @param g2d used to draw the path
 	 */
 	public void chooseTer(String name, Graphics2D g2d) {
-		gNodes.get(name).drawOn(g2d, Color.red);
-		
+		GraphNode temp = g.setDestination(name);
+		temp.drawOn(g2d, Color.GREEN);
 	}
-	
-	/**
-	 * used to write current nodes into xml file, should not be accessed by other classes
-	 * @param l nodes
-	 * @throws Exception ignore it
-	 */
-	private void write(Hashtable<String, VisibleNode> l) throws Exception{
-	    XMLEncoder encoder =
-	        new XMLEncoder(
-	            new BufferedOutputStream(
-	                new FileOutputStream("map.xml")));
-	    encoder.writeObject(l);
-	    encoder.close();
-	}
-	
-	/**
-	 * used to read existing xml file, should not be accessed by other classes
-	 * @return data stored in the file
-	 * @throws Exception ignore it
-	 */
-	private Hashtable<String, VisibleNode> read() throws Exception {
-        XMLDecoder decoder = 
-        	new XMLDecoder(
-        			new BufferedInputStream(
-        					new FileInputStream("map.xml")));
-        Hashtable<String, VisibleNode> ll = (Hashtable<String, VisibleNode>) decoder.readObject();
-        decoder.close();
-        return ll;
-    }
 	
 	public String toString() {
-		String s = "";
-		for(String key: gNodes.keySet()) {
-			s += gNodes.get(key) + "\n";
-		}
-		return s;
+		return g.toString();
 	}
 	
 	public Graph getG() {
@@ -166,13 +105,5 @@ public class Map{
 
 	public void setG(Graph g) {
 		this.g = g;
-	}
-
-	public Hashtable<String, VisibleNode> getGNodes() {
-		return gNodes;
-	}
-
-	public void setGNodes(Hashtable<String, VisibleNode> nodes) {
-		this.gNodes = nodes;
 	}
 }

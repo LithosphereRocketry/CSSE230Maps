@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.io.Serializable;
 import java.util.Hashtable;
 
@@ -5,19 +7,22 @@ import java.util.Hashtable;
 public class GraphNode implements Serializable{
 		private String name;
 		private Hashtable<String,Edge> neighbors;
-		private int hValue;
+		private int x;
+		private int y;
 		
 		public GraphNode() {
 			name = "";
 			this.neighbors = new Hashtable<>();
-			hValue = 0;
+			x = 0;
+			y = 0;
 		}
 		
 		//Node Basic Constructor
-		public GraphNode(String name) {
+		public GraphNode(String name, int x, int y) {
 			this.name = name;
 			this.neighbors = new Hashtable<>();
-			hValue = 0;
+			this.x = x;
+			this.y = y;
 		}
 		
 		/**
@@ -46,6 +51,17 @@ public class GraphNode implements Serializable{
 			return true;
 		}
 		
+		public void drawOn(Graphics2D g2d, Color color) {
+			g2d.setColor(Color.BLUE);
+			g2d.drawString(name, x + 5, + 5);
+			g2d.setColor(color);
+			g2d.fillOval(x - 3, y - 3, 6, 6);
+			
+			for(String key: neighbors.keySet()) {
+				g2d.drawLine(x, y, neighbors.get(key).otherEnd.x, neighbors.get(key).otherEnd.y);
+			}
+		}
+		
 		public String getName() {
 			return this.name;
 		}
@@ -54,14 +70,22 @@ public class GraphNode implements Serializable{
 			this.name = name;
 		}
 		
-		public int gethValue() {
-			return hValue;
+		public int getX() {
+			return x;
 		}
 
-		public void sethValue(int hValue) {
-			this.hValue = hValue;
+		public void setX(int x) {
+			this.x = x;
 		}
-		
+
+		public int getY() {
+			return y;
+		}
+
+		public void setY(int y) {
+			this.y = y;
+		}
+
 		public Hashtable<String, Edge> getNeighbors() {
 			return neighbors;
 		}
@@ -72,10 +96,12 @@ public class GraphNode implements Serializable{
 
 		public String toString() {
 			String s = "";
-			s += "    Planet: " + name + "\n\n" + "       Edges\n";
+			s += "    Planet: " + name;
+			s += "\nCurrent location (" + x + ", " + y + ")\n\n"
+					+ "       Edges\n\n";
 			for(String key: neighbors.keySet()) {
-				s += "From " + this.name + " to " + key + "\n\n";
-				s += neighbors.get(key);
+				s += "From " + this.name + " to " + key + "\n";
+				s += neighbors.get(key) + "\n";
 			}
 			return s;
 		}

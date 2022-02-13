@@ -17,16 +17,16 @@ public class Graph{
 		start = null;
 		destination = null;
 	}
-
+	
 	/**
 	 * Add a new node to the graph
 	 * @param name of the planet
 	 * @return true if the node is added successfully, false otherwise
 	 * @throws Exception 
 	 */
-	public boolean addNode(String name) throws Exception{
+	public boolean addNode(String name, int x, int y) throws Exception{
 		if(nodes.containsKey(name)) return false;
-		GraphNode temp = new GraphNode(name);
+		GraphNode temp = new GraphNode(name, x, y);
 		nodes.put(name, temp);
 		write(nodes);
 		return true;
@@ -36,14 +36,17 @@ public class Graph{
 	 * add a new edge between two nodes
 	 * @param name1 of first node
 	 * @param name2 of second node
-	 * @param timeCost of the edge
-	 * @param distanceCost of the edge
 	 * @return true if insert successfully, false otherwise
 	 */
-	public boolean addEdge(String name1, String name2, int timeCost, int distanceCost) throws Exception{
+	public boolean addEdge(String name1, String name2) throws Exception{
 		if(!this.nodes.containsKey(name1) || !this.nodes.containsKey(name2)) return false;
-		boolean temp1 = nodes.get(name1).addEdge(nodes.get(name2), timeCost, distanceCost);
-		boolean temp2 = nodes.get(name2).addEdge(nodes.get(name1), timeCost, distanceCost);
+		
+		
+		//need update
+		boolean temp1 = nodes.get(name1).addEdge(nodes.get(name2), 0, 0);
+		boolean temp2 = nodes.get(name2).addEdge(nodes.get(name1), 0, 0);
+		
+		
 		write(nodes);
 		return temp1 && temp2;
 	}
@@ -65,10 +68,23 @@ public class Graph{
 		return true;
 	}
 	
-	public void setStart(String s) {
-		start = nodes.get(s);
+	public boolean updateNodePos(String name, int x, int y) throws Exception{
+		if(!nodes.containsKey(name)) return false;
+		nodes.get(name).setX(x);
+		nodes.get(name).setY(y);
+		write(nodes);
+		return true;
 	}
 	
+	public GraphNode setStart(String s) {
+		start = nodes.get(s);
+		return start;
+	}
+	
+	public GraphNode setDestination(String s) {
+		this.destination = nodes.get(s);
+		return destination;
+	}
 	
 	/**
 	 * erase all data in xml file
@@ -114,6 +130,14 @@ public class Graph{
 			s += nodes.get(key);
 		}
 		return s;
+	}
+	
+	public ArrayList<GraphNode> getNodeList(){
+		ArrayList<GraphNode> temp = new ArrayList<>();
+		for(String key: nodes.keySet()) {
+			temp.add(nodes.get(key));
+		}
+		return temp;
 	}
 	
 	public void setNodes(Hashtable<String, GraphNode> nodes) {
