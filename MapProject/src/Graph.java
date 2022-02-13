@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.PriorityQueue;
+import java.util.Stack;
 
 public class Graph {
 	private HashMap<String, GraphNode> nodes= new HashMap<>();
@@ -71,11 +73,60 @@ public class Graph {
 		}
 		return s;
 	}
-
-	public class GraphNode {
+	
+	public enum Cost {
+		TIME, DIST
+	}
+	
+	public Path pathBetweenDist(String start, String end) {
+		for(GraphNode n : nodes.values()) {
+			n.hValue = Double.POSITIVE_INFINITY;
+		}
+		
+		GraphNode startNode = nodes.get(start);
+		GraphNode endNode = nodes.get(end);
+		
+		startNode.prevNode = null;
+		startNode.hValue = startNode.heuristicDist(endNode);
+		PriorityQueue<GraphNode> queue = new PriorityQueue<>();
+		
+		queue.add(startNode);
+		do {
+			GraphNode current = queue.poll();
+			current.hValue -= current.heuristicDist(endNode);
+			for(Edge e : current.neighbors) {
+				GraphNode n = e.otherEnd;
+				double newH = current.hValue+n.heuristicDist(endNode)+e.dCost;
+				if(newH < n.hValue) {
+					n.hValue = newH;
+					n.prevNode = current;
+					queue.add(n);
+				}
+			}
+		} while(!queue.isEmpty() && queue.peek() != endNode);
+		Path p = new Path();
+		p.cost = endNode.hValue;
+		p.push(endNode);
+		GraphNode retrace = endNode;
+		while(retrace.prevNode != null) {
+			retrace = retrace.prevNode;
+			p.push(retrace);
+		}
+		return p;
+	}
+	
+	private class Path extends Stack<GraphNode> {
+		double cost;
+		public String toString() {
+			return cost+": "+super.toString();
+		}
+	}
+	
+	public class GraphNode implements Comparable<GraphNode> {
+		private GraphNode prevNode;
 		String name;
 		ArrayList<Edge> neighbors;
-		int hValue;
+		double hValue;
 		
 		public GraphNode() {
 			super();
@@ -83,6 +134,7 @@ public class Graph {
 		
 		//Node Basic Constructor
 		public GraphNode(String name) {
+			this.prevNode = null;
 			this.name = name;
 			this.neighbors = new ArrayList<>();
 			hValue = 0;
@@ -94,7 +146,7 @@ public class Graph {
 		 * @param timeCost of the edge
 		 * @param distanceCost of the edge
 		 */
-		private void addEdge(String name, int timeCost, int distanceCost){
+		private void addEdge(String name, double timeCost, double distanceCost){
 			GraphNode otherNode = nodes.get(name);
 			Edge temp = new Edge(otherNode, timeCost, distanceCost);
 			this.neighbors.add(temp);
@@ -114,22 +166,37 @@ public class Graph {
 			return neighbors;
 		}
 		
-		public int getH() {
+		public double getH() {
 			return hValue;
 		}
 		
-		public void setH(int h) {
+		public void setH(double h) {
 			hValue = h;
 		}
 		
 		public String toString() {
 			String s = "";
-			s += "    Planet: " + name + "\n" + "       Edges\n\n";
-			for(Edge e: neighbors) {
+			s += "    Planet: " + name +" H: "+hValue/*+ "\n" + "       Edges\n\n"*/;
+	/*		for(Edge e: neighbors) {
 				s += e;
 				s += "From " + this.name + " to " + e.otherEnd.name + "\n\n";
-			}
+			}	*/
 			return s;
+		}
+		
+		public double heuristicDist(GraphNode dest) {
+			// TODO: write this
+			return 4-Integer.parseInt(name); // scuffed heuristic for testing
+		}
+		
+		public double heuristicTime(GraphNode dest) {
+			// TODO: write this
+			return 1000;
+		}
+
+		@Override
+		public int compareTo(Graph.GraphNode o) {
+			return ((Double) hValue).compareTo((Double) o.hValue);
 		}
 	}
 	
@@ -138,10 +205,13 @@ public class Graph {
 	 * Edge class
 	 * @author 
 	 *
+	 *
+	 * Remember to add edges both directions as edges are singly linked... or maybe we have one-way paths in some cases? might be a fun addition
+	 * - Ben
 	 */
 	public class Edge{
-		int dCost; 		//distance cost of the edge
-		int tCost; 		//time cost of the edge
+		double dCost; 		//distance cost of the edge
+		double tCost; 		//time cost of the edge
 		
 		private GraphNode otherEnd;		//two ends of the edge. can be modified if the use separated nodes needed
 			
@@ -149,9 +219,9 @@ public class Graph {
 		
 		
 		//Edge Basic Constructor
-		public Edge(GraphNode end, int time, int distance) {
-			dCost = distance;
-			tCost = time;
+		public Edge(GraphNode end, double timeCost, double distanceCost) {
+			dCost = distanceCost;
+			tCost = timeCost;
 			otherEnd = end;
 		}
 		
@@ -165,11 +235,11 @@ public class Graph {
 			return otherEnd;
 		}
 		
-		public int getDistance() {
+		public double getDistance() {
 			return dCost;
 		}
 		
-		public int getTime() {
+		public double getTime() {
 			return tCost;
 		}
 		
@@ -180,4 +250,6 @@ public class Graph {
 			return s;
 		}
 	}
+	
+	
 }
