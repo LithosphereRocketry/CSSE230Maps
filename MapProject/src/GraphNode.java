@@ -1,22 +1,23 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 
 public class GraphNode implements Serializable{
 		private String name;
-		private ArrayList<Edge> neighbors;
+		private Hashtable<String,Edge> neighbors;
 		private int hValue;
 		
 		public GraphNode() {
 			name = "";
-			this.neighbors = new ArrayList<>();
+			this.neighbors = new Hashtable<>();
 			hValue = 0;
 		}
 		
 		//Node Basic Constructor
 		public GraphNode(String name) {
 			this.name = name;
-			this.neighbors = new ArrayList<>();
+			this.neighbors = new Hashtable<>();
 			hValue = 0;
 		}
 		
@@ -26,9 +27,24 @@ public class GraphNode implements Serializable{
 		 * @param timeCost of the edge
 		 * @param distanceCost of the edge
 		 */
-		public void addEdge(GraphNode o, int timeCost, int distanceCost){
-			Edge temp = new Edge(o, timeCost, distanceCost);
-			this.neighbors.add(temp);
+		public boolean addEdge(GraphNode o, int timeCost, int distanceCost){
+			if(neighbors.contains(o.name)) return false;
+			this.neighbors.put(o.name, new Edge(o, timeCost, distanceCost));
+			return true;
+		}
+		
+		/**
+		 * update the edge's info
+		 * @param name of the other end of the edge
+		 * @param time cost of the edge
+		 * @param dis cost of the edge
+		 * @return
+		 */
+		public boolean updateEdge(String name, int time, int dis) {
+			if(!neighbors.contains(name)) return false;
+			neighbors.get(name).setTCost(time);
+			neighbors.get(name).setDCost(dis);
+			return true;
 		}
 		
 		public String getName() {
@@ -46,21 +62,21 @@ public class GraphNode implements Serializable{
 		public void sethValue(int hValue) {
 			this.hValue = hValue;
 		}
-
-		public void setNeighbors(ArrayList<Edge> neighbors) {
-			this.neighbors = neighbors;
-		}
 		
-		public ArrayList<Edge> getNeighbors(){
+		public Hashtable<String, Edge> getNeighbors() {
 			return neighbors;
 		}
-		
+
+		public void setNeighbors(Hashtable<String, Edge> neighbors) {
+			this.neighbors = neighbors;
+		}
+
 		public String toString() {
 			String s = "";
 			s += "    Planet: " + name + "\n\n" + "       Edges\n";
-			for(Edge e: neighbors) {
-				s += "From " + this.name + " to " + e.getOtherEnd().name + "\n\n";
-				s += e;
+			for(String key: neighbors.keySet()) {
+				s += "From " + this.name + " to " + key + "\n\n";
+				s += neighbors.get(key);
 			}
 			return s;
 		}

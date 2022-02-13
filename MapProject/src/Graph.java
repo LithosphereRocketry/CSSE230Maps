@@ -38,10 +38,10 @@ public class Graph{
 	 */
 	public boolean addEdge(String name1, String name2, int timeCost, int distanceCost) throws Exception{
 		if(!this.nodes.containsKey(name1) || !this.nodes.containsKey(name2)) return false;
-		nodes.get(name1).addEdge(nodes.get(name2), timeCost, distanceCost);
-		nodes.get(name2).addEdge(nodes.get(name1), timeCost, distanceCost);
+		boolean temp1 = nodes.get(name1).addEdge(nodes.get(name2), timeCost, distanceCost);
+		boolean temp2 = nodes.get(name2).addEdge(nodes.get(name1), timeCost, distanceCost);
 		write(nodes);
-		return true;
+		return temp1 && temp2;
 	}
 	
 	/**
@@ -60,6 +60,15 @@ public class Graph{
 		write(nodes);
 		return true;
 	}
+	
+	public boolean updateEdgeInfo(String name1, String name2, int time, int dis) throws Exception{
+		if(!nodes.get(name1).updateEdge(name2, time, dis) && !nodes.get(name2).updateEdge(name1, time, dis)) {
+			return false;
+		}
+		write(nodes);
+		return true;
+	}
+	
 	
 	/**
 	 * erase all data in xml file

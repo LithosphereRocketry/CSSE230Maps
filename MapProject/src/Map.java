@@ -37,10 +37,9 @@ public class Map{
 	 * @throws Exception ignore it
 	 */
 	public boolean addNode(String name, int x, int y) throws Exception {
-		if(!g.addNode(name)) {
-			return false;
-		}
-		gNodes.put(name, new VisibleNode(x, y));
+		if(!g.addNode(name)) return false;
+		
+		gNodes.put(name, new VisibleNode(x, y, name));
 		write(gNodes);
 		return true;
 	}
@@ -63,11 +62,19 @@ public class Map{
 	}
 	
 	/**
-	 * not completed
-	 * @return
+	 * update the name of a node
+	 * @param oldName of the node
+	 * @param newName of the node
+	 * @return true if updated successfully, false otherwise
+	 * @throws Exception
 	 */
-	public boolean updateNode() {
+	public boolean updateNodeName(String oldName, String newName)throws Exception {
+		if(!g.updateNodeName(oldName, newName)) return false;
 		
+		VisibleNode temp = gNodes.get(oldName);
+		temp.setName(newName);
+		gNodes.remove(oldName);
+		gNodes.put(newName, temp);
 		return true;
 	}
 	
@@ -75,7 +82,7 @@ public class Map{
 	 * not completed
 	 * @return
 	 */
-	public boolean updateEdge() {
+	public boolean updateEdge(String name1, String name2, int time, int distance) {
 		
 		return true;
 	}
