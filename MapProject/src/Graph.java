@@ -4,26 +4,29 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 import java.util.Stack;
 
-public class Graph {
-	private HashMap<String, GraphNode> nodes= new HashMap<>();
+public class Graph{
+	protected HashMap<String, GraphNode> nodes;
 	
-	public Graph() {super();}
+	public Graph() throws Exception {
+		nodes = read();
+	}
 
 	/**
 	 * Add a new node to the graph
 	 * @param name of the planet
 	 * @return true if the node is added successfully, false otherwise
+	 * @throws Exception 
 	 */
-	public boolean addNode(String name){
+	public boolean addNode(String name) throws Exception{
 		if(nodes.containsKey(name)) return false;
 		GraphNode temp = new GraphNode(name);
 		nodes.put(name, temp);
+		write(nodes);
 		return true;
 	}
 
@@ -35,41 +38,73 @@ public class Graph {
 	 * @param distanceCost of the edge
 	 * @return true if insert successfully, false otherwise
 	 */
-	public boolean addEdge(String name1, String name2, int timeCost, int distanceCost){
+	public boolean addEdge(String name1, String name2, double timeCost, double distanceCost) throws Exception{
 		if(!this.nodes.containsKey(name1) || !this.nodes.containsKey(name2)) return false;
-		nodes.get(name1).addEdge(name2, timeCost, distanceCost);
-		nodes.get(name2).addEdge(name1, timeCost, distanceCost);
+		nodes.get(name1).addEdge(nodes.get(name2), timeCost, distanceCost);
+		nodes.get(name2).addEdge(nodes.get(name1), timeCost, distanceCost);
+		write(nodes);
 		return true;
 	}
 	
 	/**
-	 * give a new name to an existing planet without changing the map
+	 * give a new name to an existing planet without changing the graph (haven't tested, don't use it yet)
 	 * @param oldName for planet to be replaced
 	 * @param newName that's to be given
 	 * @return true if update successfully, false otherwise
 	 * @throws Exception 
 	 */
-	public boolean updateNode(String oldName, String newName){
+	public boolean updateNodeName(String oldName, String newName) throws Exception{
 		if(!nodes.containsKey(oldName) || nodes.containsKey(newName)) return false;
 		GraphNode temp = nodes.get(oldName);
 		temp.name = newName;
 		nodes.remove(oldName);
 		nodes.put(newName, temp);
+		write(nodes);
 		return true;
 	}
+	
+	/**
+	 * erase all data in xml file
+	 * @throws Exception ignore it
+	 */
+	public void clear() throws Exception {
+		nodes = new HashMap<String, GraphNode>();
+		write(nodes);
+	}
+	
+	/**
+	 * used to write data into xml file, should not be accessed by other classes
+	 * @param l data to be written
+	 * @throws Exception ignore it
+	 */
+	private void write(HashMap<String, GraphNode> l) throws Exception{
+	    XMLEncoder encoder =
+	        new XMLEncoder(
+	            new BufferedOutputStream(
+	                new FileOutputStream("graph.xml")));
+	    encoder.writeObject(l);
+	    encoder.close();
+	}
+	
+	/**
+	 * used to read existing data from the xml file, should not be accessed by other classes
+	 * @return data
+	 * @throws Exception ignore it
+	 */
+	 private HashMap<String, GraphNode> read() throws Exception {
+	        XMLDecoder decoder = 
+	        	new XMLDecoder(
+	        			new BufferedInputStream(
+	        					new FileInputStream("graph.xml")));
+	        HashMap<String, GraphNode> ll = (HashMap<String, GraphNode>) decoder.readObject();
+	        decoder.close();
+	        return ll;
+	    }
 	
 	public String toString() {
 		String s = "";
 		for(String key: nodes.keySet()) {
 			s += nodes.get(key);
-		}
-		return s;
-	}
-	
-	public ArrayList<GraphNode> getNodes() {
-		ArrayList<GraphNode> s = new ArrayList<>();
-		for(String key: nodes.keySet()) {
-			s.add(nodes.get(key));
 		}
 		return s;
 	}
@@ -122,133 +157,12 @@ public class Graph {
 		}
 	}
 	
-	public class GraphNode implements Comparable<GraphNode> {
-		private GraphNode prevNode;
-		String name;
-		ArrayList<Edge> neighbors;
-		double hValue;
-		
-		public GraphNode() {
-			super();
-		}
-		
-		//Node Basic Constructor
-		public GraphNode(String name) {
-			this.prevNode = null;
-			this.name = name;
-			this.neighbors = new ArrayList<>();
-			hValue = 0;
-		}
-		
-		/**
-		 * insert a new edge between current node and another node
-		 * @param name of another planet to be connected
-		 * @param timeCost of the edge
-		 * @param distanceCost of the edge
-		 */
-		private void addEdge(String name, double timeCost, double distanceCost){
-			GraphNode otherNode = nodes.get(name);
-			Edge temp = new Edge(otherNode, timeCost, distanceCost);
-			this.neighbors.add(temp);
-		}
-		
-		public String getPlanetName() {
-			return this.name;
-		}
-		
-		public ArrayList<GraphNode> getNeighbors(){
-			ArrayList<GraphNode> temp = new ArrayList<>();
-			for(Edge i: neighbors) temp.add(i.otherEnd);
-			return temp;
-		}
-		
-		public ArrayList<Edge> getEdges(){
-			return neighbors;
-		}
-		
-		public double getH() {
-			return hValue;
-		}
-		
-		public void setH(double h) {
-			hValue = h;
-		}
-		
-		public String toString() {
-			String s = "";
-			s += "    Planet: " + name +" H: "+hValue/*+ "\n" + "       Edges\n\n"*/;
-	/*		for(Edge e: neighbors) {
-				s += e;
-				s += "From " + this.name + " to " + e.otherEnd.name + "\n\n";
-			}	*/
-			return s;
-		}
-		
-		public double heuristicDist(GraphNode dest) {
-			// TODO: write this
-			return 4-Integer.parseInt(name); // scuffed heuristic for testing
-		}
-		
-		public double heuristicTime(GraphNode dest) {
-			// TODO: write this
-			return 1000;
-		}
-
-		@Override
-		public int compareTo(Graph.GraphNode o) {
-			return ((Double) hValue).compareTo((Double) o.hValue);
-		}
+	public void setNodes(HashMap<String, GraphNode> nodes) {
+		this.nodes = nodes;
 	}
 	
-	
-	/**
-	 * Edge class
-	 * @author 
-	 *
-	 *
-	 * Remember to add edges both directions as edges are singly linked... or maybe we have one-way paths in some cases? might be a fun addition
-	 * - Ben
-	 */
-	public class Edge{
-		double dCost; 		//distance cost of the edge
-		double tCost; 		//time cost of the edge
-		
-		private GraphNode otherEnd;		//two ends of the edge. can be modified if the use separated nodes needed
-			
-		public Edge() {super();}
-		
-		
-		//Edge Basic Constructor
-		public Edge(GraphNode end, double timeCost, double distanceCost) {
-			dCost = distanceCost;
-			tCost = timeCost;
-			otherEnd = end;
-		}
-		
-		public Edge(GraphNode end) {
-			dCost = 0;
-			tCost = 0;
-			otherEnd = end;
-		}
-		
-		public GraphNode getEnd() {
-			return otherEnd;
-		}
-		
-		public double getDistance() {
-			return dCost;
-		}
-		
-		public double getTime() {
-			return tCost;
-		}
-		
-		public String toString() {
-			String s = "";
-			s += "Time: " + tCost + "\n";
-			s += "Distance: " + dCost + "\n";
-			return s;
-		}
+	public HashMap<String, GraphNode> getNodes() {
+		return nodes;
 	}
 	
 	

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="16.0.1" class="java.beans.XMLDecoder">
+ <object class="java.util.HashMap">
+  <void method="put">
+   <string>0</string>
+   <object class="GraphNode" id="GraphNode0">
+    <void property="name">
+     <string>0</string>
+    </void>
+    <void property="neighbors">
+     <void method="add">
+      <object class="Edge">
+       <void property="otherEnd">
+        <object class="GraphNode" id="GraphNode1">
+         <void property="name">
+          <string>1</string>
+         </void>
+         <void property="neighbors">
+          <void method="add">
+           <object class="Edge">
+            <void property="otherEnd">
+             <object class="GraphNode" id="GraphNode2">
+              <void property="name">
+               <string>2</string>
+              </void>
+              <void property="neighbors">
+               <void method="add">
+                <object class="Edge">
+                 <void property="otherEnd">
+                  <object idref="GraphNode1"/>
+                 </void>
+                </object>
+               </void>
+               <void method="add">
+                <object class="Edge">
+                 <void property="otherEnd">
+                  <object class="GraphNode" id="GraphNode3">
+                   <void property="name">
+                    <string>3</string>
+                   </void>
+                   <void property="neighbors">
+                    <void method="add">
+                     <object class="Edge">
+                      <void property="otherEnd">
+                       <object idref="GraphNode2"/>
+                      </void>
+                     </object>
+                    </void>
+                    <void method="add">
+                     <object class="Edge">
+                      <void property="otherEnd">
+                       <object class="GraphNode" id="GraphNode4">
+                        <void property="name">
+                         <string>4</string>
+                        </void>
+                        <void property="neighbors">
+                         <void method="add">
+                          <object class="Edge">
+                           <void property="otherEnd">
+                            <object idref="GraphNode3"/>
+                           </void>
+                          </object>
+                         </void>
+                         <void method="add">
+                          <object class="Edge">
+                           <void property="otherEnd">
+                            <object idref="GraphNode0"/>
+                           </void>
+                          </object>
+                         </void>
+                        </void>
+                       </object>
+                      </void>
+                     </object>
+                    </void>
+                   </void>
+                  </object>
+                 </void>
+                </object>
+               </void>
+              </void>
+             </object>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="Edge">
+            <void property="otherEnd">
+             <object idref="GraphNode0"/>
+            </void>
+           </object>
+          </void>
+         </void>
+        </object>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="Edge">
+       <void property="otherEnd">
+        <object idref="GraphNode4"/>
+       </void>
+      </object>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>1</string>
+   <object idref="GraphNode1"/>
+  </void>
+  <void method="put">
+   <string>2</string>
+   <object idref="GraphNode2"/>
+  </void>
+  <void method="put">
+   <string>3</string>
+   <object idref="GraphNode3"/>
+  </void>
+  <void method="put">
+   <string>4</string>
+   <object idref="GraphNode4"/>
+  </void>
+ </object>
+</java>
