@@ -100,29 +100,4 @@ public class MainApp {
 		tabbedPane.add("Trip Advisor", tabPanel2);
 
 	}
-	
-	class ImagePanel extends JPanel {
-
-		private Image img;
-		
-
-		public ImagePanel(String img) {
-			this(new ImageIcon(img).getImage());
-		}
-
-		public ImagePanel(Image img) {
-			this.img = img;
-			Dimension size = new Dimension(img.getWidth(null) / 100, img.getHeight(null) / 100);
-			setPreferredSize(size);
-			setMinimumSize(size);
-			setMaximumSize(size);
-			setSize(size);
-			setLayout(null);
-		}
-
-		public void paintComponent(Graphics g) {
-			g.drawImage(img, -200, -200, null);
-		}
-		
-	}
 }

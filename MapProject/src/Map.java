@@ -10,10 +10,12 @@ import java.util.Hashtable;
 
 public class Map{
 	private Graph g;
+	private String start;
 	
 	//Basic Constructor
 	public Map() throws Exception{
 		g = new Graph();
+		start = "";
 	}
 	
 	/**
@@ -75,24 +77,39 @@ public class Map{
 		g.clear();
 	}
 	
+	public void setStart(String name) {
+		start = name;
+	}
+	
+	public void setDes(String name) {
+		if(start == "") {
+			System.out.println("No starting planet selected");
+			return;
+		}
+		System.out.println(g.pathBetweenDist(start, name));
+	}
+	
 	/**
-	 * not completed
+	 * called when the user choose a start node, path finding will not start
 	 * @param name of the start node
 	 * @param g2d used to change the color of selected node and its edges
 	 */
 	public void chooseStart(String name, Graphics2D g2d) {
-		GraphNode temp = g.setStart(name);
+		start = name;
+		GraphNode temp = g.getNode(name);
 		temp.drawOn(g2d, Color.RED);
 	}
 	
 	/**
-	 * not completed
+	 * called when the user choose the destination, pathFinding will start
+	 * not complete
 	 * @param name of the termination node
 	 * @param g2d used to draw the path
 	 */
-	public void chooseTer(String name, Graphics2D g2d) {
-		GraphNode temp = g.setDestination(name);
+	public void chooseDes(String name, Graphics2D g2d) {
+		GraphNode temp = g.getNode(name);
 		temp.drawOn(g2d, Color.GREEN);
+		g.pathBetweenDist(start, name);
 	}
 	
 	public String toString() {

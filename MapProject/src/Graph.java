@@ -6,16 +6,14 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.PriorityQueue;
+import java.util.Stack;
 
 public class Graph{
 	protected Hashtable<String, GraphNode> nodes;
-	protected GraphNode start;
-	protected GraphNode destination;
-	
+
 	public Graph() throws Exception {
 		nodes = read();
-		start = null;
-		destination = null;
 	}
 	
 	/**
@@ -38,13 +36,14 @@ public class Graph{
 	 * @param name2 of second node
 	 * @return true if insert successfully, false otherwise
 	 */
+
 	public boolean addEdge(String name1, String name2) throws Exception{
 		if(!this.nodes.containsKey(name1) || !this.nodes.containsKey(name2)) return false;
 		
 		
 		//need update
-		boolean temp1 = nodes.get(name1).addEdge(nodes.get(name2), 0, 0);
-		boolean temp2 = nodes.get(name2).addEdge(nodes.get(name1), 0, 0);
+		boolean temp1 = nodes.get(name1).addEdge(nodes.get(name2));
+		boolean temp2 = nodes.get(name2).addEdge(nodes.get(name1));
 		
 		
 		write(nodes);
@@ -74,16 +73,6 @@ public class Graph{
 		nodes.get(name).setY(y);
 		write(nodes);
 		return true;
-	}
-	
-	public GraphNode setStart(String s) {
-		start = nodes.get(s);
-		return start;
-	}
-	
-	public GraphNode setDestination(String s) {
-		this.destination = nodes.get(s);
-		return destination;
 	}
 	
 	/**
@@ -123,14 +112,16 @@ public class Graph{
 	        decoder.close();
 	        return ll;
 	    }
-	
-	public String toString() {
-		String s = "";
-		for(String key: nodes.keySet()) {
-			s += nodes.get(key);
-		}
-		return s;
-	}
+	 
+	 
+	 
+	 public String toString() {
+		 String s = "";
+		 for(String key: nodes.keySet()) {
+			 s += nodes.get(key).testString();
+		 }
+		 return s;
+	 }
 	
 	public ArrayList<GraphNode> getNodeList(){
 		ArrayList<GraphNode> temp = new ArrayList<>();
@@ -140,11 +131,59 @@ public class Graph{
 		return temp;
 	}
 	
+	public GraphNode getNode(String n) {
+		return nodes.get(n);
+	}
+	
 	public void setNodes(Hashtable<String, GraphNode> nodes) {
 		this.nodes = nodes;
 	}
+
+	public enum Cost {
+		TIME, DIST
+	}
 	
-	public Hashtable<String, GraphNode> getNodes() {
-		return nodes;
+	public Path pathBetweenDist(String start, String end) {
+		for(GraphNode n : nodes.values()) {
+			n.sethValue(Double.POSITIVE_INFINITY);
+		}
+		
+		GraphNode startNode = nodes.get(start);
+		GraphNode endNode = nodes.get(end);
+		
+		startNode.setLastNode(null);
+		startNode.sethValue(startNode.heuristicDist(endNode));
+		PriorityQueue<GraphNode> queue = new PriorityQueue<>();
+		
+		queue.add(startNode);
+		do {
+			GraphNode current = queue.poll();
+			current.sethValue(current.gethValue() - current.heuristicDist(endNode));
+			for(Edge e : current.getNeighbors().values()) {
+				GraphNode n = e.otherEnd;
+				double newH = current.gethValue()+n.heuristicDist(endNode)+e.getDCost();
+				if(newH < n.gethValue()) {
+					n.sethValue(newH);
+					n.setLastNode(current);
+					queue.add(n);
+				}
+			}
+		} while(!queue.isEmpty() && queue.peek() != endNode);
+		Path p = new Path();
+		p.cost = endNode.gethValue();
+		p.push(endNode);
+		GraphNode retrace = endNode;
+		while(retrace.getLastNode() != null) {
+			retrace = retrace.getLastNode();
+			p.push(retrace);
+		}
+		return p;
+	}
+	
+	private class Path extends Stack<GraphNode> {
+		double cost;
+		public String toString() {
+			return cost+": "+super.toString();
+		}
 	}
 }

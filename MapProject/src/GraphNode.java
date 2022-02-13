@@ -4,25 +4,27 @@ import java.io.Serializable;
 import java.util.Hashtable;
 
 
-public class GraphNode implements Serializable{
+public class GraphNode implements Serializable, Comparable<GraphNode>{
 		private String name;
 		private Hashtable<String,Edge> neighbors;
+		private GraphNode lastNode;
 		private int x;
 		private int y;
+		private double hValue;
 		
 		public GraphNode() {
-			name = "";
-			this.neighbors = new Hashtable<>();
-			x = 0;
-			y = 0;
+			neighbors = new Hashtable<>();
+			hValue = 0;
 		}
 		
 		//Node Basic Constructor
 		public GraphNode(String name, int x, int y) {
+			this.lastNode = null;
 			this.name = name;
 			this.neighbors = new Hashtable<>();
 			this.x = x;
 			this.y = y;
+			this.hValue = 0;
 		}
 		
 		/**
@@ -31,9 +33,13 @@ public class GraphNode implements Serializable{
 		 * @param timeCost of the edge
 		 * @param distanceCost of the edge
 		 */
-		public boolean addEdge(GraphNode o, int timeCost, int distanceCost){
+		public boolean addEdge(GraphNode o){
 			if(neighbors.contains(o.name)) return false;
-			this.neighbors.put(o.name, new Edge(o, timeCost, distanceCost));
+			
+			//need update
+			this.neighbors.put(o.name, new Edge(o, 0,0));
+			
+			
 			return true;
 		}
 		
@@ -44,7 +50,7 @@ public class GraphNode implements Serializable{
 		 * @param dis cost of the edge
 		 * @return
 		 */
-		public boolean updateEdge(String name, int time, int dis) {
+		public boolean updateEdge(String name, double time, double dis) {
 			if(!neighbors.contains(name)) return false;
 			neighbors.get(name).setTCost(time);
 			neighbors.get(name).setDCost(dis);
@@ -86,6 +92,14 @@ public class GraphNode implements Serializable{
 			this.y = y;
 		}
 
+		public double gethValue() {
+			return hValue;
+		}
+
+		public void sethValue(double hValue) {
+			this.hValue = hValue;
+		}
+
 		public Hashtable<String, Edge> getNeighbors() {
 			return neighbors;
 		}
@@ -93,7 +107,21 @@ public class GraphNode implements Serializable{
 		public void setNeighbors(Hashtable<String, Edge> neighbors) {
 			this.neighbors = neighbors;
 		}
-
+		
+		//for test/debug use
+		public String testString() {
+			String s = "";
+			s += "    Planet: " + name +" H: " + hValue;
+			s += "\nCurrent location (" + x + ", " + y + ")\n\n"
+					+ "       Edges\n\n";
+			for(String key: neighbors.keySet()) {
+				s += "From " + this.name + " to " + key + "\n";
+				s += neighbors.get(key) + "\n";
+			}
+			return s;
+		}
+		
+		//for xml use, don't use for testing
 		public String toString() {
 			String s = "";
 			s += "    Planet: " + name;
@@ -105,6 +133,30 @@ public class GraphNode implements Serializable{
 			}
 			return s;
 		}
+		
+		public int compareTo(GraphNode o) {
+			return ((Double) hValue).compareTo((Double) o.hValue);
+		}
+
+
+		public GraphNode getLastNode() {
+			return lastNode;
+		}
+
+		public void setLastNode(GraphNode lastNode) {
+			this.lastNode = lastNode;
+		}
+	
+
+	public double heuristicDist(GraphNode dest) {
+		// TODO: write this
+		return 4; // scuffed heuristic for testing
 	}
+	public double heuristicTime(GraphNode dest) {
+		// TODO: write this
+		return 1000;
+	}
+
+}
 	
 	
