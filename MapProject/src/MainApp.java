@@ -78,7 +78,7 @@ public class MainApp {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		ImagePanel panel = new ImagePanel(
-				new ImageIcon("C:\\Users\\bhasinn\\git\\CSSE230Maps\\MapProject\\src\\Images\\Mapimage.png").getImage());
+				new ImageIcon("").getImage());
 		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
