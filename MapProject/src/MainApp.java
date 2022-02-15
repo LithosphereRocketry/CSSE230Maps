@@ -80,7 +80,7 @@ public class MainApp {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		ImagePanel panel = new ImagePanel(
-				new ImageIcon("\\Users\\bhasinn\\git\\CSSE230Maps\\MapProject\\src\\image\\Mapimage.png").getImage());
+				new ImageIcon("src/Mapimage.png").getImage());
 		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
@@ -91,6 +91,7 @@ public class MainApp {
 		gbc_scrollPane.gridx = 0;
 		gbc_scrollPane.gridy = 0;
 		frame.getContentPane().add(scrollPane, gbc_scrollPane);
+		scrollPane.add(component);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		GridBagConstraints gbc_tabbedPane = new GridBagConstraints();
