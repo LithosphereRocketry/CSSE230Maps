@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Stack;
 
@@ -138,6 +139,28 @@ public class Graph{
 	public void setNodes(Hashtable<String, GraphNode> nodes) {
 		this.nodes = nodes;
 	}
+	
+	public ArrayList<LinkedList<GraphNode>> travelPlannerDistance(int distanceConstraint, GraphNode startingNode) { //copy over to temp file then copy back later
+		ArrayList<LinkedList<GraphNode>> pathList = new ArrayList<LinkedList<GraphNode>>();
+		LinkedList<GraphNode> list = new LinkedList<GraphNode>();
+		list.add(startingNode);
+		pathList.add(list);
+		startingNode.getNodesWithinDistance(distanceConstraint, list, 0, false, pathList);
+		return pathList;
+
+	}
+	
+	public ArrayList<LinkedList<GraphNode>> travelPlannerTime(int timeConstraint, GraphNode startingNode) { //copy over to temp file then copy back later
+		ArrayList<LinkedList<GraphNode>> pathList = new ArrayList<LinkedList<GraphNode>>();
+		LinkedList<GraphNode> list = new LinkedList<GraphNode>();
+		list.add(startingNode);
+		pathList.add(list);
+		startingNode.getNodesWithinDistance(timeConstraint, list, 0, false, pathList);
+		return pathList;
+
+	}
+	
+	
 
 	public enum Cost {
 		TIME, DIST

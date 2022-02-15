@@ -1,7 +1,9 @@
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.LinkedList;
 
 
 public class GraphNode implements Serializable, Comparable<GraphNode>{
@@ -155,6 +157,75 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 	public double heuristicTime(GraphNode dest) {
 		return Math.sqrt(this.heuristicDist(dest));
 	}
+	
+	/**
+	 * Gets Node paths for travel advisory, gets paths that have a total distance less then the given constraint
+	 * 
+	 * @param distanceConstraint
+	 * @param startingNode
+	 * @param list
+	 * @param totalCost
+	 * @param firstPathEdited
+	 * @param paths
+	 */
+	public void getNodesWithinDistance(int distanceConstraint, LinkedList<GraphNode> list, double totalCost, boolean firstPathEdited, ArrayList<LinkedList<GraphNode>> paths) {
+		LinkedList<GraphNode> listCopy = (LinkedList<GraphNode>) list.clone(); //this is for checking a condition in the else condition below (need 
+		//since we will be modifying list during this method) and is also needed for creating each new linkedList for each path
+		for(String key: this.neighbors.keySet()) {
+			Edge neighborEdge = this.getNeighbors().get(key);
+			if(!firstPathEdited) {
+				if(!list.contains(neighborEdge.otherEnd)) {
+					if(neighborEdge.getDCost() + totalCost <= distanceConstraint) {
+						list.add(neighborEdge.getOtherEnd());
+						firstPathEdited = true;
+						neighborEdge.getOtherEnd().getNodesWithinDistance(distanceConstraint, list, totalCost + neighborEdge.getDCost(), false, paths);
+					}
+				}
+			} else { //create a new LinkedList for a new path
+				LinkedList<GraphNode> anotherList = (LinkedList<GraphNode>) listCopy.clone();
+				if(!listCopy.contains(neighborEdge.otherEnd)) {
+					if(neighborEdge.getDCost() + totalCost <= distanceConstraint) {
+						anotherList.add(neighborEdge.getOtherEnd());
+						totalCost += neighborEdge.getDCost();
+						paths.add(anotherList);
+						neighborEdge.getOtherEnd().getNodesWithinDistance(distanceConstraint, anotherList, totalCost + neighborEdge.getDCost(), false, paths);
+					}
+				}
+			}
+		}
+	}
+	
+	public void getNodesWithinTime (int timeConstraint, LinkedList<GraphNode> list, double totalCost, boolean firstPathEdited, ArrayList<LinkedList<GraphNode>> paths) {
+		LinkedList<GraphNode> listCopy = (LinkedList<GraphNode>) list.clone(); //this is for checking a condition in the else condition below (need 
+		//since we will be modifying list during this method) and is also needed for creating a new linkedList for each path
+		for(String key: this.neighbors.keySet()) {
+			Edge neighborEdge = this.getNeighbors().get(key);
+			if(!firstPathEdited) {
+				if(!list.contains(neighborEdge.otherEnd)) {
+					if(neighborEdge.getTCost() + totalCost <= timeConstraint) {
+						list.add(neighborEdge.getOtherEnd());
+						firstPathEdited = true;
+						neighborEdge.getOtherEnd().getNodesWithinDistance(timeConstraint, list, totalCost + neighborEdge.getTCost(), false, paths);
+					}
+				}
+			} else { //create a new LinkedList for a new path
+				LinkedList<GraphNode> anotherList = (LinkedList<GraphNode>) listCopy.clone();
+				if(!listCopy.contains(neighborEdge.otherEnd)) {
+					if(neighborEdge.getTCost() + totalCost <= timeConstraint) {
+						anotherList.add(neighborEdge.getOtherEnd());
+						totalCost += neighborEdge.getTCost();
+						paths.add(anotherList);
+						neighborEdge.getOtherEnd().getNodesWithinDistance(timeConstraint,anotherList, totalCost + neighborEdge.getTCost(), false, paths);
+					}
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
 
 }
 	
