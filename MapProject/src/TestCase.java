@@ -12,6 +12,7 @@ public class TestCase{
 		m.addNode("Earth", 200, 100);
 //		frame.add(m);
 //		m.repaint();
+		
 		System.out.print(m);
 //			Map g = new Map();
 
