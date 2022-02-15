@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
 import java.awt.Dimension;
@@ -100,10 +101,33 @@ public class MainApp {
 
 		JPanel tabPanel1 = new JPanel();
 		tabPanel1.setLayout(new GridLayout());
-		tabbedPane.add("Recommended Route", tabPanel1);
+		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
+		GridBagLayout gbl_panel_1 = new GridBagLayout();
+		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0, 0};
+		gbl_panel_1.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		tabPanel1.setLayout(gbl_panel_1);
+		
+		DropBox comboBox = new DropBox();
+		GridBagConstraints gbc_comboBox = new GridBagConstraints();
+		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboBox.gridx = 5;
+		gbc_comboBox.gridy = 1;
+		tabPanel1.add(comboBox, gbc_comboBox);
+		
+		DropBox comboBox_1 = new DropBox();
+		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
+		gbc_comboBox_1.insets = new Insets(0, 0, 0, 5);
+		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboBox_1.gridx = 5;
+		gbc_comboBox_1.gridy = 3;
+		tabPanel1.add(comboBox_1, gbc_comboBox_1);
+		
 		JPanel tabPanel2 = new JPanel();
 		tabPanel2.setLayout(new GridLayout());
-		tabbedPane.add("Trip Advisor", tabPanel2);
+		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
 
 	}
 }
