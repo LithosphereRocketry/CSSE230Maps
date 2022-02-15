@@ -2,46 +2,18 @@
 <java version="17.0.1" class="java.beans.XMLDecoder">
  <object class="java.util.Hashtable">
   <void method="put">
-   <string>Mercury</string>
-   <object class="GraphNode" id="GraphNode0">
+   <string>Earth</string>
+   <object class="GraphNode">
     <void property="name">
-     <string>Mercury</string>
+     <string>Earth</string>
     </void>
-    <void property="neighbors">
-     <void method="put">
-      <string>Earth</string>
-      <object class="Edge">
-       <void property="otherEnd">
-        <object class="GraphNode" id="GraphNode1">
-         <void property="name">
-          <string>Earth</string>
-         </void>
-         <void property="neighbors">
-          <void method="put">
-           <string>Mercury</string>
-           <object class="Edge">
-            <void property="otherEnd">
-             <object idref="GraphNode0"/>
-            </void>
-           </object>
-          </void>
-         </void>
-         <void property="x">
-          <int>10</int>
-         </void>
-         <void property="y">
-          <int>20</int>
-         </void>
-        </object>
-       </void>
-      </object>
-     </void>
+    <void property="x">
+     <int>200</int>
+    </void>
+    <void property="y">
+     <int>100</int>
     </void>
    </object>
-  </void>
-  <void method="put">
-   <string>Earth</string>
-   <object idref="GraphNode1"/>
   </void>
  </object>
 </java>
