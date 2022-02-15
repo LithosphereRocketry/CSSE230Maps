@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
@@ -115,6 +116,9 @@ public class MainApp {
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridx = 5;
 		gbc_comboBox.gridy = 1;
+		JLabel label = new JLabel();
+		label.setText("Start:");
+		tabPanel1.add(label, gbc_comboBox);
 		tabPanel1.add(comboBox, gbc_comboBox);
 		
 		DropBox comboBox_1 = new DropBox();
@@ -123,6 +127,9 @@ public class MainApp {
 		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox_1.gridx = 5;
 		gbc_comboBox_1.gridy = 3;
+		JLabel label2 = new JLabel();
+		label2.setText("Destination:");
+		tabPanel1.add(label2, gbc_comboBox_1);
 		tabPanel1.add(comboBox_1, gbc_comboBox_1);
 		
 		JPanel tabPanel2 = new JPanel();
