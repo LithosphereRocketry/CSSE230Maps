@@ -125,6 +125,7 @@ public class Graph{
 	 }
 	
 	public GraphNode[] getNodeList(){
+		
 		return (GraphNode[])nodes.values().toArray();
 	}
 	
