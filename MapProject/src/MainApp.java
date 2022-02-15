@@ -100,37 +100,10 @@ public class MainApp {
 		gbc_tabbedPane.gridy = 0;
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 
-		JPanel tabPanel1 = new JPanel();
-		tabPanel1.setLayout(new GridLayout());
+		RouterPanel tabPanel1 = new RouterPanel();
 		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
-		GridBagLayout gbl_panel_1 = new GridBagLayout();
-		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0, 0};
-		gbl_panel_1.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		tabPanel1.setLayout(gbl_panel_1);
 		
-		DropBox comboBox = new DropBox();
-		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox.gridx = 5;
-		gbc_comboBox.gridy = 1;
-		JLabel label = new JLabel();
-		label.setText("Start:");
-		tabPanel1.add(label, gbc_comboBox);
-		tabPanel1.add(comboBox, gbc_comboBox);
 		
-		DropBox comboBox_1 = new DropBox();
-		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
-		gbc_comboBox_1.insets = new Insets(0, 0, 0, 5);
-		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox_1.gridx = 5;
-		gbc_comboBox_1.gridy = 3;
-		JLabel label2 = new JLabel();
-		label2.setText("Destination:");
-		tabPanel1.add(label2, gbc_comboBox_1);
-		tabPanel1.add(comboBox_1, gbc_comboBox_1);
 		
 		JPanel tabPanel2 = new JPanel();
 		tabPanel2.setLayout(new GridLayout());
