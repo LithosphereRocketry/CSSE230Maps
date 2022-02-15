@@ -35,9 +35,10 @@ public class MainApp {
 	
 	/**
 	 * Launch the application.
+	 * @throws Exception 
 	 */
 
-	private void runApp() {
+	private void runApp() throws Exception {
 
 		// Frame
 		frame.setSize(500, 500);
@@ -66,8 +67,9 @@ public class MainApp {
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @throws Exception 
 	 */
-	private void initialize() {
+	private void initialize() throws Exception {
 		GraphicsComponent component = new GraphicsComponent();
 		
 		frame = new JFrame();
@@ -79,8 +81,7 @@ public class MainApp {
 		gridBagLayout.rowWeights = new double[] { 1.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		ImagePanel panel = new ImagePanel(
-				new ImageIcon("src/Mapimage.png").getImage());
+		Map panel = new Map();
 		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();

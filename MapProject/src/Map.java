@@ -4,12 +4,13 @@ import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
-public class Map extends JPanel{
+public class Map extends ImagePanel{
 	private Graph g;
 	private String start;
 	
 	//Basic Constructor
 	public Map() throws Exception{
+		super("src/Mapimage.png");
 		g = new Graph();
 		start = "";
 	}

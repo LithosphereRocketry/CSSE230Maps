@@ -5,6 +5,7 @@ import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -124,8 +125,8 @@ public class Graph{
 		 return s;
 	 }
 	
-	public GraphNode[] getNodeList(){
-		return (GraphNode[])nodes.values().toArray();
+	public Collection<GraphNode> getNodeList(){
+		return nodes.values();
 	}
 	
 	public GraphNode getNode(String n) {
