@@ -15,12 +15,17 @@ import java.awt.GridBagConstraints;
 import javax.swing.JTabbedPane;
 
 import java.awt.Insets;
+import java.io.File;
+import java.io.IOException;
 import java.util.Hashtable;
 
+import javax.imageio.ImageIO;
 import javax.swing.JScrollPane;
 
 public class MainApp {
+	public static final int DELAY = 50;
 	static JFrame frame = new JFrame("Hyerspace Route");
+	private Image bgImage;
 	
 	MainApp() {
 		
@@ -61,6 +66,8 @@ public class MainApp {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		GraphicsComponent component = new GraphicsComponent();
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1050, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,9 +76,10 @@ public class MainApp {
 		gridBagLayout.columnWeights = new double[] { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
 		gridBagLayout.rowWeights = new double[] { 1.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		frame.getContentPane().setLayout(gridBagLayout);
-
+		
 		ImagePanel panel = new ImagePanel(
-				new ImageIcon("\\Users\\bhasinn\\OneDrive - Rose-Hulman Institute of Technology\\Documents\\CSSE\\CSSE230W21\\Maps\\src\\Mapimage.png").getImage());
+				new ImageIcon("C:\\Users\\bhasinn\\git\\CSSE230Maps\\MapProject\\src\\Images\\Mapimage.png").getImage());
+		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.gridwidth = 10;
@@ -80,8 +88,6 @@ public class MainApp {
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane.gridx = 0;
 		gbc_scrollPane.gridy = 0;
-		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		frame.getContentPane().add(scrollPane, gbc_scrollPane);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
