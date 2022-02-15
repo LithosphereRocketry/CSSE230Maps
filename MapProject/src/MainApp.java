@@ -1,7 +1,9 @@
 import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
@@ -15,12 +17,17 @@ import java.awt.GridBagConstraints;
 import javax.swing.JTabbedPane;
 
 import java.awt.Insets;
+import java.io.File;
+import java.io.IOException;
 import java.util.Hashtable;
 
+import javax.imageio.ImageIO;
 import javax.swing.JScrollPane;
 
 public class MainApp {
+	public static final int DELAY = 50;
 	static JFrame frame = new JFrame("Hyerspace Route");
+	private Image bgImage;
 	
 	MainApp() {
 		
@@ -61,6 +68,8 @@ public class MainApp {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		GraphicsComponent component = new GraphicsComponent();
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1050, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,9 +78,10 @@ public class MainApp {
 		gridBagLayout.columnWeights = new double[] { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
 		gridBagLayout.rowWeights = new double[] { 1.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		frame.getContentPane().setLayout(gridBagLayout);
-
+		
 		ImagePanel panel = new ImagePanel(
-				new ImageIcon("\\Users\\bhasinn\\OneDrive - Rose-Hulman Institute of Technology\\Documents\\CSSE\\CSSE230W21\\Maps\\src\\Mapimage.png").getImage());
+				new ImageIcon("src/Mapimage.png").getImage());
+		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.gridwidth = 10;
@@ -80,9 +90,8 @@ public class MainApp {
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane.gridx = 0;
 		gbc_scrollPane.gridy = 0;
-		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		frame.getContentPane().add(scrollPane, gbc_scrollPane);
+		scrollPane.add(component);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		GridBagConstraints gbc_tabbedPane = new GridBagConstraints();
@@ -92,12 +101,14 @@ public class MainApp {
 		gbc_tabbedPane.gridy = 0;
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 
-		JPanel tabPanel1 = new JPanel();
-		tabPanel1.setLayout(new GridLayout());
-		tabbedPane.add("Recommended Route", tabPanel1);
-		JPanel tabPanel2 = new JPanel();
+		RouterPanel tabPanel1 = new RouterPanel();
+		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
+		
+		
+		
+		AdvisorPanel tabPanel2 = new AdvisorPanel();
 		tabPanel2.setLayout(new GridLayout());
-		tabbedPane.add("Trip Advisor", tabPanel2);
+		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
 
 	}
 }
