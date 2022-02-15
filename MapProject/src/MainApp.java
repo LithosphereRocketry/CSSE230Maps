@@ -106,7 +106,7 @@ public class MainApp {
 		
 		
 		
-		JPanel tabPanel2 = new JPanel();
+		AdvisorPanel tabPanel2 = new AdvisorPanel();
 		tabPanel2.setLayout(new GridLayout());
 		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
 
