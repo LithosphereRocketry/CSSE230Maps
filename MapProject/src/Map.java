@@ -1,14 +1,10 @@
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.util.Hashtable;
 
-public class Map{
+import javax.swing.JPanel;
+
+public class Map extends JPanel{
 	private Graph g;
 	private String start;
 	
@@ -16,6 +12,12 @@ public class Map{
 	public Map() throws Exception{
 		g = new Graph();
 		start = "";
+	}
+	
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		Graphics2D g2d = (Graphics2D) g;
+		drawOn(g2d);
 	}
 	
 	/**

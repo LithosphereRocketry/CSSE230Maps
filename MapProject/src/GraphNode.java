@@ -61,7 +61,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		
 		public void drawOn(Graphics2D g2d, Color color) {
 			g2d.setColor(Color.BLUE);
-			g2d.drawString(name, x + 5, + 5);
+			g2d.drawString(name, x + 5, y + 5);
 			g2d.setColor(color);
 			g2d.fillOval(x - 3, y - 3, 6, 6);
 			

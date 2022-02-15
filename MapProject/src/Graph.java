@@ -124,12 +124,8 @@ public class Graph{
 		 return s;
 	 }
 	
-	public ArrayList<GraphNode> getNodeList(){
-		ArrayList<GraphNode> temp = new ArrayList<>();
-		for(String key: nodes.keySet()) {
-			temp.add(nodes.get(key));
-		}
-		return temp;
+	public GraphNode[] getNodeList(){
+		return (GraphNode[])nodes.values().toArray();
 	}
 	
 	public GraphNode getNode(String n) {
