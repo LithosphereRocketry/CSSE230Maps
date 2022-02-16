@@ -24,7 +24,7 @@ public class RouterPanel extends JPanel {
 	public String selectedStart;
 	public String selectedDest;
 	//Basic Constructor
-	public RouterPanel(Collection<String> list) {
+	public RouterPanel(Graph graph) {
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -33,14 +33,15 @@ public class RouterPanel extends JPanel {
 		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		this.setLayout(gbl_panel_1);
 		
-		JLabel lblNewLabel = new JLabel("Start:");
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
-		gbc_lblNewLabel.gridx = 4;
-		gbc_lblNewLabel.gridy = 1;
-		this.add(lblNewLabel, gbc_lblNewLabel);
-		
+		JLabel lbStartLabel = new JLabel("Start:");
+		GridBagConstraints gbc_lbStartLabel = new GridBagConstraints();
+		gbc_lbStartLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_lbStartLabel.anchor = GridBagConstraints.EAST;
+		gbc_lbStartLabel.gridx = 4;
+		gbc_lbStartLabel.gridy = 1;
+		this.add(lbStartLabel, gbc_lbStartLabel);
+
+		Collection<String> list = graph.getNodeNames();
 		Object[] nodes = list.toArray();
 		
 		JComboBox comboBox = new JComboBox(nodes);
@@ -60,13 +61,13 @@ public class RouterPanel extends JPanel {
 		});
 		comboBox.setSelectedItem(nodes[0]);//set as default selected item
 		
-		JLabel lblNewLabel_1 = new JLabel("Destination:");
-		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.insets = new Insets(0, 0, 0, 5);
-		gbc_lblNewLabel_1.anchor = GridBagConstraints.EAST;
-		gbc_lblNewLabel_1.gridx = 4;
-		gbc_lblNewLabel_1.gridy = 3;
-		this.add(lblNewLabel_1, gbc_lblNewLabel_1);
+		JLabel lbDestLabel = new JLabel("Destination:");
+		GridBagConstraints gbc_lbDestLabel = new GridBagConstraints();
+		gbc_lbDestLabel.insets = new Insets(0, 0, 0, 5);
+		gbc_lbDestLabel.anchor = GridBagConstraints.EAST;
+		gbc_lbDestLabel.gridx = 4;
+		gbc_lbDestLabel.gridy = 3;
+		this.add(lbDestLabel, gbc_lbDestLabel);
 		
 		JComboBox comboBox_1 = new JComboBox(nodes);
 		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
@@ -84,6 +85,21 @@ public class RouterPanel extends JPanel {
 		    }
 		});
 		comboBox_1.setSelectedItem(nodes[1]);//set as default selected item
+		
+		JButton btnGOButton = new JButton("GO");
+		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
+		gbc_btnGOButton.insets = new Insets(0, 0, 0, 60);
+		gbc_btnGOButton.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnGOButton.gridx = 5;
+		gbc_btnGOButton.gridy = 4;
+		this.add(btnGOButton, gbc_btnGOButton);
+		
+		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	System.out.println(graph.pathBetweenDist(selectedStart, selectedDest));
+		    }
+		});
 	}
 	
 	public String getSelectedStart() {

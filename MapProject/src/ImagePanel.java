@@ -16,7 +16,7 @@ class ImagePanel extends JPanel {
 
 	public ImagePanel(Image img) {
 		this.img = img;
-		Dimension size = new Dimension(img.getWidth(null) - 400, img.getHeight(null) - 300);
+		Dimension size = new Dimension(img.getWidth(null) - 430, img.getHeight(null) - 300);
 		setPreferredSize(size);
 		setMinimumSize(size);
 		setMaximumSize(size);
@@ -25,7 +25,7 @@ class ImagePanel extends JPanel {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(img, -400, -300, null);
+		g.drawImage(img, -430, -300, null);
 	}
 	
 }

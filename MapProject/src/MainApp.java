@@ -84,7 +84,7 @@ public class MainApp {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		Map panel = new Map();
-		Collection<String> list = panel.g.getNodeNames();
+		Graph graph = panel.g;
 		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
@@ -105,7 +105,7 @@ public class MainApp {
 		gbc_tabbedPane.gridy = 0;
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 
-		RouterPanel tabPanel1 = new RouterPanel(list);
+		RouterPanel tabPanel1 = new RouterPanel(graph);
 		String start = tabPanel1.getSelectedStart();
 		panel.setStart(start);
 		String dest = tabPanel1.getSelectedDest();
