@@ -20,6 +20,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class RouterPanel extends JPanel {
+	public String selectedStart;
+	public String selectedDest;
 	//Basic Constructor
 	public RouterPanel(Collection<String> list) {
 		this.setLayout(new GridLayout());
@@ -52,6 +54,7 @@ public class RouterPanel extends JPanel {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
 		    	comboBox.setSelectedItem(comboBox.getSelectedItem());
+		    	selectedStart = (String) comboBox.getSelectedItem();
 		    }
 		});
 		comboBox.setSelectedItem(nodes[0]);//set as default selected item
@@ -71,5 +74,22 @@ public class RouterPanel extends JPanel {
 		gbc_comboBox_1.gridx = 5;
 		gbc_comboBox_1.gridy = 3;
 		this.add(comboBox_1, gbc_comboBox_1);
+		
+		comboBox_1.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	comboBox_1.setSelectedItem(comboBox_1.getSelectedItem());
+		    	selectedDest = (String) comboBox_1.getSelectedItem();
+		    }
+		});
+		comboBox_1.setSelectedItem(nodes[1]);//set as default selected item
+	}
+	
+	public String getSelectedStart() {
+		return selectedStart;
+	}
+	
+	public String getSelectedDest() {
+		return selectedDest;
 	}
 }

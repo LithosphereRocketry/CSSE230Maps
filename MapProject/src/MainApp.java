@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Hashtable;
+import java.util.Timer;
 
 import javax.imageio.ImageIO;
 import javax.swing.JScrollPane;
@@ -46,7 +47,7 @@ public class MainApp {
 
 		// Component
 		initialize();
-
+		
 		// Produces Frame
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -105,6 +106,10 @@ public class MainApp {
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 
 		RouterPanel tabPanel1 = new RouterPanel(list);
+		String start = tabPanel1.getSelectedStart();
+		panel.setStart(start);
+		String dest = tabPanel1.getSelectedDest();
+		panel.setDes(dest);
 		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
 		
 		

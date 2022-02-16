@@ -82,6 +82,7 @@ public class Map extends ImagePanel{
 	
 	public void setStart(String name) {
 		start = name;
+		System.out.println(start);
 	}
 	
 	public void setDes(String name) {
