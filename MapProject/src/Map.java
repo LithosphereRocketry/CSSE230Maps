@@ -10,7 +10,7 @@ public class Map extends ImagePanel{
 	
 	//Basic Constructor
 	public Map() throws Exception{
-		super("src/Mapimage.png");
+		super("src/SW Galaxy 1.jpg");
 		g = new Graph();
 		start = "";
 	}
