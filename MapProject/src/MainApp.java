@@ -87,7 +87,7 @@ public class MainApp {
 		panel.clear();
 		panel.addNode("Earth", 200, 100);
 		panel.addNode("Coruscant", 540, 205);
-		panel.addEdge("Earth", "Corunscant");
+		panel.addEdge("Earth", "Coruscant");
 		Graph graph = panel.g;
 		
 		JScrollPane scrollPane = new JScrollPane(panel);

@@ -207,7 +207,7 @@ public class Graph{
 	private class Path extends Stack<GraphNode> {
 		double cost;
 		public String toString() {
-			return cost+": "+super.toString() +"\n";
+			return cost+": "+super.toString();
 		}
 		
 	}

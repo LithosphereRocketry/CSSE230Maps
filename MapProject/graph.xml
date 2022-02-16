@@ -2,24 +2,24 @@
 <java version="17.0.1" class="java.beans.XMLDecoder">
  <object class="java.util.Hashtable">
   <void method="put">
-   <string>4</string>
+   <string>Earth</string>
    <object class="GraphNode" id="GraphNode0">
     <void class="GraphNode" method="getField">
      <string>name</string>
      <void method="set">
       <object idref="GraphNode0"/>
-      <string>4</string>
+      <string>Earth</string>
      </void>
     </void>
     <void property="neighbors">
      <void method="put">
-      <string>2</string>
+      <string>Coruscant</string>
       <object class="Edge">
        <void property="DCost">
-        <double>7.521206186172788</double>
+        <double>18.86382959457495</double>
        </void>
        <void property="TCost">
-        <double>56.568542494923804</double>
+        <double>355.8440669731617</double>
        </void>
        <void property="otherEnd">
         <object class="GraphNode" id="GraphNode1">
@@ -27,74 +27,30 @@
           <string>name</string>
           <void method="set">
            <object idref="GraphNode1"/>
-           <string>2</string>
+           <string>Coruscant</string>
           </void>
          </void>
          <void property="neighbors">
           <void method="put">
-           <string>4</string>
+           <string>Earth</string>
            <object class="Edge">
             <void property="DCost">
-             <double>7.521206186172788</double>
+             <double>18.86382959457495</double>
             </void>
             <void property="TCost">
-             <double>56.568542494923804</double>
+             <double>355.8440669731617</double>
             </void>
             <void property="otherEnd">
              <object idref="GraphNode0"/>
             </void>
            </object>
           </void>
-          <void method="put">
-           <string>1</string>
-           <object class="Edge">
-            <void property="DCost">
-             <double>5.3182958969449885</double>
-            </void>
-            <void property="TCost">
-             <double>28.284271247461902</double>
-            </void>
-            <void property="otherEnd">
-             <object class="GraphNode" id="GraphNode2">
-              <void class="GraphNode" method="getField">
-               <string>name</string>
-               <void method="set">
-                <object idref="GraphNode2"/>
-                <string>1</string>
-               </void>
-              </void>
-              <void property="neighbors">
-               <void method="put">
-                <string>2</string>
-                <object class="Edge">
-                 <void property="DCost">
-                  <double>5.3182958969449885</double>
-                 </void>
-                 <void property="TCost">
-                  <double>28.284271247461902</double>
-                 </void>
-                 <void property="otherEnd">
-                  <object idref="GraphNode1"/>
-                 </void>
-                </object>
-               </void>
-              </void>
-              <void property="x">
-               <int>20</int>
-              </void>
-              <void property="y">
-               <int>30</int>
-              </void>
-             </object>
-            </void>
-           </object>
-          </void>
          </void>
          <void property="x">
-          <int>40</int>
+          <int>540</int>
          </void>
          <void property="y">
-          <int>50</int>
+          <int>205</int>
          </void>
         </object>
        </void>
@@ -102,38 +58,16 @@
      </void>
     </void>
     <void property="x">
-     <int>80</int>
+     <int>200</int>
     </void>
     <void property="y">
-     <int>90</int>
+     <int>100</int>
     </void>
    </object>
   </void>
   <void method="put">
-   <string>3</string>
-   <object class="GraphNode" id="GraphNode3">
-    <void class="GraphNode" method="getField">
-     <string>name</string>
-     <void method="set">
-      <object idref="GraphNode3"/>
-      <string>3</string>
-     </void>
-    </void>
-    <void property="x">
-     <int>60</int>
-    </void>
-    <void property="y">
-     <int>70</int>
-    </void>
-   </object>
-  </void>
-  <void method="put">
-   <string>2</string>
+   <string>Coruscant</string>
    <object idref="GraphNode1"/>
-  </void>
-  <void method="put">
-   <string>1</string>
-   <object idref="GraphNode2"/>
   </void>
  </object>
 </java>
