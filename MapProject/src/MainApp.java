@@ -84,6 +84,10 @@ public class MainApp {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		Map panel = new Map();
+		panel.clear();
+		panel.addNode("Earth", 200, 100);
+		panel.addNode("Coruscant", 540, 205);
+		panel.addEdge("Earth", "Corunscant");
 		Graph graph = panel.g;
 		
 		JScrollPane scrollPane = new JScrollPane(panel);

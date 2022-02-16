@@ -1,13 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="16.0.2" class="java.beans.XMLDecoder">
+<java version="17.0.1" class="java.beans.XMLDecoder">
  <object class="java.util.Hashtable">
   <void method="put">
-   <string>Earth</string>
+   <string>4</string>
    <object class="GraphNode" id="GraphNode0">
     <void class="GraphNode" method="getField">
      <string>name</string>
      <void method="set">
       <object idref="GraphNode0"/>
+      <string>4</string>
+     </void>
+    </void>
+    <void property="neighbors">
+     <void method="put">
+      <string>3</string>
+      <object class="Edge">
+       <void property="otherEnd">
+        <object class="GraphNode" id="GraphNode1">
+         <void class="GraphNode" method="getField">
+          <string>name</string>
+          <void method="set">
+           <object idref="GraphNode1"/>
+           <string>3</string>
+          </void>
+         </void>
+         <void property="neighbors">
+          <void method="put">
+           <string>4</string>
+           <object class="Edge">
+            <void property="otherEnd">
+             <object idref="GraphNode0"/>
+            </void>
+           </object>
+          </void>
+          <void method="put">
+           <string>2</string>
+           <object class="Edge">
+            <void property="otherEnd">
+             <object class="GraphNode" id="GraphNode2">
+              <void class="GraphNode" method="getField">
+               <string>name</string>
+               <void method="set">
+                <object idref="GraphNode2"/>
+                <string>2</string>
+               </void>
+              </void>
+              <void property="neighbors">
+               <void method="put">
+                <string>3</string>
+                <object class="Edge">
+                 <void property="otherEnd">
+                  <object idref="GraphNode1"/>
+                 </void>
+                </object>
+               </void>
+               <void method="put">
+                <string>1</string>
+                <object class="Edge">
+                 <void property="otherEnd">
+                  <object class="GraphNode" id="GraphNode3">
+                   <void class="GraphNode" method="getField">
+                    <string>name</string>
+                    <void method="set">
+                     <object idref="GraphNode3"/>
+                     <string>1</string>
+                    </void>
+                   </void>
+                   <void property="neighbors">
+                    <void method="put">
+                     <string>2</string>
+                     <object class="Edge">
+                      <void property="otherEnd">
+                       <object idref="GraphNode2"/>
+                      </void>
+                     </object>
+                    </void>
+                   </void>
+                   <void property="x">
+                    <int>20</int>
+                   </void>
+                   <void property="y">
+                    <int>30</int>
+                   </void>
+                  </object>
+                 </void>
+                </object>
+               </void>
+              </void>
+              <void property="x">
+               <int>40</int>
+              </void>
+              <void property="y">
+               <int>50</int>
+              </void>
+             </object>
+            </void>
+           </object>
+          </void>
+         </void>
+         <void property="x">
+          <int>60</int>
+         </void>
+         <void property="y">
+          <int>70</int>
+         </void>
+        </object>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="x">
+     <int>80</int>
+    </void>
+    <void property="y">
+     <int>90</int>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Earth</string>
+   <object class="GraphNode" id="GraphNode4">
+    <void class="GraphNode" method="getField">
+     <string>name</string>
+     <void method="set">
+      <object idref="GraphNode4"/>
       <string>Earth</string>
      </void>
     </void>
@@ -20,12 +136,24 @@
    </object>
   </void>
   <void method="put">
+   <string>3</string>
+   <object idref="GraphNode1"/>
+  </void>
+  <void method="put">
+   <string>2</string>
+   <object idref="GraphNode2"/>
+  </void>
+  <void method="put">
+   <string>1</string>
+   <object idref="GraphNode3"/>
+  </void>
+  <void method="put">
    <string>Coruscant</string>
-   <object class="GraphNode" id="GraphNode1">
+   <object class="GraphNode" id="GraphNode5">
     <void class="GraphNode" method="getField">
      <string>name</string>
      <void method="set">
-      <object idref="GraphNode1"/>
+      <object idref="GraphNode5"/>
       <string>Coruscant</string>
      </void>
     </void>

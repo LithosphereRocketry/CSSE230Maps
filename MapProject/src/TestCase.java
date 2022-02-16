@@ -7,27 +7,28 @@ public class TestCase{
 	public static void main(String[] args) throws Exception {
 		JFrame frame = new JFrame();
 		
-		Map m = new Map();
-		m.clear();
-		m.addNode("Earth", 200, 100);
-		m.addNode("Coruscant", 540, 205);
+//		Map m = new Map();
+//		m.clear();
+//		m.addNode("Earth", 200, 100);
+//		m.addNode("Coruscant", 540, 205);
+//		m.addEdge("Earth", "Corunscant");
 //		frame.add(m);
 //		m.repaint();
 		
-		System.out.print(m);
-//			Map g = new Map();
+//		System.out.print(m);
+			Map g = new Map();
 
-//			g.addNode("1");
-//			g.addNode("2");
-//			g.addNode("3");
-//			g.addNode("4");
-//			g.addEdge("1", "2", 10, 10);
-//			g.addEdge("2", "3", 10, 10);
-//			g.addEdge("3", "4", 10, 10);
+			g.addNode("1", 20, 30);
+			g.addNode("2", 40, 50);
+			g.addNode("3", 60, 70);
+			g.addNode("4", 80, 90);
+			g.addEdge("1", "2");
+			g.addEdge("2", "3");
+			g.addEdge("3", "4");
 //			g.addNode("0");
-//			g.addEdge("0", "1", 10, 10);
-//			g.addEdge("0", "4", 20, 20);
-//			System.out.println(g.pathBetweenDist("1", "4"));
+			g.addEdge("0", "1");
+			g.addEdge("0", "4");
+			System.out.println(g.getG().pathBetweenDist("1", "4"));
 		
 		
 		frame.setSize(500, 500);

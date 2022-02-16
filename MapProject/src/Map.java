@@ -90,7 +90,7 @@ public class Map extends ImagePanel{
 			System.out.println("No starting planet selected");
 			return;
 		}
-		System.out.println(g.pathBetweenDist(start, name));
+		//System.out.println(g.pathBetweenDist(start, name));
 	}
 	
 	/**
