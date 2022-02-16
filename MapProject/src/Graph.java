@@ -43,8 +43,6 @@ public class Graph{
 	public boolean addEdge(String name1, String name2) throws Exception{
 		if(!this.nodes.containsKey(name1) || !this.nodes.containsKey(name2)) return false;
 		
-		
-		//need update
 		boolean temp1 = nodes.get(name1).addEdge(nodes.get(name2));
 		boolean temp2 = nodes.get(name2).addEdge(nodes.get(name1));
 		
@@ -182,6 +180,7 @@ public class Graph{
 		
 		queue.add(startNode);
 		do {
+			
 			GraphNode current = queue.poll();
 			current.sethValue(current.gethValue() - current.heuristicDist(endNode));
 			for(Edge e : current.getNeighbors().values()) {
@@ -208,7 +207,7 @@ public class Graph{
 	private class Path extends Stack<GraphNode> {
 		double cost;
 		public String toString() {
-			return cost+": "+super.toString();
+			return cost+": "+super.toString() +"\n";
 		}
 		
 	}

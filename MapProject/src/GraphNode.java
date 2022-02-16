@@ -39,7 +39,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 			if(neighbors.contains(o.name)) return false;
 			
 			//need update
-			this.neighbors.put(o.name, new Edge(o, 0,0));
+			this.neighbors.put(o.name, new Edge(o, heuristicDist(o),heuristicTime(o)));
 			
 			
 			return true;
@@ -127,12 +127,12 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		public String toString() {
 			String s = "";
 			s += "    Planet: " + name;
-			s += "\nCurrent location (" + x + ", " + y + ")\n\n"
-					+ "       Edges\n\n";
-			for(String key: neighbors.keySet()) {
-				s += "From " + this.name + " to " + key + "\n";
-				s += neighbors.get(key) + "\n";
-			}
+//			s += "\nCurrent location (" + x + ", " + y + ")\n\n"
+//					+ "       Edges\n\n";
+//			for(String key: neighbors.keySet()) {
+//				s += "From " + this.name + " to " + key + "\n";
+//				s += neighbors.get(key) + "\n";
+//			}
 			return s;
 		}
 		
