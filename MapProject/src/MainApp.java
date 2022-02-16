@@ -112,10 +112,7 @@ public class MainApp {
 		panel.setDes(dest);
 		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
 		
-		
-		
 		AdvisorPanel tabPanel2 = new AdvisorPanel();
-		tabPanel2.setLayout(new GridLayout());
 		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
 
 	}
