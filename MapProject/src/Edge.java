@@ -7,7 +7,7 @@ public class Edge{
 	public Edge() {}
 		
 	//Edge Basic Constructor
-	public Edge(GraphNode end, double timeCost, double distanceCost) {
+	public Edge(GraphNode end, double distanceCost, double timeCost) {
 		dCost = distanceCost;
 		tCost = timeCost;
 		otherEnd = end;

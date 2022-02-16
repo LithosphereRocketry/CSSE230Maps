@@ -180,20 +180,19 @@ public class Graph{
 		PriorityQueue<GraphNode> queue = new PriorityQueue<>();
 		
 		queue.add(startNode);
-		do {
-			
-			GraphNode current = queue.poll();
-			current.sethValue(current.gethValue() - current.heuristicDist(endNode));
+		
+		GraphNode current;
+		while((current = queue.poll()) != endNode) {
 			for(Edge e : current.getNeighbors().values()) {
 				GraphNode n = e.otherEnd;
-				double newH = current.gethValue()+n.heuristicDist(endNode)+e.getDCost();
+				double newH = current.gethValue()-current.heuristicDist(endNode)+n.heuristicDist(endNode)+e.getDCost();
 				if(newH < n.gethValue()) {
-					n.sethValue(newH);
 					n.setLastNode(current);
+					n.sethValue(newH);
 					queue.add(n);
 				}
 			}
-		} while(!queue.isEmpty() && queue.peek() != endNode);
+		}
 		Path p = new Path();
 		p.cost = endNode.gethValue();
 		p.push(endNode);

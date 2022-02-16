@@ -85,6 +85,7 @@ public class MainApp {
 		
 		Map panel = new Map();
 //		panel.clear();
+//		panel.addNode("Null", 818, 104);
 //		panel.addNode("Coruscant", 510, 205);
 //		panel.addNode("Mobus", 255, 14);
 //		panel.addNode("Selvaris", 403, 113);
@@ -95,7 +96,82 @@ public class MainApp {
 //		panel.addNode("Aphran", 541, 115);
 //		panel.addNode("Corratos", 536, 133);
 //		panel.addNode("Vortex", 585, 76);
+//		panel.addNode("Tatooine", 534, 918);
+//		panel.addNode("Dagobah", 98, 941);
+//		panel.addNode("Naboo", 336, 813);
+//		panel.addNode("Geonosis", 539, 945);
+//		panel.addNode("Kessel", 1091, 461);
+//		panel.addNode("Alderaan", 594, 245);
+//		panel.addNode("Yavin", 1073, 96);
+//		panel.addNode("Kamino", 737,  836);
+//		panel.addNode("Gamorr", 839, 810);
+//		panel.addNode("Corelia", 512, 381);
+//		panel.addNode("Tarhassan", 731, 422);
+//		panel.addNode("Ruusan", 833, 476);
+//		panel.addNode("Tholatin", 791, 428);
+//		panel.addNode("Roche Asteroids", 909, 281);
+//		panel.addNode("Ord Mantell", 698, 57);
+//		panel.addNode("Thyferra", 239, 527);
+//		panel.addNode("Umbara", 747, 378);
+//		panel.addNode("Honoghr", 1101, 533);
+//		panel.addNode("Byss", 383, 278);
+//		
+//		
+//		panel.addEdge("Tatooine", "Geonosis");
 //		panel.addEdge("Reecee", "Aphran");
+//		panel.addEdge("Reecee", "Selvaris");
+//		panel.addEdge("Reecee", "Coruscant");
+//		panel.addEdge("Bilbringi", "Aphran");
+//		panel.addEdge("Corratos", "Aphran");
+//		panel.addEdge("Reecee", "Bilbringi");
+//		panel.addEdge("Reecee", "Corratos");
+//		panel.addEdge("Selvaris", "Mobus");
+//		panel.addEdge("Bilbringi", "Dorin");
+//		panel.addEdge("Dorin", "Vortex");
+//		panel.addEdge("Dorin", "Glee Anselm");
+//		panel.addEdge("Glee Anselm", "Vortex");
+//		panel.addEdge("Glee Anselm", "Mobus");
+//		panel.addEdge("Coruscant", "Corratos");
+//		panel.addEdge("Coruscant", "Alderaan");
+//		panel.addEdge("Alderaan", "Corelia");
+//		panel.addEdge("Coruscant", "Corelia");
+//		panel.addEdge("Coruscant", "Byss");
+//		panel.addEdge("Corelia", "Byss");
+//		panel.addEdge("Byss", "Thyferra");
+//		panel.addEdge("Corelia", "Thyferra");
+//		panel.addEdge("Corelia", "Naboo");
+//		panel.addEdge("Thyferra", "Naboo");
+//		panel.addEdge("Selvaris", "Byss");
+//		panel.addEdge("Dagobah", "Naboo");
+//		panel.addEdge("Dagobah", "Thyferra");
+//		panel.addEdge("Naboo", "Tatooine");
+//		panel.addEdge("Geonosis", "Dagobah");
+//		panel.addEdge("Naboo", "Dagobah");
+//		panel.addEdge("Naboo", "Geonosis");
+//		panel.addEdge("Tatooine", "Kamino");
+//		panel.addEdge("Kamino", "Gamorr");
+//		panel.addEdge("Ruusan", "Gamorr");
+//		panel.addEdge("Kamino", "Ruusan");
+//		panel.addEdge("Tarhassan", "Umbara");
+//		panel.addEdge("Ruusan", "Tarhassan");
+//		panel.addEdge("Ruusan", "Tholatin");
+//		panel.addEdge("Tholatin", "Umbara");
+//		panel.addEdge("Tarhassan", "Corelia");
+//		panel.addEdge("Umbara", "Alderaan");
+//		panel.addEdge("Ruusan", "Roche Asteroids");
+//		panel.addEdge("Umbara", "Roche Asteroids");
+//		panel.addEdge("Ruusan", "Kessel");
+//		panel.addEdge("Kessel", "Honoghr");
+//		panel.addEdge("Honoghr", "Gamorr");
+//		panel.addEdge("Roche Asteroids", "Yavin");
+//		panel.addEdge("Kessel", "Yavin");
+//		panel.addEdge("Yavin", "Null");
+//		panel.addEdge("Null", "Alderaan");
+//		panel.addEdge("Null", "Ord Mantell");
+//		panel.addEdge("Ord Mantell", "Vortex");
+//		panel.addEdge("Ord Mantell", "Glee Anselm");
+		
+		
 		
 		Graph graph = panel.g;
 		

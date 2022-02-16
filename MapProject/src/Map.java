@@ -27,7 +27,7 @@ public class Map extends ImagePanel{
 	 */
 	public void drawOn(Graphics2D g2d) {
 		for(GraphNode g: g.getNodeList()) {
-			g.drawOn(g2d, Color.BLACK);
+			g.drawOn(g2d, Color.YELLOW);
 		}
 	}
 	

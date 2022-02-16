@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="17.0.1" class="java.beans.XMLDecoder">
+<java version="16.0.1" class="java.beans.XMLDecoder">
  <object class="java.util.Hashtable">
   <void method="put">
-   <string>Reecee</string>
+   <string>Tholatin</string>
    <object class="GraphNode" id="GraphNode0">
     <void class="GraphNode" method="getField">
      <string>name</string>
      <void method="set">
       <object idref="GraphNode0"/>
-      <string>Reecee</string>
+      <string>Tholatin</string>
      </void>
     </void>
     <void property="neighbors">
      <void method="put">
-      <string>Aphran</string>
+      <string>Ruusan</string>
       <object class="Edge">
        <void property="DCost">
-        <double>9.173258850901663</double>
+        <double>63.7808748764079</double>
        </void>
        <void property="TCost">
-        <double>84.1486779456457</double>
+        <double>7.986292937052077</double>
        </void>
        <void property="otherEnd">
         <object class="GraphNode" id="GraphNode1">
@@ -27,32 +27,18 @@
           <string>name</string>
           <void method="set">
            <object idref="GraphNode1"/>
-           <string>Aphran</string>
+           <string>Ruusan</string>
           </void>
          </void>
          <void property="neighbors">
           <void method="put">
-           <string>Reecee</string>
+           <string>Roche Asteroids</string>
            <object class="Edge">
             <void property="DCost">
-             <double>9.173258850901663</double>
+             <double>209.2868844433401</double>
             </void>
             <void property="TCost">
-             <double>84.1486779456457</double>
-            </void>
-            <void property="otherEnd">
-             <object idref="GraphNode0"/>
-            </void>
-           </object>
-          </void>
-          <void method="put">
-           <string>Bilbringi</string>
-           <object class="Edge">
-            <void property="DCost">
-             <double>4.3437267713466055</double>
-            </void>
-            <void property="TCost">
-             <double>18.867962264113206</double>
+             <double>14.466750998179934</double>
             </void>
             <void property="otherEnd">
              <object class="GraphNode" id="GraphNode2">
@@ -60,188 +46,2016 @@
                <string>name</string>
                <void method="set">
                 <object idref="GraphNode2"/>
-                <string>Bilbringi</string>
+                <string>Roche Asteroids</string>
                </void>
               </void>
               <void property="neighbors">
                <void method="put">
-                <string>Aphran</string>
+                <string>Yavin</string>
                 <object class="Edge">
                  <void property="DCost">
-                  <double>4.3437267713466055</double>
+                  <double>247.226616690032</double>
                  </void>
                  <void property="TCost">
-                  <double>18.867962264113206</double>
+                  <double>15.723441629936875</double>
+                 </void>
+                 <void property="otherEnd">
+                  <object class="GraphNode" id="GraphNode3">
+                   <void class="GraphNode" method="getField">
+                    <string>name</string>
+                    <void method="set">
+                     <object idref="GraphNode3"/>
+                     <string>Yavin</string>
+                    </void>
+                   </void>
+                   <void property="neighbors">
+                    <void method="put">
+                     <string>Roche Asteroids</string>
+                     <object class="Edge">
+                      <void property="DCost">
+                       <double>247.226616690032</double>
+                      </void>
+                      <void property="TCost">
+                       <double>15.723441629936875</double>
+                      </void>
+                      <void property="otherEnd">
+                       <object idref="GraphNode2"/>
+                      </void>
+                     </object>
+                    </void>
+                    <void method="put">
+                     <string>Kessel</string>
+                     <object class="Edge">
+                      <void property="DCost">
+                       <double>365.44356609468446</double>
+                      </void>
+                      <void property="TCost">
+                       <double>19.116578305091224</double>
+                      </void>
+                      <void property="otherEnd">
+                       <object class="GraphNode" id="GraphNode4">
+                        <void class="GraphNode" method="getField">
+                         <string>name</string>
+                         <void method="set">
+                          <object idref="GraphNode4"/>
+                          <string>Kessel</string>
+                         </void>
+                        </void>
+                        <void property="neighbors">
+                         <void method="put">
+                          <string>Yavin</string>
+                          <object class="Edge">
+                           <void property="DCost">
+                            <double>365.44356609468446</double>
+                           </void>
+                           <void property="TCost">
+                            <double>19.116578305091224</double>
+                           </void>
+                           <void property="otherEnd">
+                            <object idref="GraphNode3"/>
+                           </void>
+                          </object>
+                         </void>
+                         <void method="put">
+                          <string>Honoghr</string>
+                          <object class="Edge">
+                           <void property="DCost">
+                            <double>72.69112738154499</double>
+                           </void>
+                           <void property="TCost">
+                            <double>8.525909182107501</double>
+                           </void>
+                           <void property="otherEnd">
+                            <object class="GraphNode" id="GraphNode5">
+                             <void class="GraphNode" method="getField">
+                              <string>name</string>
+                              <void method="set">
+                               <object idref="GraphNode5"/>
+                               <string>Honoghr</string>
+                              </void>
+                             </void>
+                             <void property="neighbors">
+                              <void method="put">
+                               <string>Gamorr</string>
+                               <object class="Edge">
+                                <void property="DCost">
+                                 <double>381.27811371753296</double>
+                                </void>
+                                <void property="TCost">
+                                 <double>19.526344095030513</double>
+                                </void>
+                                <void property="otherEnd">
+                                 <object class="GraphNode" id="GraphNode6">
+                                  <void class="GraphNode" method="getField">
+                                   <string>name</string>
+                                   <void method="set">
+                                    <object idref="GraphNode6"/>
+                                    <string>Gamorr</string>
+                                   </void>
+                                  </void>
+                                  <void property="neighbors">
+                                   <void method="put">
+                                    <string>Kamino</string>
+                                    <object class="Edge">
+                                     <void property="DCost">
+                                      <double>105.26157893552613</double>
+                                     </void>
+                                     <void property="TCost">
+                                      <double>10.259706571609449</double>
+                                     </void>
+                                     <void property="otherEnd">
+                                      <object class="GraphNode" id="GraphNode7">
+                                       <void class="GraphNode" method="getField">
+                                        <string>name</string>
+                                        <void method="set">
+                                         <object idref="GraphNode7"/>
+                                         <string>Kamino</string>
+                                        </void>
+                                       </void>
+                                       <void property="neighbors">
+                                        <void method="put">
+                                         <string>Ruusan</string>
+                                         <object class="Edge">
+                                          <void property="DCost">
+                                           <double>372.58019271024057</double>
+                                          </void>
+                                          <void property="TCost">
+                                           <double>19.30233645728518</double>
+                                          </void>
+                                          <void property="otherEnd">
+                                           <object idref="GraphNode1"/>
+                                          </void>
+                                         </object>
+                                        </void>
+                                        <void method="put">
+                                         <string>Tatooine</string>
+                                         <object class="Edge">
+                                          <void property="DCost">
+                                           <double>218.93606372637652</double>
+                                          </void>
+                                          <void property="TCost">
+                                           <double>14.796488222763417</double>
+                                          </void>
+                                          <void property="otherEnd">
+                                           <object class="GraphNode" id="GraphNode8">
+                                            <void class="GraphNode" method="getField">
+                                             <string>name</string>
+                                             <void method="set">
+                                              <object idref="GraphNode8"/>
+                                              <string>Tatooine</string>
+                                             </void>
+                                            </void>
+                                            <void property="neighbors">
+                                             <void method="put">
+                                              <string>Geonosis</string>
+                                              <object class="Edge">
+                                               <void property="DCost">
+                                                <double>27.459060435491963</double>
+                                               </void>
+                                               <void property="TCost">
+                                                <double>5.2401393526787015</double>
+                                               </void>
+                                               <void property="otherEnd">
+                                                <object class="GraphNode" id="GraphNode9">
+                                                 <void class="GraphNode" method="getField">
+                                                  <string>name</string>
+                                                  <void method="set">
+                                                   <object idref="GraphNode9"/>
+                                                   <string>Geonosis</string>
+                                                  </void>
+                                                 </void>
+                                                 <void property="neighbors">
+                                                  <void method="put">
+                                                   <string>Dagobah</string>
+                                                   <object class="Edge">
+                                                    <void property="DCost">
+                                                     <double>441.0181402164768</double>
+                                                    </void>
+                                                    <void property="TCost">
+                                                     <double>21.00043190547463</double>
+                                                    </void>
+                                                    <void property="otherEnd">
+                                                     <object class="GraphNode" id="GraphNode10">
+                                                      <void class="GraphNode" method="getField">
+                                                       <string>name</string>
+                                                       <void method="set">
+                                                        <object idref="GraphNode10"/>
+                                                        <string>Dagobah</string>
+                                                       </void>
+                                                      </void>
+                                                      <void property="neighbors">
+                                                       <void method="put">
+                                                        <string>Geonosis</string>
+                                                        <object class="Edge">
+                                                         <void property="DCost">
+                                                          <double>441.0181402164768</double>
+                                                         </void>
+                                                         <void property="TCost">
+                                                          <double>21.00043190547463</double>
+                                                         </void>
+                                                         <void property="otherEnd">
+                                                          <object idref="GraphNode9"/>
+                                                         </void>
+                                                        </object>
+                                                       </void>
+                                                       <void method="put">
+                                                        <string>Thyferra</string>
+                                                        <object class="Edge">
+                                                         <void property="DCost">
+                                                          <double>437.35226076927967</double>
+                                                         </void>
+                                                         <void property="TCost">
+                                                          <double>20.912968722046127</double>
+                                                         </void>
+                                                         <void property="otherEnd">
+                                                          <object class="GraphNode" id="GraphNode11">
+                                                           <void class="GraphNode" method="getField">
+                                                            <string>name</string>
+                                                            <void method="set">
+                                                             <object idref="GraphNode11"/>
+                                                             <string>Thyferra</string>
+                                                            </void>
+                                                           </void>
+                                                           <void property="neighbors">
+                                                            <void method="put">
+                                                             <string>Dagobah</string>
+                                                             <object class="Edge">
+                                                              <void property="DCost">
+                                                               <double>437.35226076927967</double>
+                                                              </void>
+                                                              <void property="TCost">
+                                                               <double>20.912968722046127</double>
+                                                              </void>
+                                                              <void property="otherEnd">
+                                                               <object idref="GraphNode10"/>
+                                                              </void>
+                                                             </object>
+                                                            </void>
+                                                            <void method="put">
+                                                             <string>Byss</string>
+                                                             <object class="Edge">
+                                                              <void property="DCost">
+                                                               <double>287.64040050034697</double>
+                                                              </void>
+                                                              <void property="TCost">
+                                                               <double>16.959964637355437</double>
+                                                              </void>
+                                                              <void property="otherEnd">
+                                                               <object class="GraphNode" id="GraphNode12">
+                                                                <void class="GraphNode" method="getField">
+                                                                 <string>name</string>
+                                                                 <void method="set">
+                                                                  <object idref="GraphNode12"/>
+                                                                  <string>Byss</string>
+                                                                 </void>
+                                                                </void>
+                                                                <void property="neighbors">
+                                                                 <void method="put">
+                                                                  <string>Selvaris</string>
+                                                                  <object class="Edge">
+                                                                   <void property="DCost">
+                                                                    <double>166.20770138594662</double>
+                                                                   </void>
+                                                                   <void property="TCost">
+                                                                    <double>12.892156583983404</double>
+                                                                   </void>
+                                                                   <void property="otherEnd">
+                                                                    <object class="GraphNode" id="GraphNode13">
+                                                                     <void class="GraphNode" method="getField">
+                                                                      <string>name</string>
+                                                                      <void method="set">
+                                                                       <object idref="GraphNode13"/>
+                                                                       <string>Selvaris</string>
+                                                                      </void>
+                                                                     </void>
+                                                                     <void property="neighbors">
+                                                                      <void method="put">
+                                                                       <string>Byss</string>
+                                                                       <object class="Edge">
+                                                                        <void property="DCost">
+                                                                         <double>166.20770138594662</double>
+                                                                        </void>
+                                                                        <void property="TCost">
+                                                                         <double>12.892156583983404</double>
+                                                                        </void>
+                                                                        <void property="otherEnd">
+                                                                         <object idref="GraphNode12"/>
+                                                                        </void>
+                                                                       </object>
+                                                                      </void>
+                                                                      <void method="put">
+                                                                       <string>Reecee</string>
+                                                                       <object class="Edge">
+                                                                        <void property="DCost">
+                                                                         <double>54.45181356024793</double>
+                                                                        </void>
+                                                                        <void property="TCost">
+                                                                         <double>7.37914721090777</double>
+                                                                        </void>
+                                                                        <void property="otherEnd">
+                                                                         <object class="GraphNode" id="GraphNode14">
+                                                                          <void class="GraphNode" method="getField">
+                                                                           <string>name</string>
+                                                                           <void method="set">
+                                                                            <object idref="GraphNode14"/>
+                                                                            <string>Reecee</string>
+                                                                           </void>
+                                                                          </void>
+                                                                          <void property="neighbors">
+                                                                           <void method="put">
+                                                                            <string>Corratos</string>
+                                                                            <object class="Edge">
+                                                                             <void property="DCost">
+                                                                              <double>80.06247560499239</double>
+                                                                             </void>
+                                                                             <void property="TCost">
+                                                                              <double>8.947763720896544</double>
+                                                                             </void>
+                                                                             <void property="otherEnd">
+                                                                              <object class="GraphNode" id="GraphNode15">
+                                                                               <void class="GraphNode" method="getField">
+                                                                                <string>name</string>
+                                                                                <void method="set">
+                                                                                 <object idref="GraphNode15"/>
+                                                                                 <string>Corratos</string>
+                                                                                </void>
+                                                                               </void>
+                                                                               <void property="neighbors">
+                                                                                <void method="put">
+                                                                                 <string>Reecee</string>
+                                                                                 <object class="Edge">
+                                                                                  <void property="DCost">
+                                                                                   <double>80.06247560499239</double>
+                                                                                  </void>
+                                                                                  <void property="TCost">
+                                                                                   <double>8.947763720896544</double>
+                                                                                  </void>
+                                                                                  <void property="otherEnd">
+                                                                                   <object idref="GraphNode14"/>
+                                                                                  </void>
+                                                                                 </object>
+                                                                                </void>
+                                                                                <void method="put">
+                                                                                 <string>Coruscant</string>
+                                                                                 <object class="Edge">
+                                                                                  <void property="DCost">
+                                                                                   <double>76.55063683601855</double>
+                                                                                  </void>
+                                                                                  <void property="TCost">
+                                                                                   <double>8.749322078653783</double>
+                                                                                  </void>
+                                                                                  <void property="otherEnd">
+                                                                                   <object class="GraphNode" id="GraphNode16">
+                                                                                    <void class="GraphNode" method="getField">
+                                                                                     <string>name</string>
+                                                                                     <void method="set">
+                                                                                      <object idref="GraphNode16"/>
+                                                                                      <string>Coruscant</string>
+                                                                                     </void>
+                                                                                    </void>
+                                                                                    <void property="neighbors">
+                                                                                     <void method="put">
+                                                                                      <string>Corratos</string>
+                                                                                      <object class="Edge">
+                                                                                       <void property="DCost">
+                                                                                        <double>76.55063683601855</double>
+                                                                                       </void>
+                                                                                       <void property="TCost">
+                                                                                        <double>8.749322078653783</double>
+                                                                                       </void>
+                                                                                       <void property="otherEnd">
+                                                                                        <object idref="GraphNode15"/>
+                                                                                       </void>
+                                                                                      </object>
+                                                                                     </void>
+                                                                                     <void method="put">
+                                                                                      <string>Byss</string>
+                                                                                      <object class="Edge">
+                                                                                       <void property="DCost">
+                                                                                        <double>146.48549416239138</double>
+                                                                                       </void>
+                                                                                       <void property="TCost">
+                                                                                        <double>12.103119191447773</double>
+                                                                                       </void>
+                                                                                       <void property="otherEnd">
+                                                                                        <object idref="GraphNode12"/>
+                                                                                       </void>
+                                                                                      </object>
+                                                                                     </void>
+                                                                                     <void method="put">
+                                                                                      <string>Reecee</string>
+                                                                                      <object class="Edge">
+                                                                                       <void property="DCost">
+                                                                                        <double>100.16985574512923</double>
+                                                                                       </void>
+                                                                                       <void property="TCost">
+                                                                                        <double>10.00848918394426</double>
+                                                                                       </void>
+                                                                                       <void property="otherEnd">
+                                                                                        <object idref="GraphNode14"/>
+                                                                                       </void>
+                                                                                      </object>
+                                                                                     </void>
+                                                                                     <void method="put">
+                                                                                      <string>Alderaan</string>
+                                                                                      <object class="Edge">
+                                                                                       <void property="DCost">
+                                                                                        <double>93.03762679690406</double>
+                                                                                       </void>
+                                                                                       <void property="TCost">
+                                                                                        <double>9.645601422249628</double>
+                                                                                       </void>
+                                                                                       <void property="otherEnd">
+                                                                                        <object class="GraphNode" id="GraphNode17">
+                                                                                         <void class="GraphNode" method="getField">
+                                                                                          <string>name</string>
+                                                                                          <void method="set">
+                                                                                           <object idref="GraphNode17"/>
+                                                                                           <string>Alderaan</string>
+                                                                                          </void>
+                                                                                         </void>
+                                                                                         <void property="neighbors">
+                                                                                          <void method="put">
+                                                                                           <string>Umbara</string>
+                                                                                           <object class="Edge">
+                                                                                            <void property="DCost">
+                                                                                             <double>202.72641663088706</double>
+                                                                                            </void>
+                                                                                            <void property="TCost">
+                                                                                             <double>14.238202717719926</double>
+                                                                                            </void>
+                                                                                            <void property="otherEnd">
+                                                                                             <object class="GraphNode" id="GraphNode18">
+                                                                                              <void class="GraphNode" method="getField">
+                                                                                               <string>name</string>
+                                                                                               <void method="set">
+                                                                                                <object idref="GraphNode18"/>
+                                                                                                <string>Umbara</string>
+                                                                                               </void>
+                                                                                              </void>
+                                                                                              <void property="neighbors">
+                                                                                               <void method="put">
+                                                                                                <string>Roche Asteroids</string>
+                                                                                                <object class="Edge">
+                                                                                                 <void property="DCost">
+                                                                                                  <double>188.8200201249857</double>
+                                                                                                 </void>
+                                                                                                 <void property="TCost">
+                                                                                                  <double>13.741179721005969</double>
+                                                                                                 </void>
+                                                                                                 <void property="otherEnd">
+                                                                                                  <object idref="GraphNode2"/>
+                                                                                                 </void>
+                                                                                                </object>
+                                                                                               </void>
+                                                                                               <void method="put">
+                                                                                                <string>Tholatin</string>
+                                                                                                <object class="Edge">
+                                                                                                 <void property="DCost">
+                                                                                                  <double>66.60330322138685</double>
+                                                                                                 </void>
+                                                                                                 <void property="TCost">
+                                                                                                  <double>8.16108468412054</double>
+                                                                                                 </void>
+                                                                                                 <void property="otherEnd">
+                                                                                                  <object idref="GraphNode0"/>
+                                                                                                 </void>
+                                                                                                </object>
+                                                                                               </void>
+                                                                                               <void method="put">
+                                                                                                <string>Tarhassan</string>
+                                                                                                <object class="Edge">
+                                                                                                 <void property="DCost">
+                                                                                                  <double>46.8187996428785</double>
+                                                                                                 </void>
+                                                                                                 <void property="TCost">
+                                                                                                  <double>6.842426444097043</double>
+                                                                                                 </void>
+                                                                                                 <void property="otherEnd">
+                                                                                                  <object class="GraphNode" id="GraphNode19">
+                                                                                                   <void class="GraphNode" method="getField">
+                                                                                                    <string>name</string>
+                                                                                                    <void method="set">
+                                                                                                     <object idref="GraphNode19"/>
+                                                                                                     <string>Tarhassan</string>
+                                                                                                    </void>
+                                                                                                   </void>
+                                                                                                   <void property="neighbors">
+                                                                                                    <void method="put">
+                                                                                                     <string>Ruusan</string>
+                                                                                                     <object class="Edge">
+                                                                                                      <void property="DCost">
+                                                                                                       <double>115.41230437002807</double>
+                                                                                                      </void>
+                                                                                                      <void property="TCost">
+                                                                                                       <double>10.743011885408489</double>
+                                                                                                      </void>
+                                                                                                      <void property="otherEnd">
+                                                                                                       <object idref="GraphNode1"/>
+                                                                                                      </void>
+                                                                                                     </object>
+                                                                                                    </void>
+                                                                                                    <void method="put">
+                                                                                                     <string>Umbara</string>
+                                                                                                     <object class="Edge">
+                                                                                                      <void property="DCost">
+                                                                                                       <double>46.8187996428785</double>
+                                                                                                      </void>
+                                                                                                      <void property="TCost">
+                                                                                                       <double>6.842426444097043</double>
+                                                                                                      </void>
+                                                                                                      <void property="otherEnd">
+                                                                                                       <object idref="GraphNode18"/>
+                                                                                                      </void>
+                                                                                                     </object>
+                                                                                                    </void>
+                                                                                                    <void method="put">
+                                                                                                     <string>Corelia</string>
+                                                                                                     <object class="Edge">
+                                                                                                      <void property="DCost">
+                                                                                                       <double>222.80484734403782</double>
+                                                                                                      </void>
+                                                                                                      <void property="TCost">
+                                                                                                       <double>14.926648898665695</double>
+                                                                                                      </void>
+                                                                                                      <void property="otherEnd">
+                                                                                                       <object class="GraphNode" id="GraphNode20">
+                                                                                                        <void class="GraphNode" method="getField">
+                                                                                                         <string>name</string>
+                                                                                                         <void method="set">
+                                                                                                          <object idref="GraphNode20"/>
+                                                                                                          <string>Corelia</string>
+                                                                                                         </void>
+                                                                                                        </void>
+                                                                                                        <void property="neighbors">
+                                                                                                         <void method="put">
+                                                                                                          <string>Byss</string>
+                                                                                                          <object class="Edge">
+                                                                                                           <void property="DCost">
+                                                                                                            <double>165.07574019219177</double>
+                                                                                                           </void>
+                                                                                                           <void property="TCost">
+                                                                                                            <double>12.848180423398162</double>
+                                                                                                           </void>
+                                                                                                           <void property="otherEnd">
+                                                                                                            <object idref="GraphNode12"/>
+                                                                                                           </void>
+                                                                                                          </object>
+                                                                                                         </void>
+                                                                                                         <void method="put">
+                                                                                                          <string>Naboo</string>
+                                                                                                          <object class="Edge">
+                                                                                                           <void property="DCost">
+                                                                                                            <double>466.47615158762403</double>
+                                                                                                           </void>
+                                                                                                           <void property="TCost">
+                                                                                                            <double>21.598058977316086</double>
+                                                                                                           </void>
+                                                                                                           <void property="otherEnd">
+                                                                                                            <object class="GraphNode" id="GraphNode21">
+                                                                                                             <void class="GraphNode" method="getField">
+                                                                                                              <string>name</string>
+                                                                                                              <void method="set">
+                                                                                                               <object idref="GraphNode21"/>
+                                                                                                               <string>Naboo</string>
+                                                                                                              </void>
+                                                                                                             </void>
+                                                                                                             <void property="neighbors">
+                                                                                                              <void method="put">
+                                                                                                               <string>Geonosis</string>
+                                                                                                               <object class="Edge">
+                                                                                                                <void property="DCost">
+                                                                                                                 <double>242.1425200166216</double>
+                                                                                                                </void>
+                                                                                                                <void property="TCost">
+                                                                                                                 <double>15.560929278697389</double>
+                                                                                                                </void>
+                                                                                                                <void property="otherEnd">
+                                                                                                                 <object idref="GraphNode9"/>
+                                                                                                                </void>
+                                                                                                               </object>
+                                                                                                              </void>
+                                                                                                              <void method="put">
+                                                                                                               <string>Dagobah</string>
+                                                                                                               <object class="Edge">
+                                                                                                                <void property="DCost">
+                                                                                                                 <double>270.2369330791038</double>
+                                                                                                                </void>
+                                                                                                                <void property="TCost">
+                                                                                                                 <double>16.438884788181458</double>
+                                                                                                                </void>
+                                                                                                                <void property="otherEnd">
+                                                                                                                 <object idref="GraphNode10"/>
+                                                                                                                </void>
+                                                                                                               </object>
+                                                                                                              </void>
+                                                                                                              <void method="put">
+                                                                                                               <string>Tatooine</string>
+                                                                                                               <object class="Edge">
+                                                                                                                <void property="DCost">
+                                                                                                                 <double>224.1182723474371</double>
+                                                                                                                </void>
+                                                                                                                <void property="TCost">
+                                                                                                                 <double>14.970580227480735</double>
+                                                                                                                </void>
+                                                                                                                <void property="otherEnd">
+                                                                                                                 <object idref="GraphNode8"/>
+                                                                                                                </void>
+                                                                                                               </object>
+                                                                                                              </void>
+                                                                                                              <void method="put">
+                                                                                                               <string>Thyferra</string>
+                                                                                                               <object class="Edge">
+                                                                                                                <void property="DCost">
+                                                                                                                 <double>302.00165562460086</double>
+                                                                                                                </void>
+                                                                                                                <void property="TCost">
+                                                                                                                 <double>17.378194832162542</double>
+                                                                                                                </void>
+                                                                                                                <void property="otherEnd">
+                                                                                                                 <object idref="GraphNode11"/>
+                                                                                                                </void>
+                                                                                                               </object>
+                                                                                                              </void>
+                                                                                                              <void method="put">
+                                                                                                               <string>Corelia</string>
+                                                                                                               <object class="Edge">
+                                                                                                                <void property="DCost">
+                                                                                                                 <double>466.47615158762403</double>
+                                                                                                                </void>
+                                                                                                                <void property="TCost">
+                                                                                                                 <double>21.598058977316086</double>
+                                                                                                                </void>
+                                                                                                                <void property="otherEnd">
+                                                                                                                 <object idref="GraphNode20"/>
+                                                                                                                </void>
+                                                                                                               </object>
+                                                                                                              </void>
+                                                                                                             </void>
+                                                                                                             <void property="x">
+                                                                                                              <int>336</int>
+                                                                                                             </void>
+                                                                                                             <void property="y">
+                                                                                                              <int>813</int>
+                                                                                                             </void>
+                                                                                                            </object>
+                                                                                                           </void>
+                                                                                                          </object>
+                                                                                                         </void>
+                                                                                                         <void method="put">
+                                                                                                          <string>Thyferra</string>
+                                                                                                          <object class="Edge">
+                                                                                                           <void property="DCost">
+                                                                                                            <double>309.58843647655834</double>
+                                                                                                           </void>
+                                                                                                           <void property="TCost">
+                                                                                                            <double>17.595125361206108</double>
+                                                                                                           </void>
+                                                                                                           <void property="otherEnd">
+                                                                                                            <object idref="GraphNode11"/>
+                                                                                                           </void>
+                                                                                                          </object>
+                                                                                                         </void>
+                                                                                                         <void method="put">
+                                                                                                          <string>Tarhassan</string>
+                                                                                                          <object class="Edge">
+                                                                                                           <void property="DCost">
+                                                                                                            <double>222.80484734403782</double>
+                                                                                                           </void>
+                                                                                                           <void property="TCost">
+                                                                                                            <double>14.926648898665695</double>
+                                                                                                           </void>
+                                                                                                           <void property="otherEnd">
+                                                                                                            <object idref="GraphNode19"/>
+                                                                                                           </void>
+                                                                                                          </object>
+                                                                                                         </void>
+                                                                                                         <void method="put">
+                                                                                                          <string>Coruscant</string>
+                                                                                                          <object class="Edge">
+                                                                                                           <void property="DCost">
+                                                                                                            <double>176.0113632695344</double>
+                                                                                                           </void>
+                                                                                                           <void property="TCost">
+                                                                                                            <double>13.266927423843638</double>
+                                                                                                           </void>
+                                                                                                           <void property="otherEnd">
+                                                                                                            <object idref="GraphNode16"/>
+                                                                                                           </void>
+                                                                                                          </object>
+                                                                                                         </void>
+                                                                                                         <void method="put">
+                                                                                                          <string>Alderaan</string>
+                                                                                                          <object class="Edge">
+                                                                                                           <void property="DCost">
+                                                                                                            <double>158.80806024884254</double>
+                                                                                                           </void>
+                                                                                                           <void property="TCost">
+                                                                                                            <double>12.601907008419104</double>
+                                                                                                           </void>
+                                                                                                           <void property="otherEnd">
+                                                                                                            <object idref="GraphNode17"/>
+                                                                                                           </void>
+                                                                                                          </object>
+                                                                                                         </void>
+                                                                                                        </void>
+                                                                                                        <void property="x">
+                                                                                                         <int>512</int>
+                                                                                                        </void>
+                                                                                                        <void property="y">
+                                                                                                         <int>381</int>
+                                                                                                        </void>
+                                                                                                       </object>
+                                                                                                      </void>
+                                                                                                     </object>
+                                                                                                    </void>
+                                                                                                   </void>
+                                                                                                   <void property="x">
+                                                                                                    <int>731</int>
+                                                                                                   </void>
+                                                                                                   <void property="y">
+                                                                                                    <int>422</int>
+                                                                                                   </void>
+                                                                                                  </object>
+                                                                                                 </void>
+                                                                                                </object>
+                                                                                               </void>
+                                                                                               <void method="put">
+                                                                                                <string>Alderaan</string>
+                                                                                                <object class="Edge">
+                                                                                                 <void property="DCost">
+                                                                                                  <double>202.72641663088706</double>
+                                                                                                 </void>
+                                                                                                 <void property="TCost">
+                                                                                                  <double>14.238202717719926</double>
+                                                                                                 </void>
+                                                                                                 <void property="otherEnd">
+                                                                                                  <object idref="GraphNode17"/>
+                                                                                                 </void>
+                                                                                                </object>
+                                                                                               </void>
+                                                                                              </void>
+                                                                                              <void property="x">
+                                                                                               <int>747</int>
+                                                                                              </void>
+                                                                                              <void property="y">
+                                                                                               <int>378</int>
+                                                                                              </void>
+                                                                                             </object>
+                                                                                            </void>
+                                                                                           </object>
+                                                                                          </void>
+                                                                                          <void method="put">
+                                                                                           <string>Coruscant</string>
+                                                                                           <object class="Edge">
+                                                                                            <void property="DCost">
+                                                                                             <double>93.03762679690406</double>
+                                                                                            </void>
+                                                                                            <void property="TCost">
+                                                                                             <double>9.645601422249628</double>
+                                                                                            </void>
+                                                                                            <void property="otherEnd">
+                                                                                             <object idref="GraphNode16"/>
+                                                                                            </void>
+                                                                                           </object>
+                                                                                          </void>
+                                                                                          <void method="put">
+                                                                                           <string>Null</string>
+                                                                                           <object class="Edge">
+                                                                                            <void property="DCost">
+                                                                                             <double>264.6828290615015</double>
+                                                                                            </void>
+                                                                                            <void property="TCost">
+                                                                                             <double>16.269075851488967</double>
+                                                                                            </void>
+                                                                                            <void property="otherEnd">
+                                                                                             <object class="GraphNode" id="GraphNode22">
+                                                                                              <void class="GraphNode" method="getField">
+                                                                                               <string>name</string>
+                                                                                               <void method="set">
+                                                                                                <object idref="GraphNode22"/>
+                                                                                                <string>Null</string>
+                                                                                               </void>
+                                                                                              </void>
+                                                                                              <void property="neighbors">
+                                                                                               <void method="put">
+                                                                                                <string>Yavin</string>
+                                                                                                <object class="Edge">
+                                                                                                 <void property="DCost">
+                                                                                                  <double>255.12545933324648</double>
+                                                                                                 </void>
+                                                                                                 <void property="TCost">
+                                                                                                  <double>15.972647223714874</double>
+                                                                                                 </void>
+                                                                                                 <void property="otherEnd">
+                                                                                                  <object idref="GraphNode3"/>
+                                                                                                 </void>
+                                                                                                </object>
+                                                                                               </void>
+                                                                                               <void method="put">
+                                                                                                <string>Ord Mantell</string>
+                                                                                                <object class="Edge">
+                                                                                                 <void property="DCost">
+                                                                                                  <double>128.87590930814028</double>
+                                                                                                 </void>
+                                                                                                 <void property="TCost">
+                                                                                                  <double>11.35235258913941</double>
+                                                                                                 </void>
+                                                                                                 <void property="otherEnd">
+                                                                                                  <object class="GraphNode" id="GraphNode23">
+                                                                                                   <void class="GraphNode" method="getField">
+                                                                                                    <string>name</string>
+                                                                                                    <void method="set">
+                                                                                                     <object idref="GraphNode23"/>
+                                                                                                     <string>Ord Mantell</string>
+                                                                                                    </void>
+                                                                                                   </void>
+                                                                                                   <void property="neighbors">
+                                                                                                    <void method="put">
+                                                                                                     <string>Vortex</string>
+                                                                                                     <object class="Edge">
+                                                                                                      <void property="DCost">
+                                                                                                       <double>114.58621208504974</double>
+                                                                                                      </void>
+                                                                                                      <void property="TCost">
+                                                                                                       <double>10.704494947686683</double>
+                                                                                                      </void>
+                                                                                                      <void property="otherEnd">
+                                                                                                       <object class="GraphNode" id="GraphNode24">
+                                                                                                        <void class="GraphNode" method="getField">
+                                                                                                         <string>name</string>
+                                                                                                         <void method="set">
+                                                                                                          <object idref="GraphNode24"/>
+                                                                                                          <string>Vortex</string>
+                                                                                                         </void>
+                                                                                                        </void>
+                                                                                                        <void property="neighbors">
+                                                                                                         <void method="put">
+                                                                                                          <string>Dorin</string>
+                                                                                                          <object class="Edge">
+                                                                                                           <void property="DCost">
+                                                                                                            <double>43.0</double>
+                                                                                                           </void>
+                                                                                                           <void property="TCost">
+                                                                                                            <double>6.557438524302</double>
+                                                                                                           </void>
+                                                                                                           <void property="otherEnd">
+                                                                                                            <object class="GraphNode" id="GraphNode25">
+                                                                                                             <void class="GraphNode" method="getField">
+                                                                                                              <string>name</string>
+                                                                                                              <void method="set">
+                                                                                                               <object idref="GraphNode25"/>
+                                                                                                               <string>Dorin</string>
+                                                                                                              </void>
+                                                                                                             </void>
+                                                                                                             <void property="neighbors">
+                                                                                                              <void method="put">
+                                                                                                               <string>Vortex</string>
+                                                                                                               <object class="Edge">
+                                                                                                                <void property="DCost">
+                                                                                                                 <double>43.0</double>
+                                                                                                                </void>
+                                                                                                                <void property="TCost">
+                                                                                                                 <double>6.557438524302</double>
+                                                                                                                </void>
+                                                                                                                <void property="otherEnd">
+                                                                                                                 <object idref="GraphNode24"/>
+                                                                                                                </void>
+                                                                                                               </object>
+                                                                                                              </void>
+                                                                                                              <void method="put">
+                                                                                                               <string>Glee Anselm</string>
+                                                                                                               <object class="Edge">
+                                                                                                                <void property="DCost">
+                                                                                                                 <double>49.25444142409901</double>
+                                                                                                                </void>
+                                                                                                                <void property="TCost">
+                                                                                                                 <double>7.018150855040023</double>
+                                                                                                                </void>
+                                                                                                                <void property="otherEnd">
+                                                                                                                 <object class="GraphNode" id="GraphNode26">
+                                                                                                                  <void class="GraphNode" method="getField">
+                                                                                                                   <string>name</string>
+                                                                                                                   <void method="set">
+                                                                                                                    <object idref="GraphNode26"/>
+                                                                                                                    <string>Glee Anselm</string>
+                                                                                                                   </void>
+                                                                                                                  </void>
+                                                                                                                  <void property="neighbors">
+                                                                                                                   <void method="put">
+                                                                                                                    <string>Vortex</string>
+                                                                                                                    <object class="Edge">
+                                                                                                                     <void property="DCost">
+                                                                                                                      <double>62.00806399170998</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="TCost">
+                                                                                                                      <double>7.87451992134822</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="otherEnd">
+                                                                                                                      <object idref="GraphNode24"/>
+                                                                                                                     </void>
+                                                                                                                    </object>
+                                                                                                                   </void>
+                                                                                                                   <void method="put">
+                                                                                                                    <string>Dorin</string>
+                                                                                                                    <object class="Edge">
+                                                                                                                     <void property="DCost">
+                                                                                                                      <double>49.25444142409901</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="TCost">
+                                                                                                                      <double>7.018150855040023</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="otherEnd">
+                                                                                                                      <object idref="GraphNode25"/>
+                                                                                                                     </void>
+                                                                                                                    </object>
+                                                                                                                   </void>
+                                                                                                                   <void method="put">
+                                                                                                                    <string>Ord Mantell</string>
+                                                                                                                    <object class="Edge">
+                                                                                                                     <void property="DCost">
+                                                                                                                      <double>153.95129099815955</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="TCost">
+                                                                                                                      <double>12.40771094917026</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="otherEnd">
+                                                                                                                      <object idref="GraphNode23"/>
+                                                                                                                     </void>
+                                                                                                                    </object>
+                                                                                                                   </void>
+                                                                                                                   <void method="put">
+                                                                                                                    <string>Mobus</string>
+                                                                                                                    <object class="Edge">
+                                                                                                                     <void property="DCost">
+                                                                                                                      <double>292.2892403082946</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="TCost">
+                                                                                                                      <double>17.096468650229923</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="otherEnd">
+                                                                                                                      <object class="GraphNode" id="GraphNode27">
+                                                                                                                       <void class="GraphNode" method="getField">
+                                                                                                                        <string>name</string>
+                                                                                                                        <void method="set">
+                                                                                                                         <object idref="GraphNode27"/>
+                                                                                                                         <string>Mobus</string>
+                                                                                                                        </void>
+                                                                                                                       </void>
+                                                                                                                       <void property="neighbors">
+                                                                                                                        <void method="put">
+                                                                                                                         <string>Selvaris</string>
+                                                                                                                         <object class="Edge">
+                                                                                                                          <void property="DCost">
+                                                                                                                           <double>178.05897899291685</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="TCost">
+                                                                                                                           <double>13.343874212271219</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="otherEnd">
+                                                                                                                           <object idref="GraphNode13"/>
+                                                                                                                          </void>
+                                                                                                                         </object>
+                                                                                                                        </void>
+                                                                                                                        <void method="put">
+                                                                                                                         <string>Glee Anselm</string>
+                                                                                                                         <object class="Edge">
+                                                                                                                          <void property="DCost">
+                                                                                                                           <double>292.2892403082946</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="TCost">
+                                                                                                                           <double>17.096468650229923</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="otherEnd">
+                                                                                                                           <object idref="GraphNode26"/>
+                                                                                                                          </void>
+                                                                                                                         </object>
+                                                                                                                        </void>
+                                                                                                                       </void>
+                                                                                                                       <void property="x">
+                                                                                                                        <int>255</int>
+                                                                                                                       </void>
+                                                                                                                       <void property="y">
+                                                                                                                        <int>14</int>
+                                                                                                                       </void>
+                                                                                                                      </object>
+                                                                                                                     </void>
+                                                                                                                    </object>
+                                                                                                                   </void>
+                                                                                                                  </void>
+                                                                                                                  <void property="x">
+                                                                                                                   <int>547</int>
+                                                                                                                  </void>
+                                                                                                                  <void property="y">
+                                                                                                                   <int>27</int>
+                                                                                                                  </void>
+                                                                                                                 </object>
+                                                                                                                </void>
+                                                                                                               </object>
+                                                                                                              </void>
+                                                                                                              <void method="put">
+                                                                                                               <string>Bilbringi</string>
+                                                                                                               <object class="Edge">
+                                                                                                                <void property="DCost">
+                                                                                                                 <double>25.495097567963924</double>
+                                                                                                                </void>
+                                                                                                                <void property="TCost">
+                                                                                                                 <double>5.049267032744845</double>
+                                                                                                                </void>
+                                                                                                                <void property="otherEnd">
+                                                                                                                 <object class="GraphNode" id="GraphNode28">
+                                                                                                                  <void class="GraphNode" method="getField">
+                                                                                                                   <string>name</string>
+                                                                                                                   <void method="set">
+                                                                                                                    <object idref="GraphNode28"/>
+                                                                                                                    <string>Bilbringi</string>
+                                                                                                                   </void>
+                                                                                                                  </void>
+                                                                                                                  <void property="neighbors">
+                                                                                                                   <void method="put">
+                                                                                                                    <string>Dorin</string>
+                                                                                                                    <object class="Edge">
+                                                                                                                     <void property="DCost">
+                                                                                                                      <double>25.495097567963924</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="TCost">
+                                                                                                                      <double>5.049267032744845</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="otherEnd">
+                                                                                                                      <object idref="GraphNode25"/>
+                                                                                                                     </void>
+                                                                                                                    </object>
+                                                                                                                   </void>
+                                                                                                                   <void method="put">
+                                                                                                                    <string>Reecee</string>
+                                                                                                                    <object class="Edge">
+                                                                                                                     <void property="DCost">
+                                                                                                                      <double>76.92203845452875</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="TCost">
+                                                                                                                      <double>8.770520991054564</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="otherEnd">
+                                                                                                                      <object idref="GraphNode14"/>
+                                                                                                                     </void>
+                                                                                                                    </object>
+                                                                                                                   </void>
+                                                                                                                   <void method="put">
+                                                                                                                    <string>Aphran</string>
+                                                                                                                    <object class="Edge">
+                                                                                                                     <void property="DCost">
+                                                                                                                      <double>18.867962264113206</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="TCost">
+                                                                                                                      <double>4.3437267713466055</double>
+                                                                                                                     </void>
+                                                                                                                     <void property="otherEnd">
+                                                                                                                      <object class="GraphNode" id="GraphNode29">
+                                                                                                                       <void class="GraphNode" method="getField">
+                                                                                                                        <string>name</string>
+                                                                                                                        <void method="set">
+                                                                                                                         <object idref="GraphNode29"/>
+                                                                                                                         <string>Aphran</string>
+                                                                                                                        </void>
+                                                                                                                       </void>
+                                                                                                                       <void property="neighbors">
+                                                                                                                        <void method="put">
+                                                                                                                         <string>Corratos</string>
+                                                                                                                         <object class="Edge">
+                                                                                                                          <void property="DCost">
+                                                                                                                           <double>18.681541692269406</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="TCost">
+                                                                                                                           <double>4.322214905840454</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="otherEnd">
+                                                                                                                           <object idref="GraphNode15"/>
+                                                                                                                          </void>
+                                                                                                                         </object>
+                                                                                                                        </void>
+                                                                                                                        <void method="put">
+                                                                                                                         <string>Reecee</string>
+                                                                                                                         <object class="Edge">
+                                                                                                                          <void property="DCost">
+                                                                                                                           <double>84.1486779456457</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="TCost">
+                                                                                                                           <double>9.173258850901663</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="otherEnd">
+                                                                                                                           <object idref="GraphNode14"/>
+                                                                                                                          </void>
+                                                                                                                         </object>
+                                                                                                                        </void>
+                                                                                                                        <void method="put">
+                                                                                                                         <string>Bilbringi</string>
+                                                                                                                         <object class="Edge">
+                                                                                                                          <void property="DCost">
+                                                                                                                           <double>18.867962264113206</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="TCost">
+                                                                                                                           <double>4.3437267713466055</double>
+                                                                                                                          </void>
+                                                                                                                          <void property="otherEnd">
+                                                                                                                           <object idref="GraphNode28"/>
+                                                                                                                          </void>
+                                                                                                                         </object>
+                                                                                                                        </void>
+                                                                                                                       </void>
+                                                                                                                       <void property="x">
+                                                                                                                        <int>541</int>
+                                                                                                                       </void>
+                                                                                                                       <void property="y">
+                                                                                                                        <int>115</int>
+                                                                                                                       </void>
+                                                                                                                      </object>
+                                                                                                                     </void>
+                                                                                                                    </object>
+                                                                                                                   </void>
+                                                                                                                  </void>
+                                                                                                                  <void property="x">
+                                                                                                                   <int>531</int>
+                                                                                                                  </void>
+                                                                                                                  <void property="y">
+                                                                                                                   <int>99</int>
+                                                                                                                  </void>
+                                                                                                                 </object>
+                                                                                                                </void>
+                                                                                                               </object>
+                                                                                                              </void>
+                                                                                                             </void>
+                                                                                                             <void property="x">
+                                                                                                              <int>542</int>
+                                                                                                             </void>
+                                                                                                             <void property="y">
+                                                                                                              <int>76</int>
+                                                                                                             </void>
+                                                                                                            </object>
+                                                                                                           </void>
+                                                                                                          </object>
+                                                                                                         </void>
+                                                                                                         <void method="put">
+                                                                                                          <string>Ord Mantell</string>
+                                                                                                          <object class="Edge">
+                                                                                                           <void property="DCost">
+                                                                                                            <double>114.58621208504974</double>
+                                                                                                           </void>
+                                                                                                           <void property="TCost">
+                                                                                                            <double>10.704494947686683</double>
+                                                                                                           </void>
+                                                                                                           <void property="otherEnd">
+                                                                                                            <object idref="GraphNode23"/>
+                                                                                                           </void>
+                                                                                                          </object>
+                                                                                                         </void>
+                                                                                                         <void method="put">
+                                                                                                          <string>Glee Anselm</string>
+                                                                                                          <object class="Edge">
+                                                                                                           <void property="DCost">
+                                                                                                            <double>62.00806399170998</double>
+                                                                                                           </void>
+                                                                                                           <void property="TCost">
+                                                                                                            <double>7.87451992134822</double>
+                                                                                                           </void>
+                                                                                                           <void property="otherEnd">
+                                                                                                            <object idref="GraphNode26"/>
+                                                                                                           </void>
+                                                                                                          </object>
+                                                                                                         </void>
+                                                                                                        </void>
+                                                                                                        <void property="x">
+                                                                                                         <int>585</int>
+                                                                                                        </void>
+                                                                                                        <void property="y">
+                                                                                                         <int>76</int>
+                                                                                                        </void>
+                                                                                                       </object>
+                                                                                                      </void>
+                                                                                                     </object>
+                                                                                                    </void>
+                                                                                                    <void method="put">
+                                                                                                     <string>Glee Anselm</string>
+                                                                                                     <object class="Edge">
+                                                                                                      <void property="DCost">
+                                                                                                       <double>153.95129099815955</double>
+                                                                                                      </void>
+                                                                                                      <void property="TCost">
+                                                                                                       <double>12.40771094917026</double>
+                                                                                                      </void>
+                                                                                                      <void property="otherEnd">
+                                                                                                       <object idref="GraphNode26"/>
+                                                                                                      </void>
+                                                                                                     </object>
+                                                                                                    </void>
+                                                                                                    <void method="put">
+                                                                                                     <string>Null</string>
+                                                                                                     <object class="Edge">
+                                                                                                      <void property="DCost">
+                                                                                                       <double>128.87590930814028</double>
+                                                                                                      </void>
+                                                                                                      <void property="TCost">
+                                                                                                       <double>11.35235258913941</double>
+                                                                                                      </void>
+                                                                                                      <void property="otherEnd">
+                                                                                                       <object idref="GraphNode22"/>
+                                                                                                      </void>
+                                                                                                     </object>
+                                                                                                    </void>
+                                                                                                   </void>
+                                                                                                   <void property="x">
+                                                                                                    <int>698</int>
+                                                                                                   </void>
+                                                                                                   <void property="y">
+                                                                                                    <int>57</int>
+                                                                                                   </void>
+                                                                                                  </object>
+                                                                                                 </void>
+                                                                                                </object>
+                                                                                               </void>
+                                                                                               <void method="put">
+                                                                                                <string>Alderaan</string>
+                                                                                                <object class="Edge">
+                                                                                                 <void property="DCost">
+                                                                                                  <double>264.6828290615015</double>
+                                                                                                 </void>
+                                                                                                 <void property="TCost">
+                                                                                                  <double>16.269075851488967</double>
+                                                                                                 </void>
+                                                                                                 <void property="otherEnd">
+                                                                                                  <object idref="GraphNode17"/>
+                                                                                                 </void>
+                                                                                                </object>
+                                                                                               </void>
+                                                                                              </void>
+                                                                                              <void property="x">
+                                                                                               <int>818</int>
+                                                                                              </void>
+                                                                                              <void property="y">
+                                                                                               <int>104</int>
+                                                                                              </void>
+                                                                                             </object>
+                                                                                            </void>
+                                                                                           </object>
+                                                                                          </void>
+                                                                                          <void method="put">
+                                                                                           <string>Corelia</string>
+                                                                                           <object class="Edge">
+                                                                                            <void property="DCost">
+                                                                                             <double>158.80806024884254</double>
+                                                                                            </void>
+                                                                                            <void property="TCost">
+                                                                                             <double>12.601907008419104</double>
+                                                                                            </void>
+                                                                                            <void property="otherEnd">
+                                                                                             <object idref="GraphNode20"/>
+                                                                                            </void>
+                                                                                           </object>
+                                                                                          </void>
+                                                                                         </void>
+                                                                                         <void property="x">
+                                                                                          <int>594</int>
+                                                                                         </void>
+                                                                                         <void property="y">
+                                                                                          <int>245</int>
+                                                                                         </void>
+                                                                                        </object>
+                                                                                       </void>
+                                                                                      </object>
+                                                                                     </void>
+                                                                                     <void method="put">
+                                                                                      <string>Corelia</string>
+                                                                                      <object class="Edge">
+                                                                                       <void property="DCost">
+                                                                                        <double>176.0113632695344</double>
+                                                                                       </void>
+                                                                                       <void property="TCost">
+                                                                                        <double>13.266927423843638</double>
+                                                                                       </void>
+                                                                                       <void property="otherEnd">
+                                                                                        <object idref="GraphNode20"/>
+                                                                                       </void>
+                                                                                      </object>
+                                                                                     </void>
+                                                                                    </void>
+                                                                                    <void property="x">
+                                                                                     <int>510</int>
+                                                                                    </void>
+                                                                                    <void property="y">
+                                                                                     <int>205</int>
+                                                                                    </void>
+                                                                                   </object>
+                                                                                  </void>
+                                                                                 </object>
+                                                                                </void>
+                                                                                <void method="put">
+                                                                                 <string>Aphran</string>
+                                                                                 <object class="Edge">
+                                                                                  <void property="DCost">
+                                                                                   <double>18.681541692269406</double>
+                                                                                  </void>
+                                                                                  <void property="TCost">
+                                                                                   <double>4.322214905840454</double>
+                                                                                  </void>
+                                                                                  <void property="otherEnd">
+                                                                                   <object idref="GraphNode29"/>
+                                                                                  </void>
+                                                                                 </object>
+                                                                                </void>
+                                                                               </void>
+                                                                               <void property="x">
+                                                                                <int>536</int>
+                                                                               </void>
+                                                                               <void property="y">
+                                                                                <int>133</int>
+                                                                               </void>
+                                                                              </object>
+                                                                             </void>
+                                                                            </object>
+                                                                           </void>
+                                                                           <void method="put">
+                                                                            <string>Selvaris</string>
+                                                                            <object class="Edge">
+                                                                             <void property="DCost">
+                                                                              <double>54.45181356024793</double>
+                                                                             </void>
+                                                                             <void property="TCost">
+                                                                              <double>7.37914721090777</double>
+                                                                             </void>
+                                                                             <void property="otherEnd">
+                                                                              <object idref="GraphNode13"/>
+                                                                             </void>
+                                                                            </object>
+                                                                           </void>
+                                                                           <void method="put">
+                                                                            <string>Coruscant</string>
+                                                                            <object class="Edge">
+                                                                             <void property="DCost">
+                                                                              <double>100.16985574512923</double>
+                                                                             </void>
+                                                                             <void property="TCost">
+                                                                              <double>10.00848918394426</double>
+                                                                             </void>
+                                                                             <void property="otherEnd">
+                                                                              <object idref="GraphNode16"/>
+                                                                             </void>
+                                                                            </object>
+                                                                           </void>
+                                                                           <void method="put">
+                                                                            <string>Bilbringi</string>
+                                                                            <object class="Edge">
+                                                                             <void property="DCost">
+                                                                              <double>76.92203845452875</double>
+                                                                             </void>
+                                                                             <void property="TCost">
+                                                                              <double>8.770520991054564</double>
+                                                                             </void>
+                                                                             <void property="otherEnd">
+                                                                              <object idref="GraphNode28"/>
+                                                                             </void>
+                                                                            </object>
+                                                                           </void>
+                                                                           <void method="put">
+                                                                            <string>Aphran</string>
+                                                                            <object class="Edge">
+                                                                             <void property="DCost">
+                                                                              <double>84.1486779456457</double>
+                                                                             </void>
+                                                                             <void property="TCost">
+                                                                              <double>9.173258850901663</double>
+                                                                             </void>
+                                                                             <void property="otherEnd">
+                                                                              <object idref="GraphNode29"/>
+                                                                             </void>
+                                                                            </object>
+                                                                           </void>
+                                                                          </void>
+                                                                          <void property="x">
+                                                                           <int>457</int>
+                                                                          </void>
+                                                                          <void property="y">
+                                                                           <int>120</int>
+                                                                          </void>
+                                                                         </object>
+                                                                        </void>
+                                                                       </object>
+                                                                      </void>
+                                                                      <void method="put">
+                                                                       <string>Mobus</string>
+                                                                       <object class="Edge">
+                                                                        <void property="DCost">
+                                                                         <double>178.05897899291685</double>
+                                                                        </void>
+                                                                        <void property="TCost">
+                                                                         <double>13.343874212271219</double>
+                                                                        </void>
+                                                                        <void property="otherEnd">
+                                                                         <object idref="GraphNode27"/>
+                                                                        </void>
+                                                                       </object>
+                                                                      </void>
+                                                                     </void>
+                                                                     <void property="x">
+                                                                      <int>403</int>
+                                                                     </void>
+                                                                     <void property="y">
+                                                                      <int>113</int>
+                                                                     </void>
+                                                                    </object>
+                                                                   </void>
+                                                                  </object>
+                                                                 </void>
+                                                                 <void method="put">
+                                                                  <string>Thyferra</string>
+                                                                  <object class="Edge">
+                                                                   <void property="DCost">
+                                                                    <double>287.64040050034697</double>
+                                                                   </void>
+                                                                   <void property="TCost">
+                                                                    <double>16.959964637355437</double>
+                                                                   </void>
+                                                                   <void property="otherEnd">
+                                                                    <object idref="GraphNode11"/>
+                                                                   </void>
+                                                                  </object>
+                                                                 </void>
+                                                                 <void method="put">
+                                                                  <string>Coruscant</string>
+                                                                  <object class="Edge">
+                                                                   <void property="DCost">
+                                                                    <double>146.48549416239138</double>
+                                                                   </void>
+                                                                   <void property="TCost">
+                                                                    <double>12.103119191447773</double>
+                                                                   </void>
+                                                                   <void property="otherEnd">
+                                                                    <object idref="GraphNode16"/>
+                                                                   </void>
+                                                                  </object>
+                                                                 </void>
+                                                                 <void method="put">
+                                                                  <string>Corelia</string>
+                                                                  <object class="Edge">
+                                                                   <void property="DCost">
+                                                                    <double>165.07574019219177</double>
+                                                                   </void>
+                                                                   <void property="TCost">
+                                                                    <double>12.848180423398162</double>
+                                                                   </void>
+                                                                   <void property="otherEnd">
+                                                                    <object idref="GraphNode20"/>
+                                                                   </void>
+                                                                  </object>
+                                                                 </void>
+                                                                </void>
+                                                                <void property="x">
+                                                                 <int>383</int>
+                                                                </void>
+                                                                <void property="y">
+                                                                 <int>278</int>
+                                                                </void>
+                                                               </object>
+                                                              </void>
+                                                             </object>
+                                                            </void>
+                                                            <void method="put">
+                                                             <string>Naboo</string>
+                                                             <object class="Edge">
+                                                              <void property="DCost">
+                                                               <double>302.00165562460086</double>
+                                                              </void>
+                                                              <void property="TCost">
+                                                               <double>17.378194832162542</double>
+                                                              </void>
+                                                              <void property="otherEnd">
+                                                               <object idref="GraphNode21"/>
+                                                              </void>
+                                                             </object>
+                                                            </void>
+                                                            <void method="put">
+                                                             <string>Corelia</string>
+                                                             <object class="Edge">
+                                                              <void property="DCost">
+                                                               <double>309.58843647655834</double>
+                                                              </void>
+                                                              <void property="TCost">
+                                                               <double>17.595125361206108</double>
+                                                              </void>
+                                                              <void property="otherEnd">
+                                                               <object idref="GraphNode20"/>
+                                                              </void>
+                                                             </object>
+                                                            </void>
+                                                           </void>
+                                                           <void property="x">
+                                                            <int>239</int>
+                                                           </void>
+                                                           <void property="y">
+                                                            <int>527</int>
+                                                           </void>
+                                                          </object>
+                                                         </void>
+                                                        </object>
+                                                       </void>
+                                                       <void method="put">
+                                                        <string>Naboo</string>
+                                                        <object class="Edge">
+                                                         <void property="DCost">
+                                                          <double>270.2369330791038</double>
+                                                         </void>
+                                                         <void property="TCost">
+                                                          <double>16.438884788181458</double>
+                                                         </void>
+                                                         <void property="otherEnd">
+                                                          <object idref="GraphNode21"/>
+                                                         </void>
+                                                        </object>
+                                                       </void>
+                                                      </void>
+                                                      <void property="x">
+                                                       <int>98</int>
+                                                      </void>
+                                                      <void property="y">
+                                                       <int>941</int>
+                                                      </void>
+                                                     </object>
+                                                    </void>
+                                                   </object>
+                                                  </void>
+                                                  <void method="put">
+                                                   <string>Naboo</string>
+                                                   <object class="Edge">
+                                                    <void property="DCost">
+                                                     <double>242.1425200166216</double>
+                                                    </void>
+                                                    <void property="TCost">
+                                                     <double>15.560929278697389</double>
+                                                    </void>
+                                                    <void property="otherEnd">
+                                                     <object idref="GraphNode21"/>
+                                                    </void>
+                                                   </object>
+                                                  </void>
+                                                  <void method="put">
+                                                   <string>Tatooine</string>
+                                                   <object class="Edge">
+                                                    <void property="DCost">
+                                                     <double>27.459060435491963</double>
+                                                    </void>
+                                                    <void property="TCost">
+                                                     <double>5.2401393526787015</double>
+                                                    </void>
+                                                    <void property="otherEnd">
+                                                     <object idref="GraphNode8"/>
+                                                    </void>
+                                                   </object>
+                                                  </void>
+                                                 </void>
+                                                 <void property="x">
+                                                  <int>539</int>
+                                                 </void>
+                                                 <void property="y">
+                                                  <int>945</int>
+                                                 </void>
+                                                </object>
+                                               </void>
+                                              </object>
+                                             </void>
+                                             <void method="put">
+                                              <string>Kamino</string>
+                                              <object class="Edge">
+                                               <void property="DCost">
+                                                <double>218.93606372637652</double>
+                                               </void>
+                                               <void property="TCost">
+                                                <double>14.796488222763417</double>
+                                               </void>
+                                               <void property="otherEnd">
+                                                <object idref="GraphNode7"/>
+                                               </void>
+                                              </object>
+                                             </void>
+                                             <void method="put">
+                                              <string>Naboo</string>
+                                              <object class="Edge">
+                                               <void property="DCost">
+                                                <double>224.1182723474371</double>
+                                               </void>
+                                               <void property="TCost">
+                                                <double>14.970580227480735</double>
+                                               </void>
+                                               <void property="otherEnd">
+                                                <object idref="GraphNode21"/>
+                                               </void>
+                                              </object>
+                                             </void>
+                                            </void>
+                                            <void property="x">
+                                             <int>534</int>
+                                            </void>
+                                            <void property="y">
+                                             <int>918</int>
+                                            </void>
+                                           </object>
+                                          </void>
+                                         </object>
+                                        </void>
+                                        <void method="put">
+                                         <string>Gamorr</string>
+                                         <object class="Edge">
+                                          <void property="DCost">
+                                           <double>105.26157893552613</double>
+                                          </void>
+                                          <void property="TCost">
+                                           <double>10.259706571609449</double>
+                                          </void>
+                                          <void property="otherEnd">
+                                           <object idref="GraphNode6"/>
+                                          </void>
+                                         </object>
+                                        </void>
+                                       </void>
+                                       <void property="x">
+                                        <int>737</int>
+                                       </void>
+                                       <void property="y">
+                                        <int>836</int>
+                                       </void>
+                                      </object>
+                                     </void>
+                                    </object>
+                                   </void>
+                                   <void method="put">
+                                    <string>Honoghr</string>
+                                    <object class="Edge">
+                                     <void property="DCost">
+                                      <double>381.27811371753296</double>
+                                     </void>
+                                     <void property="TCost">
+                                      <double>19.526344095030513</double>
+                                     </void>
+                                     <void property="otherEnd">
+                                      <object idref="GraphNode5"/>
+                                     </void>
+                                    </object>
+                                   </void>
+                                   <void method="put">
+                                    <string>Ruusan</string>
+                                    <object class="Edge">
+                                     <void property="DCost">
+                                      <double>334.0538878684096</double>
+                                     </void>
+                                     <void property="TCost">
+                                      <double>18.27714112952049</double>
+                                     </void>
+                                     <void property="otherEnd">
+                                      <object idref="GraphNode1"/>
+                                     </void>
+                                    </object>
+                                   </void>
+                                  </void>
+                                  <void property="x">
+                                   <int>839</int>
+                                  </void>
+                                  <void property="y">
+                                   <int>810</int>
+                                  </void>
+                                 </object>
+                                </void>
+                               </object>
+                              </void>
+                              <void method="put">
+                               <string>Kessel</string>
+                               <object class="Edge">
+                                <void property="DCost">
+                                 <double>72.69112738154499</double>
+                                </void>
+                                <void property="TCost">
+                                 <double>8.525909182107501</double>
+                                </void>
+                                <void property="otherEnd">
+                                 <object idref="GraphNode4"/>
+                                </void>
+                               </object>
+                              </void>
+                             </void>
+                             <void property="x">
+                              <int>1101</int>
+                             </void>
+                             <void property="y">
+                              <int>533</int>
+                             </void>
+                            </object>
+                           </void>
+                          </object>
+                         </void>
+                         <void method="put">
+                          <string>Ruusan</string>
+                          <object class="Edge">
+                           <void property="DCost">
+                            <double>258.43567865138124</double>
+                           </void>
+                           <void property="TCost">
+                            <double>16.075934767576697</double>
+                           </void>
+                           <void property="otherEnd">
+                            <object idref="GraphNode1"/>
+                           </void>
+                          </object>
+                         </void>
+                        </void>
+                        <void property="x">
+                         <int>1091</int>
+                        </void>
+                        <void property="y">
+                         <int>461</int>
+                        </void>
+                       </object>
+                      </void>
+                     </object>
+                    </void>
+                    <void method="put">
+                     <string>Null</string>
+                     <object class="Edge">
+                      <void property="DCost">
+                       <double>255.12545933324648</double>
+                      </void>
+                      <void property="TCost">
+                       <double>15.972647223714874</double>
+                      </void>
+                      <void property="otherEnd">
+                       <object idref="GraphNode22"/>
+                      </void>
+                     </object>
+                    </void>
+                   </void>
+                   <void property="x">
+                    <int>1073</int>
+                   </void>
+                   <void property="y">
+                    <int>96</int>
+                   </void>
+                  </object>
+                 </void>
+                </object>
+               </void>
+               <void method="put">
+                <string>Ruusan</string>
+                <object class="Edge">
+                 <void property="DCost">
+                  <double>209.2868844433401</double>
+                 </void>
+                 <void property="TCost">
+                  <double>14.466750998179934</double>
                  </void>
                  <void property="otherEnd">
                   <object idref="GraphNode1"/>
                  </void>
                 </object>
                </void>
+               <void method="put">
+                <string>Umbara</string>
+                <object class="Edge">
+                 <void property="DCost">
+                  <double>188.8200201249857</double>
+                 </void>
+                 <void property="TCost">
+                  <double>13.741179721005969</double>
+                 </void>
+                 <void property="otherEnd">
+                  <object idref="GraphNode18"/>
+                 </void>
+                </object>
+               </void>
               </void>
               <void property="x">
-               <int>531</int>
+               <int>909</int>
               </void>
               <void property="y">
-               <int>99</int>
+               <int>281</int>
               </void>
              </object>
             </void>
            </object>
           </void>
+          <void method="put">
+           <string>Tholatin</string>
+           <object class="Edge">
+            <void property="DCost">
+             <double>63.7808748764079</double>
+            </void>
+            <void property="TCost">
+             <double>7.986292937052077</double>
+            </void>
+            <void property="otherEnd">
+             <object idref="GraphNode0"/>
+            </void>
+           </object>
+          </void>
+          <void method="put">
+           <string>Kamino</string>
+           <object class="Edge">
+            <void property="DCost">
+             <double>372.58019271024057</double>
+            </void>
+            <void property="TCost">
+             <double>19.30233645728518</double>
+            </void>
+            <void property="otherEnd">
+             <object idref="GraphNode7"/>
+            </void>
+           </object>
+          </void>
+          <void method="put">
+           <string>Gamorr</string>
+           <object class="Edge">
+            <void property="DCost">
+             <double>334.0538878684096</double>
+            </void>
+            <void property="TCost">
+             <double>18.27714112952049</double>
+            </void>
+            <void property="otherEnd">
+             <object idref="GraphNode6"/>
+            </void>
+           </object>
+          </void>
+          <void method="put">
+           <string>Kessel</string>
+           <object class="Edge">
+            <void property="DCost">
+             <double>258.43567865138124</double>
+            </void>
+            <void property="TCost">
+             <double>16.075934767576697</double>
+            </void>
+            <void property="otherEnd">
+             <object idref="GraphNode4"/>
+            </void>
+           </object>
+          </void>
+          <void method="put">
+           <string>Tarhassan</string>
+           <object class="Edge">
+            <void property="DCost">
+             <double>115.41230437002807</double>
+            </void>
+            <void property="TCost">
+             <double>10.743011885408489</double>
+            </void>
+            <void property="otherEnd">
+             <object idref="GraphNode19"/>
+            </void>
+           </object>
+          </void>
          </void>
          <void property="x">
-          <int>541</int>
+          <int>833</int>
          </void>
          <void property="y">
-          <int>115</int>
+          <int>476</int>
          </void>
         </object>
        </void>
       </object>
      </void>
-    </void>
-    <void property="x">
-     <int>457</int>
-    </void>
-    <void property="y">
-     <int>120</int>
-    </void>
-   </object>
-  </void>
-  <void method="put">
-   <string>Aphran</string>
-   <object idref="GraphNode1"/>
-  </void>
-  <void method="put">
-   <string>Corratos</string>
-   <object class="GraphNode" id="GraphNode3">
-    <void class="GraphNode" method="getField">
-     <string>name</string>
-     <void method="set">
-      <object idref="GraphNode3"/>
-      <string>Corratos</string>
+     <void method="put">
+      <string>Umbara</string>
+      <object class="Edge">
+       <void property="DCost">
+        <double>66.60330322138685</double>
+       </void>
+       <void property="TCost">
+        <double>8.16108468412054</double>
+       </void>
+       <void property="otherEnd">
+        <object idref="GraphNode18"/>
+       </void>
+      </object>
      </void>
     </void>
     <void property="x">
-     <int>536</int>
+     <int>791</int>
     </void>
     <void property="y">
-     <int>133</int>
+     <int>428</int>
     </void>
    </object>
   </void>
   <void method="put">
-   <string>Bilbringi</string>
+   <string>Yavin</string>
+   <object idref="GraphNode3"/>
+  </void>
+  <void method="put">
+   <string>Corelia</string>
+   <object idref="GraphNode20"/>
+  </void>
+  <void method="put">
+   <string>Roche Asteroids</string>
    <object idref="GraphNode2"/>
   </void>
   <void method="put">
-   <string>Glee Anselm</string>
-   <object class="GraphNode" id="GraphNode4">
-    <void class="GraphNode" method="getField">
-     <string>name</string>
-     <void method="set">
-      <object idref="GraphNode4"/>
-      <string>Glee Anselm</string>
-     </void>
-    </void>
-    <void property="x">
-     <int>547</int>
-    </void>
-    <void property="y">
-     <int>27</int>
-    </void>
-   </object>
+   <string>Corratos</string>
+   <object idref="GraphNode15"/>
   </void>
   <void method="put">
-   <string>Dorin</string>
-   <object class="GraphNode" id="GraphNode5">
-    <void class="GraphNode" method="getField">
-     <string>name</string>
-     <void method="set">
-      <object idref="GraphNode5"/>
-      <string>Dorin</string>
-     </void>
-    </void>
-    <void property="x">
-     <int>542</int>
-    </void>
-    <void property="y">
-     <int>76</int>
-    </void>
-   </object>
+   <string>Kessel</string>
+   <object idref="GraphNode4"/>
   </void>
   <void method="put">
-   <string>Selvaris</string>
-   <object class="GraphNode" id="GraphNode6">
-    <void class="GraphNode" method="getField">
-     <string>name</string>
-     <void method="set">
-      <object idref="GraphNode6"/>
-      <string>Selvaris</string>
-     </void>
-    </void>
-    <void property="x">
-     <int>403</int>
-    </void>
-    <void property="y">
-     <int>113</int>
-    </void>
-   </object>
+   <string>Naboo</string>
+   <object idref="GraphNode21"/>
+  </void>
+  <void method="put">
+   <string>Kamino</string>
+   <object idref="GraphNode7"/>
+  </void>
+  <void method="put">
+   <string>Reecee</string>
+   <object idref="GraphNode14"/>
+  </void>
+  <void method="put">
+   <string>Honoghr</string>
+   <object idref="GraphNode5"/>
+  </void>
+  <void method="put">
+   <string>Bilbringi</string>
+   <object idref="GraphNode28"/>
+  </void>
+  <void method="put">
+   <string>Tatooine</string>
+   <object idref="GraphNode8"/>
+  </void>
+  <void method="put">
+   <string>Alderaan</string>
+   <object idref="GraphNode17"/>
+  </void>
+  <void method="put">
+   <string>Thyferra</string>
+   <object idref="GraphNode11"/>
+  </void>
+  <void method="put">
+   <string>Byss</string>
+   <object idref="GraphNode12"/>
+  </void>
+  <void method="put">
+   <string>Tarhassan</string>
+   <object idref="GraphNode19"/>
+  </void>
+  <void method="put">
+   <string>Ord Mantell</string>
+   <object idref="GraphNode23"/>
   </void>
   <void method="put">
    <string>Coruscant</string>
-   <object class="GraphNode" id="GraphNode7">
-    <void class="GraphNode" method="getField">
-     <string>name</string>
-     <void method="set">
-      <object idref="GraphNode7"/>
-      <string>Coruscant</string>
-     </void>
-    </void>
-    <void property="x">
-     <int>510</int>
-    </void>
-    <void property="y">
-     <int>205</int>
-    </void>
-   </object>
+   <object idref="GraphNode16"/>
   </void>
   <void method="put">
-   <string>Vortex</string>
-   <object class="GraphNode" id="GraphNode8">
-    <void class="GraphNode" method="getField">
-     <string>name</string>
-     <void method="set">
-      <object idref="GraphNode8"/>
-      <string>Vortex</string>
-     </void>
-    </void>
-    <void property="x">
-     <int>585</int>
-    </void>
-    <void property="y">
-     <int>76</int>
-    </void>
-   </object>
+   <string>Umbara</string>
+   <object idref="GraphNode18"/>
+  </void>
+  <void method="put">
+   <string>Dagobah</string>
+   <object idref="GraphNode10"/>
   </void>
   <void method="put">
    <string>Mobus</string>
-   <object class="GraphNode" id="GraphNode9">
-    <void class="GraphNode" method="getField">
-     <string>name</string>
-     <void method="set">
-      <object idref="GraphNode9"/>
-      <string>Mobus</string>
-     </void>
-    </void>
-    <void property="x">
-     <int>255</int>
-    </void>
-    <void property="y">
-     <int>14</int>
-    </void>
-   </object>
+   <object idref="GraphNode27"/>
+  </void>
+  <void method="put">
+   <string>Aphran</string>
+   <object idref="GraphNode29"/>
+  </void>
+  <void method="put">
+   <string>Glee Anselm</string>
+   <object idref="GraphNode26"/>
+  </void>
+  <void method="put">
+   <string>Selvaris</string>
+   <object idref="GraphNode13"/>
+  </void>
+  <void method="put">
+   <string>Null</string>
+   <object idref="GraphNode22"/>
+  </void>
+  <void method="put">
+   <string>Ruusan</string>
+   <object idref="GraphNode1"/>
+  </void>
+  <void method="put">
+   <string>Geonosis</string>
+   <object idref="GraphNode9"/>
+  </void>
+  <void method="put">
+   <string>Vortex</string>
+   <object idref="GraphNode24"/>
+  </void>
+  <void method="put">
+   <string>Gamorr</string>
+   <object idref="GraphNode6"/>
+  </void>
+  <void method="put">
+   <string>Dorin</string>
+   <object idref="GraphNode25"/>
   </void>
  </object>
 </java>
