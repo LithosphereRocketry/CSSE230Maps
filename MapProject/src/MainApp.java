@@ -19,6 +19,7 @@ import javax.swing.JTabbedPane;
 import java.awt.Insets;
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Hashtable;
 
 import javax.imageio.ImageIO;
@@ -82,6 +83,7 @@ public class MainApp {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		Map panel = new Map();
+		Collection<String> list = panel.g.getNodeNames();
 		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
@@ -102,7 +104,7 @@ public class MainApp {
 		gbc_tabbedPane.gridy = 0;
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 
-		RouterPanel tabPanel1 = new RouterPanel();
+		RouterPanel tabPanel1 = new RouterPanel(list);
 		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
 		
 		

@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="17.0.1" class="java.beans.XMLDecoder">
+<java version="16.0.2" class="java.beans.XMLDecoder">
  <object class="java.util.Hashtable">
   <void method="put">
    <string>Earth</string>
-   <object class="GraphNode">
-    <void property="name">
-     <string>Earth</string>
+   <object class="GraphNode" id="GraphNode0">
+    <void class="GraphNode" method="getField">
+     <string>name</string>
+     <void method="set">
+      <object idref="GraphNode0"/>
+      <string>Earth</string>
+     </void>
     </void>
     <void property="x">
      <int>200</int>
+    </void>
+    <void property="y">
+     <int>100</int>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Mars</string>
+   <object class="GraphNode" id="GraphNode1">
+    <void class="GraphNode" method="getField">
+     <string>name</string>
+     <void method="set">
+      <object idref="GraphNode1"/>
+      <string>Mars</string>
+     </void>
+    </void>
+    <void property="x">
+     <int>300</int>
     </void>
     <void property="y">
      <int>100</int>

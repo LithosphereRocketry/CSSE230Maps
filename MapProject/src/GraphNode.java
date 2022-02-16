@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 
 public class GraphNode implements Serializable, Comparable<GraphNode>{
-		private String name;
+		public String name;
 		private Hashtable<String,Edge> neighbors;
 		private GraphNode lastNode;
 		private int x;

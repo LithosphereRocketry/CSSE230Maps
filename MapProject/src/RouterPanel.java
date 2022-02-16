@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.Collection;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -18,9 +20,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class RouterPanel extends JPanel {
-	
 	//Basic Constructor
-	public RouterPanel() {
+	public RouterPanel(Collection<String> list) {
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -37,13 +38,23 @@ public class RouterPanel extends JPanel {
 		gbc_lblNewLabel.gridy = 1;
 		this.add(lblNewLabel, gbc_lblNewLabel);
 		
-		JComboBox comboBox = new JComboBox();
+		Object[] nodes = list.toArray();
+		
+		JComboBox comboBox = new JComboBox(nodes);
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
 		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridx = 5;
 		gbc_comboBox.gridy = 1;
 		this.add(comboBox, gbc_comboBox);
+		
+		comboBox.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	comboBox.setSelectedItem(comboBox.getSelectedItem());
+		    }
+		});
+		comboBox.setSelectedItem(nodes[0]);//set as default selected item
 		
 		JLabel lblNewLabel_1 = new JLabel("Destination:");
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
@@ -53,7 +64,7 @@ public class RouterPanel extends JPanel {
 		gbc_lblNewLabel_1.gridy = 3;
 		this.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		JComboBox comboBox_1 = new JComboBox();
+		JComboBox comboBox_1 = new JComboBox(nodes);
 		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
 		gbc_comboBox_1.insets = new Insets(0, 0, 0, 5);
 		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;

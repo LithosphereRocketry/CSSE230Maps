@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.Set;
 import java.util.Stack;
 
 public class Graph{
@@ -129,6 +130,10 @@ public class Graph{
 		return nodes.values();
 	}
 	
+	public Collection<String> getNodeNames(){
+		return nodes.keySet();
+	}
+	
 	public GraphNode getNode(String n) {
 		return nodes.get(n);
 	}
@@ -205,5 +210,6 @@ public class Graph{
 		public String toString() {
 			return cost+": "+super.toString();
 		}
+		
 	}
 }

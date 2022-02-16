@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 public class Map extends ImagePanel{
-	private Graph g;
+	public Graph g;
 	private String start;
 	
 	//Basic Constructor
