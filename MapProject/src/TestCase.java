@@ -10,7 +10,7 @@ public class TestCase{
 		Map m = new Map();
 		m.clear();
 		m.addNode("Earth", 200, 100);
-		m.addNode("Mars", 300, 100);
+		m.addNode("Coruscant", 540, 205);
 //		frame.add(m);
 //		m.repaint();
 		

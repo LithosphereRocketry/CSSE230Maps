@@ -20,20 +20,20 @@
    </object>
   </void>
   <void method="put">
-   <string>Mars</string>
+   <string>Coruscant</string>
    <object class="GraphNode" id="GraphNode1">
     <void class="GraphNode" method="getField">
      <string>name</string>
      <void method="set">
       <object idref="GraphNode1"/>
-      <string>Mars</string>
+      <string>Coruscant</string>
      </void>
     </void>
     <void property="x">
-     <int>300</int>
+     <int>540</int>
     </void>
     <void property="y">
-     <int>100</int>
+     <int>205</int>
     </void>
    </object>
   </void>
