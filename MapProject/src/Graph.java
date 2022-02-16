@@ -40,15 +40,16 @@ public class Graph{
 	 * @return true if insert successfully, false otherwise
 	 */
 
-	public boolean addEdge(String name1, String name2) throws Exception{
-		if(!this.nodes.containsKey(name1) || !this.nodes.containsKey(name2)) return false;
+	public void addEdge(String name1, String name2) throws Exception{
+		if(!this.nodes.containsKey(name1) || !this.nodes.containsKey(name2)) {
+			System.out.println("At least one invalid choice!");
+			return ;
+		}
 		
-		boolean temp1 = nodes.get(name1).addEdge(nodes.get(name2));
-		boolean temp2 = nodes.get(name2).addEdge(nodes.get(name1));
-		
-		
-		write(nodes);
-		return temp1 && temp2;
+		if(nodes.get(name1).addEdge(nodes.get(name2))) {
+			nodes.get(name2).addEdge(nodes.get(name1));
+			write(nodes);
+		}
 	}
 	
 	/**

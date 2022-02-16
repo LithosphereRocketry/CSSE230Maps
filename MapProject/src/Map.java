@@ -53,7 +53,7 @@ public class Map extends ImagePanel{
 	 * @throws Exception ignore it
 	 */
 	public void addEdge(String name1, String name2) throws Exception {
-		if(! g.addEdge(name1, name2)) System.out.println(name1 + " and " + name2 + " are already linked");
+		g.addEdge(name1, name2);
 	}
 	
 

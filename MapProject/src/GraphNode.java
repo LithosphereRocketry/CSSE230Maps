@@ -36,12 +36,13 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		 * @param distanceCost of the edge
 		 */
 		public boolean addEdge(GraphNode o){
-			if(neighbors.contains(o.name)) return false;
-			
-			//need update
+			if(neighbors.contains(o.name)) {
+				System.out.println(name + " and " + o.name + " are already linked");
+				return false;
+			}
+						
 			this.neighbors.put(o.name, new Edge(o, heuristicDist(o),heuristicTime(o)));
-			
-			
+
 			return true;
 		}
 		

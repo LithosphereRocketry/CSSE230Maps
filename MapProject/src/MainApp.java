@@ -84,10 +84,19 @@ public class MainApp {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		Map panel = new Map();
-		panel.clear();
-		panel.addNode("Earth", 200, 100);
-		panel.addNode("Coruscant", 540, 205);
-		panel.addEdge("Earth", "Coruscant");
+//		panel.clear();
+//		panel.addNode("Coruscant", 510, 205);
+//		panel.addNode("Mobus", 255, 14);
+//		panel.addNode("Selvaris", 403, 113);
+//		panel.addNode("Reecee", 457, 120);
+//		panel.addNode("Dorin", 542, 76);
+//		panel.addNode("Glee Anselm", 547, 27);
+//		panel.addNode("Bilbringi", 531, 99);
+//		panel.addNode("Aphran", 541, 115);
+//		panel.addNode("Corratos", 536, 133);
+//		panel.addNode("Vortex", 585, 76);
+//		panel.addEdge("Reecee", "Aphran");
+		
 		Graph graph = panel.g;
 		
 		JScrollPane scrollPane = new JScrollPane(panel);
