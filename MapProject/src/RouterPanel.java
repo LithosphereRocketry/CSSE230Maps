@@ -21,10 +21,12 @@ import javax.swing.JPanel;
 import javax.swing.SwingWorker;
 
 public class RouterPanel extends JPanel {
-	public String selectedStart;
-	public String selectedDest;
+//	public String selectedStart;
+//	public String selectedDest;
+	Map map;
 	//Basic Constructor
-	public RouterPanel(Graph graph) {
+	public RouterPanel(Map map) {
+		this.map = map;
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -41,7 +43,7 @@ public class RouterPanel extends JPanel {
 		gbc_lbStartLabel.gridy = 1;
 		this.add(lbStartLabel, gbc_lbStartLabel);
 
-		Collection<String> list = graph.getNodeNames();
+		Collection<String> list = map.getNodeNames();
 		Object[] nodes = list.toArray();
 		
 		JComboBox comboBox = new JComboBox(nodes);
@@ -56,7 +58,7 @@ public class RouterPanel extends JPanel {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
 		    	comboBox.setSelectedItem(comboBox.getSelectedItem());
-		    	selectedStart = (String) comboBox.getSelectedItem();
+		    	map.setStart((String) comboBox.getSelectedItem());
 		    }
 		});
 		comboBox.setSelectedItem(nodes[0]);//set as default selected item
@@ -81,7 +83,7 @@ public class RouterPanel extends JPanel {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
 		    	comboBox_1.setSelectedItem(comboBox_1.getSelectedItem());
-		    	selectedDest = (String) comboBox_1.getSelectedItem();
+		    	map.setDes((String) comboBox_1.getSelectedItem());
 		    }
 		});
 		comboBox_1.setSelectedItem(nodes[1]);//set as default selected item
@@ -97,16 +99,16 @@ public class RouterPanel extends JPanel {
 		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	System.out.println(graph.pathBetweenDist(selectedStart, selectedDest));
+		    	System.out.println(map.pathBetweenDist());
 		    }
 		});
 	}
-	
-	public String getSelectedStart() {
-		return selectedStart;
-	}
-	
-	public String getSelectedDest() {
-		return selectedDest;
-	}
+//	
+//	public String getSelectedStart() {
+//		return selectedStart;
+//	}
+//	
+//	public String getSelectedDest() {
+//		return selectedDest;
+//	}
 }

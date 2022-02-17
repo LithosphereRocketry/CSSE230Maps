@@ -13,10 +13,12 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		private int x;
 		private int y;
 		private double hValue;
+		private boolean selected;
 		
 		public GraphNode() {
 			neighbors = new Hashtable<>();
 			hValue = 0;
+			selected = false;
 		}
 		
 		//Node Basic Constructor
@@ -27,6 +29,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 			this.x = x;
 			this.y = y;
 			this.hValue = 0;
+			selected = false;
 		}
 		
 		/**
@@ -46,6 +49,14 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 			return true;
 		}
 		
+		public void setSelected() {
+			selected = true;
+		}
+		
+		public boolean getSelected() {
+			return selected;
+		}
+		
 		/**
 		 * update the edge's info
 		 * @param name of the other end of the edge
@@ -61,14 +72,19 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		}
 		
 		public void drawOn(Graphics2D g2d, Color color) {
-			g2d.setColor(Color.RED);
-			g2d.drawString(name, x + 5, y + 5);
-			g2d.setColor(color);
-			g2d.fillOval(x - 3, y - 3, 6, 6);
+//			g2d.setColor(Color.RED);
+//			g2d.drawString(name, x + 5, y + 5);
+			g2d.setColor(Color.YELLOW);
 			
 			for(String key: neighbors.keySet()) {
 				g2d.drawLine(x, y, neighbors.get(key).otherEnd.x, neighbors.get(key).otherEnd.y);
 			}
+			if(color.equals(Color.RED)) {
+				g2d.setColor(color);
+				g2d.fillOval(x - 5, y - 5, 10, 10);
+			}
+				
+			else g2d.fillOval(x - 3, y - 3, 6, 6);
 		}
 		
 		public String getName() {
@@ -127,7 +143,8 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		//for xml use, don't use for testing
 		public String toString() {
 			String s = "";
-			s += "    Planet: " + name;
+//			s += "Planet: " + name;
+			s += name;
 //			s += "\nCurrent location (" + x + ", " + y + ")\n\n"
 //					+ "       Edges\n\n";
 //			for(String key: neighbors.keySet()) {

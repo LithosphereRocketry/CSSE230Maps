@@ -1,12 +1,14 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-
-import javax.swing.JPanel;
+import java.util.Collection;
 
 public class Map extends ImagePanel{
 	public Graph g;
 	private String start;
+	private String des;
+	static final Color NORMAL_COLOR = Color.YELLOW;
+	static final Color SELECTED_NODE = Color.RED;
 	
 	//Basic Constructor
 	public Map() throws Exception{
@@ -27,7 +29,11 @@ public class Map extends ImagePanel{
 	 */
 	public void drawOn(Graphics2D g2d) {
 		for(GraphNode g: g.getNodeList()) {
-			g.drawOn(g2d, Color.YELLOW);
+			if(g.name.equals(start) || g.name.equals(des)) {
+				g.drawOn(g2d, SELECTED_NODE);
+			} else{
+				g.drawOn(g2d, NORMAL_COLOR);
+			}
 		}
 	}
 	
@@ -82,7 +88,7 @@ public class Map extends ImagePanel{
 	
 	public void setStart(String name) {
 		start = name;
-//		System.out.println(start);
+		repaint();
 	}
 	
 	public void setDes(String name) {
@@ -90,32 +96,20 @@ public class Map extends ImagePanel{
 			System.out.println("No starting planet selected");
 			return;
 		}
-		System.out.println(g.pathBetweenDist(start, name));
+		des = name;
+		repaint();
 	}
 	
-	/**
-	 * called when the user choose a start node, path finding will not start
-	 * @param name of the start node
-	 * @param g2d used to change the color of selected node and its edges
-	 */
-	public void chooseStart(String name, Graphics2D g2d) {
-		start = name;
-		GraphNode temp = g.getNode(name);
-		temp.drawOn(g2d, Color.RED);
+	public Collection<String> getNodeNames(){
+		return g.getNodeNames();
 	}
 	
-	/**
-	 * called when the user choose the destination, pathFinding will start
-	 * not complete
-	 * @param name of the termination node
-	 * @param g2d used to draw the path
-	 */
-	public void chooseDes(String name, Graphics2D g2d) {
-		GraphNode temp = g.getNode(name);
-		temp.drawOn(g2d, Color.GREEN);
-		g.pathBetweenDist(start, name);
+	public Graph.Path pathBetweenDist() {
+		Graph.Path temp = g.pathBetweenDist(start, des);
+		
+		return temp;
 	}
-	
+
 	public String toString() {
 		return g.toString();
 	}

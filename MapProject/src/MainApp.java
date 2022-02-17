@@ -173,7 +173,7 @@ public class MainApp {
 		
 		
 		
-		Graph graph = panel.g;
+//		Graph graph = panel.g;
 		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
@@ -194,11 +194,11 @@ public class MainApp {
 		gbc_tabbedPane.gridy = 0;
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 
-		RouterPanel tabPanel1 = new RouterPanel(graph);
-		String start = tabPanel1.getSelectedStart();
-		panel.setStart(start);
-		String dest = tabPanel1.getSelectedDest();
-		panel.setDes(dest);
+		RouterPanel tabPanel1 = new RouterPanel(panel);
+//		String start = tabPanel1.getSelectedStart();
+//		panel.setStart(start);
+//		String dest = tabPanel1.getSelectedDest();
+//		panel.setDes(dest);
 		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
 		
 		AdvisorPanel tabPanel2 = new AdvisorPanel();
