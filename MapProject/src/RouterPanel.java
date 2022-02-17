@@ -21,18 +21,19 @@ import javax.swing.JPanel;
 import javax.swing.SwingWorker;
 
 public class RouterPanel extends JPanel {
-//	public String selectedStart;
-//	public String selectedDest;
-	Map map;
+
+	private Map map;
+	public String cost;
+	
 	//Basic Constructor
 	public RouterPanel(Map map) {
 		this.map = map;
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0, 0};
+		gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
 		gbl_panel_1.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 3.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		this.setLayout(gbl_panel_1);
 		
 		JLabel lbStartLabel = new JLabel("Start:");
@@ -48,7 +49,7 @@ public class RouterPanel extends JPanel {
 		
 		JComboBox comboBox = new JComboBox(nodes);
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_comboBox.insets = new Insets(5, 0, 5, 5);
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridx = 5;
 		gbc_comboBox.gridy = 1;
@@ -65,7 +66,7 @@ public class RouterPanel extends JPanel {
 		
 		JLabel lbDestLabel = new JLabel("Destination:");
 		GridBagConstraints gbc_lbDestLabel = new GridBagConstraints();
-		gbc_lbDestLabel.insets = new Insets(0, 0, 0, 5);
+		gbc_lbDestLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lbDestLabel.anchor = GridBagConstraints.EAST;
 		gbc_lbDestLabel.gridx = 4;
 		gbc_lbDestLabel.gridy = 3;
@@ -73,7 +74,7 @@ public class RouterPanel extends JPanel {
 		
 		JComboBox comboBox_1 = new JComboBox(nodes);
 		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
-		gbc_comboBox_1.insets = new Insets(0, 0, 0, 5);
+		gbc_comboBox_1.insets = new Insets(0, 0, 5, 5);
 		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox_1.gridx = 5;
 		gbc_comboBox_1.gridy = 3;
@@ -88,18 +89,35 @@ public class RouterPanel extends JPanel {
 		});
 		comboBox_1.setSelectedItem(nodes[1]);//set as default selected item
 		
+		JLabel lblCostLabel = new JLabel("Cost:");
+		GridBagConstraints gbc_lblCostLabel = new GridBagConstraints();
+		gbc_lblCostLabel.anchor = GridBagConstraints.SOUTHEAST;
+		gbc_lblCostLabel.insets = new Insets(10, 0, 5, 5);
+		gbc_lblCostLabel.gridx = 4;
+		gbc_lblCostLabel.gridy = 4;
+		this.add(lblCostLabel, gbc_lblCostLabel);
+		
+		JLabel lblNewLabel_2 = new JLabel(cost);
+		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
+		gbc_lblNewLabel_2.anchor = GridBagConstraints.SOUTHWEST;
+		gbc_lblNewLabel_2.insets = new Insets(10, 0, 5, 5);
+		gbc_lblNewLabel_2.gridx = 5;
+		gbc_lblNewLabel_2.gridy = 4;
+		this.add(lblNewLabel_2, gbc_lblNewLabel_2);
+		
 		JButton btnGOButton = new JButton("GO");
 		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
 		gbc_btnGOButton.insets = new Insets(0, 0, 0, 60);
 		gbc_btnGOButton.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnGOButton.gridx = 5;
-		gbc_btnGOButton.gridy = 4;
+		gbc_btnGOButton.gridy = 5;
 		this.add(btnGOButton, gbc_btnGOButton);
 		
 		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	System.out.println(map.pathBetweenDist());
+		    	cost = map.pathBetweenDist().getCost();
+		    	lblNewLabel_2.setText(cost + " Parsecs");
 		    }
 		});
 	}
