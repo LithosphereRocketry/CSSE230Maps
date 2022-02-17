@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.awt.Graphics2D;
+
 public class Edge{
 	private double dCost; 		//distance cost of the edge
 	private double tCost; 		//time cost of the edge
@@ -11,6 +14,13 @@ public class Edge{
 		dCost = distanceCost;
 		tCost = timeCost;
 		otherEnd = end;
+	}
+	
+	public void drawOn(Graphics2D g2d, int x, int y, boolean selected) {
+		if(selected && otherEnd.getSelected())
+		g2d.setColor(Color.RED);
+		else g2d.setColor(Color.YELLOW);
+		g2d.drawLine(otherEnd.getX(), otherEnd.getY(), x, y);
 	}
 	
 	public double getDCost() {return dCost;}

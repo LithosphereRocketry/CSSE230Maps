@@ -57,6 +57,10 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 			return selected;
 		}
 		
+		public void reset() {
+			selected = false;
+		}
+		
 		/**
 		 * update the edge's info
 		 * @param name of the other end of the edge
@@ -77,7 +81,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 			g2d.setColor(Color.YELLOW);
 			
 			for(String key: neighbors.keySet()) {
-				g2d.drawLine(x, y, neighbors.get(key).otherEnd.x, neighbors.get(key).otherEnd.y);
+				neighbors.get(key).drawOn(g2d, x, y, selected);
 			}
 			if(color.equals(Color.RED)) {
 				g2d.setColor(color);

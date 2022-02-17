@@ -115,7 +115,13 @@ public class Graph{
 	        return ll;
 	    }
 	 
-	 
+	 public void reset(String start, String end) {
+		 for(String key: nodes.keySet()) {
+			 if(!key.equals(start) || !key.equals(end)) {
+				 nodes.get(key).reset();
+			 }
+		 }
+	 }
 	 
 	 public String toString() {
 		 String s = "";

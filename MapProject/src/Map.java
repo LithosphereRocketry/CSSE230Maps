@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.Collection;
+import java.util.Iterator;
 
 public class Map extends ImagePanel{
 	public Graph g;
@@ -29,7 +30,7 @@ public class Map extends ImagePanel{
 	 */
 	public void drawOn(Graphics2D g2d) {
 		for(GraphNode g: g.getNodeList()) {
-			if(g.name.equals(start) || g.name.equals(des)) {
+			if(g.name.equals(start) || g.name.equals(des) || g.getSelected()) {
 				g.drawOn(g2d, SELECTED_NODE);
 			} else{
 				g.drawOn(g2d, NORMAL_COLOR);
@@ -105,8 +106,13 @@ public class Map extends ImagePanel{
 	}
 	
 	public Graph.Path pathBetweenDist() {
+		g.reset(start, des);
 		Graph.Path temp = g.pathBetweenDist(start, des);
-		
+		Iterator<GraphNode> ite = temp.iterator();
+		while(ite.hasNext()) {
+			ite.next().setSelected();
+		}
+		repaint();
 		return temp;
 	}
 
