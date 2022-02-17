@@ -204,10 +204,14 @@ public class Graph{
 		return p;
 	}
 	
-	private class Path extends Stack<GraphNode> {
+	public class Path extends Stack<GraphNode> {
 		double cost;
 		public String toString() {
 			return cost+": "+super.toString();
+		}
+		
+		public String getCost() {
+			return Double.toString(cost);
 		}
 		
 	}

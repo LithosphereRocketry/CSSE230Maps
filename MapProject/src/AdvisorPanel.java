@@ -21,6 +21,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class AdvisorPanel extends JPanel {
+	boolean selectedTime = false;
+	boolean selectedDistance = true;
 	
 	//Basic Constructor
 	public AdvisorPanel() {
@@ -50,6 +52,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_rdbtnNewRadioButton.gridy = 4;
 		this.add(rdbtnNewRadioButton, gbc_rdbtnNewRadioButton);
 		
+		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Time");
 		GridBagConstraints gbc_rdbtnNewRadioButton_1 = new GridBagConstraints();
 		gbc_rdbtnNewRadioButton_1.insets = new Insets(0, 0, 0, 5);
@@ -58,7 +61,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_rdbtnNewRadioButton_1.gridy = 4;
 		this.add(rdbtnNewRadioButton_1, gbc_rdbtnNewRadioButton_1);
 		
-
+		
 		JButton btnGOButton = new JButton("      GO      ");
 		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
 		gbc_btnGOButton.insets = new Insets(0, 0, 0, 35);
