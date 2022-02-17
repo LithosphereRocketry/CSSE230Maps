@@ -213,7 +213,8 @@ public class Graph{
 		}
 		
 		public String getCost() {
-			return Double.toString(cost);
+			String result = String.format("%.2f", cost);
+			return result;
 		}
 		
 	}
