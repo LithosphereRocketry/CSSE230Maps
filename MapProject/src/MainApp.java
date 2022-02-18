@@ -17,6 +17,7 @@ import java.awt.GridBagConstraints;
 import javax.swing.JTabbedPane;
 
 import java.awt.Insets;
+import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
@@ -24,6 +25,11 @@ import java.util.Hashtable;
 import java.util.Timer;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JScrollPane;
 
 public class MainApp {
@@ -200,9 +206,29 @@ public class MainApp {
 //		String dest = tabPanel1.getSelectedDest();
 //		panel.setDes(dest);
 		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
+		panel.setPanels(tabPanel1);
 		
 		AdvisorPanel tabPanel2 = new AdvisorPanel();
 		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
-
+		music();
 	}
+	
+	
+			//note: we got help from this link
+			//https://stackoverflow.com/questions/15526255/best-way-to-get-sound-on-button-press-for-a-java-calculator
+			// for this method
+			private void music() {
+				String soundName = "music/backgroundmusic.wav";    
+				try {
+					AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+					Clip clip = AudioSystem.getClip();
+					clip.open(audioInputStream);
+					clip.start();
+				} catch(IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+					System.out.println("music file not found, program will run without music");
+				}
+				
+			}
+	
+	
 }
