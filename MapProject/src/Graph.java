@@ -117,7 +117,7 @@ public class Graph{
 	 
 	 public void reset(String start, String end) {
 		 for(String key: nodes.keySet()) {
-			 if(!key.equals(start) || (end != null && !key.equals(end))) {
+			 if((start != null && !key.equals(start)) || (end != null && !key.equals(end))) {
 				 nodes.get(key).reset();
 			 }
 		 }
