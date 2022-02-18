@@ -25,6 +25,7 @@ public class Map extends ImagePanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
+		
 		drawOn(g2d);
 	}
 	
@@ -34,10 +35,11 @@ public class Map extends ImagePanel{
 	 */
 	public void drawOn(Graphics2D g2d) {
 		for(GraphNode g: g.getNodeList()) {
+			
 			if(g.getSelected()) {
 				g.drawOn(g2d, SELECTED_NODE);
-//			} else{
-//				g.drawOn(g2d, NORMAL_COLOR);
+			} else{
+				g.drawOn(g2d, NORMAL_COLOR);
 			}
 		}
 	}
@@ -92,11 +94,12 @@ public class Map extends ImagePanel{
 	}
 	
 	public void setStart(String name) {
-//		g.reset(start, des);
+		g.reset(start, des);
 		start = name;
-		System.out.println(name);
+//		System.out.println(name);
 //		if(advisory) g.getNode(des).reset();
 		g.getNode(start).setSelected();
+		if(des != null)g.getNode(des).setSelected();
 		repaint();
 	}
 	
@@ -105,8 +108,10 @@ public class Map extends ImagePanel{
 			System.out.println("No starting planet selected");
 			return;
 		}
+		g.reset(start, des);
 		des = name;
 		g.getNode(des).setSelected();
+		g.getNode(start).setSelected();
 		repaint();
 	}
 	
