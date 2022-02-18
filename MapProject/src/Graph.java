@@ -117,7 +117,7 @@ public class Graph{
 	 
 	 public void reset(String start, String end) {
 		 for(String key: nodes.keySet()) {
-			 if(!key.equals(start) || !key.equals(end)) {
+			 if((start != null && !key.equals(start)) || (end != null && !key.equals(end))) {
 				 nodes.get(key).reset();
 			 }
 		 }
@@ -147,22 +147,22 @@ public class Graph{
 		this.nodes = nodes;
 	}
 	
-	public ArrayList<LinkedList<GraphNode>> travelPlannerDistance(int distanceConstraint, GraphNode startingNode) { //copy over to temp file then copy back later
+	public ArrayList<LinkedList<GraphNode>> travelPlannerDistance(int distanceConstraint, String startingNode) { //copy over to temp file then copy back later
 		ArrayList<LinkedList<GraphNode>> pathList = new ArrayList<LinkedList<GraphNode>>();
 		LinkedList<GraphNode> list = new LinkedList<GraphNode>();
-		list.add(startingNode);
+		list.add(nodes.get(startingNode));
 		pathList.add(list);
-		startingNode.getNodesWithinDistance(distanceConstraint, list, 0, false, pathList);
+		nodes.get(startingNode).getNodesWithinDistance(distanceConstraint, list, 0, false, pathList);
 		return pathList;
 
 	}
 	
-	public ArrayList<LinkedList<GraphNode>> travelPlannerTime(int timeConstraint, GraphNode startingNode) { //copy over to temp file then copy back later
+	public ArrayList<LinkedList<GraphNode>> travelPlannerTime(int timeConstraint, String startingNode) { //copy over to temp file then copy back later
 		ArrayList<LinkedList<GraphNode>> pathList = new ArrayList<LinkedList<GraphNode>>();
 		LinkedList<GraphNode> list = new LinkedList<GraphNode>();
-		list.add(startingNode);
+		list.add(nodes.get(startingNode));
 		pathList.add(list);
-		startingNode.getNodesWithinDistance(timeConstraint, list, 0, false, pathList);
+		nodes.get(startingNode).getNodesWithinDistance(timeConstraint, list, 0, false, pathList);
 		return pathList;
 
 	}

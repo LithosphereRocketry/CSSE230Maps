@@ -25,6 +25,8 @@ public class RouterPanel extends JPanel {
 	private Map map;
 	public String cost;
 	
+	private JComboBox<String> comboBoxStart, comboBoxEnd;
+	
 	//Basic Constructor
 	public RouterPanel(Map map) {
 		this.map = map;
@@ -45,24 +47,23 @@ public class RouterPanel extends JPanel {
 		this.add(lbStartLabel, gbc_lbStartLabel);
 		
 		Collection<String> list = map.getNodeNames();
-		Object[] nodes = list.toArray();
+		String[] nodes = list.toArray(new String[list.size()]);
 		
-		JComboBox comboBox = new JComboBox(nodes);
+		comboBoxStart = new JComboBox<>(nodes);
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
 		gbc_comboBox.insets = new Insets(5, 0, 5, 5);
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridx = 5;
 		gbc_comboBox.gridy = 1;
-		this.add(comboBox, gbc_comboBox);
+		this.add(comboBoxStart, gbc_comboBox);
 		
-		comboBox.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		comboBoxStart.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	comboBox.setSelectedItem(comboBox.getSelectedItem());
-		    	map.setStart((String) comboBox.getSelectedItem());
+		    	setStart(comboBoxStart.getSelectedItem());
 		    }
 		});
-		comboBox.setSelectedItem(nodes[0]);//set as default selected item
+		comboBoxStart.setSelectedItem(nodes[0]);//set as default selected item
 		
 		JLabel lbDestLabel = new JLabel("Destination:");
 		GridBagConstraints gbc_lbDestLabel = new GridBagConstraints();
@@ -72,22 +73,21 @@ public class RouterPanel extends JPanel {
 		gbc_lbDestLabel.gridy = 3;
 		this.add(lbDestLabel, gbc_lbDestLabel);
 		
-		JComboBox comboBox_1 = new JComboBox(nodes);
-		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
-		gbc_comboBox_1.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox_1.gridx = 5;
-		gbc_comboBox_1.gridy = 3;
-		this.add(comboBox_1, gbc_comboBox_1);
+		comboBoxEnd = new JComboBox<>(nodes);
+		GridBagConstraints gbc_comboBoxEnd = new GridBagConstraints();
+		gbc_comboBoxEnd.insets = new Insets(0, 0, 5, 5);
+		gbc_comboBoxEnd.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboBoxEnd.gridx = 5;
+		gbc_comboBoxEnd.gridy = 3;
+		this.add(comboBoxEnd, gbc_comboBoxEnd);
 		
-		comboBox_1.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		comboBoxEnd.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	comboBox_1.setSelectedItem(comboBox_1.getSelectedItem());
-		    	map.setDes((String) comboBox_1.getSelectedItem());
+		    	setDest(comboBoxEnd.getSelectedItem());
 		    }
 		});
-		comboBox_1.setSelectedItem(nodes[1]);//set as default selected item
+		comboBoxEnd.setSelectedItem(nodes[1]);//set as default selected item
 		
 		JLabel lblCostLabel = new JLabel("Cost:");
 		GridBagConstraints gbc_lblCostLabel = new GridBagConstraints();
@@ -121,6 +121,16 @@ public class RouterPanel extends JPanel {
 		    }
 		});
 	}
+	public void setStart(Object name) {
+		comboBoxStart.setSelectedItem(name);
+    	map.setStart((String) name);
+	}
+	public void setDest(Object name) {
+    	comboBoxEnd.setSelectedItem(name);
+    	map.setDes((String) name);
+	}
+	
+	
 //	
 //	public String getSelectedStart() {
 //		return selectedStart;

@@ -80,12 +80,12 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 //			g2d.drawString(name, x + 5, y + 5);
 			g2d.setColor(Color.YELLOW);
 			
-			for(String key: neighbors.keySet()) {
-				neighbors.get(key).drawOn(g2d, x, y, selected);
-			}
-			if(color.equals(Color.RED)) {
+			if(this.selected) {
 				g2d.setColor(color);
 				g2d.fillOval(x - 5, y - 5, 10, 10);
+				for(String key: neighbors.keySet()) {
+					neighbors.get(key).drawOn(g2d, x, y, selected);
+				}
 			}
 				
 			else g2d.fillOval(x - 3, y - 3, 6, 6);
@@ -245,7 +245,9 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 	}
 	
 	
-	
+	boolean isTouching(int x, int y) {
+		return Math.hypot(x-this.x, y-this.y) < 10;
+	}
 	
 	
 
