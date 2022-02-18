@@ -17,6 +17,7 @@ import java.awt.GridBagConstraints;
 import javax.swing.JTabbedPane;
 
 import java.awt.Insets;
+import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
@@ -203,6 +204,7 @@ public class MainApp {
 		
 		AdvisorPanel tabPanel2 = new AdvisorPanel();
 		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
-
 	}
+	
+	
 }
