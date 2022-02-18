@@ -16,13 +16,16 @@ public class Edge{
 		otherEnd = end;
 	}
 	
-	public void drawOn(Graphics2D g2d, int x, int y, boolean selected) {
+	public void drawOn(Graphics2D g2d, int x, int y, boolean selected, boolean draw) {
+		
+		if(draw) {
+			g2d.setColor(Color.YELLOW);
+			g2d.drawLine(otherEnd.getX(), otherEnd.getY(), x, y);
+		}
 		if(selected && otherEnd.getSelected()) {
 			g2d.setColor(Color.RED);
 			g2d.drawLine(otherEnd.getX(), otherEnd.getY(), x, y);
 		}
-		
-//		else g2d.setColor(Color.YELLOW);
 		
 	}
 	

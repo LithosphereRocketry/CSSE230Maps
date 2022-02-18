@@ -120,6 +120,21 @@ public class RouterPanel extends JPanel {
 		    	lblNewLabel_2.setText(cost + " Parsecs");
 		    }
 		});
+		
+		JButton drawAllButton = new JButton("All paths");
+		GridBagConstraints gbc_drawAllButton = new GridBagConstraints();
+		gbc_drawAllButton.insets = new Insets(0, 0, 0, 60);
+		gbc_drawAllButton.fill = GridBagConstraints.HORIZONTAL;
+		gbc_drawAllButton.gridx = 5;
+		gbc_drawAllButton.gridy = 6;
+		this.add(drawAllButton, gbc_drawAllButton);
+		
+		drawAllButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	map.displayAllPath();
+		    }
+		});
 	}
 	public void setStart(Object name) {
 		comboBoxStart.setSelectedItem(name);

@@ -16,6 +16,7 @@ public class Map extends ImagePanel implements MouseListener {
 	private int time;
 	static final Color NORMAL_COLOR = Color.YELLOW;
 	static final Color SELECTED_NODE = Color.RED;
+	private boolean displayAll;
 	private RouterPanel router;
 	
 	//Basic Constructor
@@ -23,26 +24,41 @@ public class Map extends ImagePanel implements MouseListener {
 		super("src/SW Galaxy 1.jpg");
 		g = new Graph();
 		start = "";
+		displayAll = false;
 	}
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
-		
 		drawOn(g2d);
+		if(displayAll) drawAll(g2d);
 	}
 	
+	public void drawAll(Graphics2D g2d) {
+		for(GraphNode g: g.getNodeList()) {
+			if(g.getSelected()) {
+				g.drawOn(g2d, SELECTED_NODE, true);
+			} else{
+				g.drawOn(g2d, NORMAL_COLOR, true);
+			}
+		}
+	}
+	
+	public void hideAll() {
+		displayAll = false;
+		repaint();
+	}
+
 	/**
 	 * 
 	 * @param g2d used to draw all nodes and edges
 	 */
 	public void drawOn(Graphics2D g2d) {
 		for(GraphNode g: g.getNodeList()) {
-			
 			if(g.getSelected()) {
-				g.drawOn(g2d, SELECTED_NODE);
+				g.drawOn(g2d, SELECTED_NODE, false);
 			} else{
-				g.drawOn(g2d, NORMAL_COLOR);
+				g.drawOn(g2d, NORMAL_COLOR, false);
 			}
 		}
 	}
@@ -99,8 +115,6 @@ public class Map extends ImagePanel implements MouseListener {
 	public void setStart(String name) {
 		g.reset(start, des);
 		start = name;
-//		System.out.println(name);
-//		if(advisory) g.getNode(des).reset();
 		g.getNode(start).setSelected();
 		if(des != null)g.getNode(des).setSelected();
 		repaint();
@@ -158,7 +172,11 @@ public class Map extends ImagePanel implements MouseListener {
 		return temp1;
 	}
 	
-	
+	public void displayAllPath() {
+		if(displayAll) displayAll = false;
+		else displayAll = true;
+		repaint();
+	}
 	
 	public Graph.Path pathBetweenDist() {
 		g.reset(start, des);
