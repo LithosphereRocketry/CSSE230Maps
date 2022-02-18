@@ -20,13 +20,12 @@ public class Edge{
 		
 		if(draw) {
 			g2d.setColor(Color.YELLOW);
+			g2d.drawLine(otherEnd.getX(), otherEnd.getY(), x, y);
 		}
 		if(selected && otherEnd.getSelected()) {
 			g2d.setColor(Color.RED);
+			g2d.drawLine(otherEnd.getX(), otherEnd.getY(), x, y);
 		}
-		
-		g2d.drawLine(otherEnd.getX(), otherEnd.getY(), x, y);
-//		else g2d.setColor(Color.YELLOW);
 		
 	}
 	

@@ -44,6 +44,11 @@ public class Map extends ImagePanel implements MouseListener {
 		}
 	}
 	
+	public void hideAll() {
+		displayAll = false;
+		repaint();
+	}
+
 	/**
 	 * 
 	 * @param g2d used to draw all nodes and edges
@@ -110,8 +115,6 @@ public class Map extends ImagePanel implements MouseListener {
 	public void setStart(String name) {
 		g.reset(start, des);
 		start = name;
-//		System.out.println(name);
-//		if(advisory) g.getNode(des).reset();
 		g.getNode(start).setSelected();
 		if(des != null)g.getNode(des).setSelected();
 		repaint();
@@ -170,7 +173,8 @@ public class Map extends ImagePanel implements MouseListener {
 	}
 	
 	public void displayAllPath() {
-		displayAll = true;
+		if(displayAll) displayAll = false;
+		else displayAll = true;
 		repaint();
 	}
 	
