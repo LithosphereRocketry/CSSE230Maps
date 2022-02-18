@@ -1,12 +1,14 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class Map extends ImagePanel{
+public class Map extends ImagePanel implements MouseListener {
 	public Graph g;
 	private String start;
 	private String des;
@@ -14,6 +16,7 @@ public class Map extends ImagePanel{
 	private int time;
 	static final Color NORMAL_COLOR = Color.YELLOW;
 	static final Color SELECTED_NODE = Color.RED;
+	private RouterPanel router;
 	
 	//Basic Constructor
 	public Map() throws Exception{
@@ -178,5 +181,47 @@ public class Map extends ImagePanel{
 
 	public void setG(Graph g) {
 		this.g = g;
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		for(GraphNode n : g.nodes.values()) {
+			if(n.isTouching(e.getX(), e.getY())) {
+				if(e.getButton() == MouseEvent.BUTTON1) {
+					router.setStart(n.getName());
+				} else {
+					router.setDest(n.getName());
+				}
+				break;
+			}
+		}
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setPanels(RouterPanel r) {
+		router = r;
+		addMouseListener(this);
 	}
 }

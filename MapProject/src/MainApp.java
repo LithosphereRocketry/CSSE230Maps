@@ -201,6 +201,7 @@ public class MainApp {
 //		String dest = tabPanel1.getSelectedDest();
 //		panel.setDes(dest);
 		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
+		panel.setPanels(tabPanel1);
 		
 		AdvisorPanel tabPanel2 = new AdvisorPanel();
 		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
