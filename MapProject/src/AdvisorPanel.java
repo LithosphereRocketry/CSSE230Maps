@@ -25,7 +25,7 @@ public class AdvisorPanel extends JPanel {
 	boolean selectedDistance = true;
 	
 	//Basic Constructor
-	public AdvisorPanel() {
+	public AdvisorPanel(Map panel) {
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -33,6 +33,22 @@ public class AdvisorPanel extends JPanel {
 		gbl_panel_2.columnWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, Double.MIN_VALUE};
 		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		this.setLayout(gbl_panel_2);
+		
+		JComboBox comboBox = new JComboBox(nodes);
+		GridBagConstraints gbc_comboBox = new GridBagConstraints();
+		gbc_comboBox.insets = new Insets(5, 0, 5, 5);
+		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboBox.gridx = 5;
+		gbc_comboBox.gridy = 1;
+		this.add(comboBox, gbc_comboBox);
+		
+		comboBox.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	comboBox.setSelectedItem(comboBox.getSelectedItem());
+		    	map.setStart((String) comboBox.getSelectedItem());
+		    }
+		});
 		
 		JFormattedTextField textField = new JFormattedTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();

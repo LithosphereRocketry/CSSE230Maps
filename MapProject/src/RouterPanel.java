@@ -43,7 +43,7 @@ public class RouterPanel extends JPanel {
 		gbc_lbStartLabel.gridx = 4;
 		gbc_lbStartLabel.gridy = 1;
 		this.add(lbStartLabel, gbc_lbStartLabel);
-
+		
 		Collection<String> list = map.getNodeNames();
 		Object[] nodes = list.toArray();
 		
