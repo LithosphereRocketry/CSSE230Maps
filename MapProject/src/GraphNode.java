@@ -246,7 +246,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 	
 	
 	boolean isTouching(int x, int y) {
-		return Math.hypot(x-this.x, y-this.y) < 5;
+		return Math.hypot(x-this.x, y-this.y) < 10;
 	}
 	
 	
