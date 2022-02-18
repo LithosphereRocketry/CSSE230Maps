@@ -75,16 +75,16 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 			return true;
 		}
 		
-		public void drawOn(Graphics2D g2d, Color color) {
+		public void drawOn(Graphics2D g2d, Color color, boolean draw) {
 //			g2d.setColor(Color.RED);
 //			g2d.drawString(name, x + 5, y + 5);
-			g2d.setColor(Color.YELLOW);
+			g2d.setColor(color);
 			
-			if(this.selected) {
+			if(this.selected || draw) {
 				g2d.setColor(color);
 				g2d.fillOval(x - 5, y - 5, 10, 10);
 				for(String key: neighbors.keySet()) {
-					neighbors.get(key).drawOn(g2d, x, y, selected);
+					neighbors.get(key).drawOn(g2d, x, y, selected, draw);
 				}
 			}
 				

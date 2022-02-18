@@ -14,19 +14,31 @@ public class Map extends ImagePanel{
 	private int time;
 	static final Color NORMAL_COLOR = Color.YELLOW;
 	static final Color SELECTED_NODE = Color.RED;
+	private boolean displayAll;
 	
 	//Basic Constructor
 	public Map() throws Exception{
 		super("src/SW Galaxy 1.jpg");
 		g = new Graph();
 		start = "";
+		displayAll = false;
 	}
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
-		
 		drawOn(g2d);
+		if(displayAll) drawAll(g2d);
+	}
+	
+	public void drawAll(Graphics2D g2d) {
+		for(GraphNode g: g.getNodeList()) {
+			if(g.getSelected()) {
+				g.drawOn(g2d, SELECTED_NODE, true);
+			} else{
+				g.drawOn(g2d, NORMAL_COLOR, true);
+			}
+		}
 	}
 	
 	/**
@@ -35,11 +47,10 @@ public class Map extends ImagePanel{
 	 */
 	public void drawOn(Graphics2D g2d) {
 		for(GraphNode g: g.getNodeList()) {
-			
 			if(g.getSelected()) {
-				g.drawOn(g2d, SELECTED_NODE);
+				g.drawOn(g2d, SELECTED_NODE, false);
 			} else{
-				g.drawOn(g2d, NORMAL_COLOR);
+				g.drawOn(g2d, NORMAL_COLOR, false);
 			}
 		}
 	}
@@ -155,7 +166,10 @@ public class Map extends ImagePanel{
 		return temp1;
 	}
 	
-	
+	public void displayAllPath() {
+		displayAll = true;
+		repaint();
+	}
 	
 	public Graph.Path pathBetweenDist() {
 		g.reset(start, des);
