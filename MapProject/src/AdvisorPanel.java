@@ -34,6 +34,8 @@ public class AdvisorPanel extends JPanel {
 	private String input;
 	private int dist;
 	private String  start;
+	ArrayList<LinkedList<GraphNode>>  pathlist;
+	ArrayList<LinkedList<GraphNode>> paths;
 	
 	//Basic Constructor
 	public AdvisorPanel(Map map) {
@@ -57,6 +59,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_comboBox.gridx = 5;
 		gbc_comboBox.gridy = 1;
 		this.add(comboBox, gbc_comboBox);
+		start = (String) comboBox.getSelectedItem();
 		
 		comboBox.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
@@ -133,7 +136,15 @@ public class AdvisorPanel extends JPanel {
 		    	}
 				
 		    	if(dist != 0) {
-		    		map.g.travelPlannerDistance(dist, start);
+		    		pathlist = map.g.travelPlannerDistance(dist, start);
+		    	}
+		    	
+		    	if(pathlist != null) {
+		    		paths = map.returnThreeRandomPaths(pathlist);
+		    	}
+		    	
+		    	if(paths != null) {
+		    		System.out.println(map.pathsToStrings(paths));
 		    	}
 		    }
 		});
