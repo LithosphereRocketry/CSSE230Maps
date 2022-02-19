@@ -236,6 +236,7 @@ public class Graph{
 				}
 			}
 		}
+		
 		Path p = new Path();
 		p.cost = endNode.gethValue();
 		p.push(endNode);
