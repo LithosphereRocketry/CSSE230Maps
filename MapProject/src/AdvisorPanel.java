@@ -33,6 +33,7 @@ public class AdvisorPanel extends JPanel {
 	public String cost;
 	private String input;
 	private int dist;
+	private int time;
 	private String  start;
 	ArrayList<LinkedList<GraphNode>>  pathlist;
 	ArrayList<LinkedList<GraphNode>> paths;
@@ -121,7 +122,6 @@ public class AdvisorPanel extends JPanel {
 					rdbtnTimeRadioButton_1.setSelected(false);
 					selectedTime = false;
 				}
-				switchButtons(selectedDistance, selectedTime);
 			}
 		});
 		
@@ -134,7 +134,6 @@ public class AdvisorPanel extends JPanel {
 					rdbtnDistanceRadioButton.setSelected(false);
 					selectedDistance = false;
 				}
-				switchButtons(selectedDistance, selectedTime);
 			}
 		});
 		
@@ -154,15 +153,22 @@ public class AdvisorPanel extends JPanel {
 		    	input = textField.getText();
 		    	if(input != "") {
 		    		try {
-					 	dist = Integer.parseInt(input);
-					 	System.out.println(dist);
+		    			if(selectedDistance = true && selectedTime == false) {
+		    				dist = Integer.parseInt(input);
+			    		} else {
+			    			time = Integer.parseInt(input);
+			    		}
 					  } catch (NumberFormatException e1) {
 							  System.out.println("not a number");
 					  }
 		    	}
 				
 		    	if(dist != 0) {
-		    		pathlist = map.g.travelPlannerDistance(dist, start);
+		    		if(selectedDistance = true && selectedTime == false) {
+		    			pathlist = map.g.travelPlannerDistance(dist, start);
+		    		} else {
+		    			pathlist = map.g.travelPlannerTime(time, start);
+		    		}
 		    	}
 		    	
 		    	if(pathlist != null) {
@@ -174,13 +180,5 @@ public class AdvisorPanel extends JPanel {
 		    	}
 		    }
 		});
-	}
-	
-	public void switchButtons (boolean distance, boolean time) {
-		if(distance = true && time == false) {
-			
-		} else {
-			
-		}
 	}
 }
