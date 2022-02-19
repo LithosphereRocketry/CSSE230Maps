@@ -48,9 +48,9 @@ public class AdvisorPanel extends JPanel {
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel_2.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
+		gbl_panel_2.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel_2.columnWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, Double.MIN_VALUE};
-		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,Double.MIN_VALUE};
 		this.setLayout(gbl_panel_2);
 		
 		JComboBox comboBox = new JComboBox(nodes);
@@ -140,11 +140,11 @@ public class AdvisorPanel extends JPanel {
 		
 		JButton btnGOButton = new JButton("GO");
 		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
-		gbc_btnGOButton.insets = new Insets(0, 0, 0, 5);
+		gbc_btnGOButton.insets = new Insets(150, 0, 0, 5);
 		gbc_btnGOButton.anchor = GridBagConstraints.EAST;
 		gbc_btnGOButton.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnGOButton.gridx = 5;
-		gbc_btnGOButton.gridy = 5;
+		gbc_btnGOButton.gridy = 6;
 		this.add(btnGOButton, gbc_btnGOButton);
 		
 		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
@@ -180,5 +180,31 @@ public class AdvisorPanel extends JPanel {
 		    	}
 		    }
 		});
+		
+		JButton btnPath1Button = new JButton("1");
+		GridBagConstraints gbc_btnPath1Button = new GridBagConstraints();
+		gbc_btnPath1Button.insets = new Insets(0, 0, 0, 20);
+		gbc_btnPath1Button.anchor = GridBagConstraints.WEST;
+		gbc_btnPath1Button.gridx = 5;
+		gbc_btnPath1Button.gridy = 7;
+		this.add(btnPath1Button, gbc_btnPath1Button);
+		
+
+		JButton btnPath2Button = new JButton("2");
+		GridBagConstraints gbc_btnPath2Button = new GridBagConstraints();
+		gbc_btnPath2Button.insets = new Insets(0, 10, 0, 10);
+		gbc_btnPath2Button.anchor = GridBagConstraints.CENTER;
+		gbc_btnPath2Button.gridx = 5;
+		gbc_btnPath2Button.gridy = 7;
+		this.add(btnPath2Button, gbc_btnPath2Button);
+		
+
+		JButton btnPath3Button = new JButton("3");
+		GridBagConstraints gbc_btnPath3Button = new GridBagConstraints();
+		gbc_btnPath3Button.insets = new Insets(0, 20, 0, 0);
+		gbc_btnPath3Button.anchor = GridBagConstraints.EAST;
+		gbc_btnPath3Button.gridx = 5;
+		gbc_btnPath3Button.gridy = 7;
+		this.add(btnPath3Button, gbc_btnPath3Button);
 	}
 }
