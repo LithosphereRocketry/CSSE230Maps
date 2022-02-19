@@ -6,6 +6,8 @@ import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,6 +32,8 @@ public class AdvisorPanel extends JPanel {
 	private Map map;
 	public String cost;
 	private String input;
+	private int dist;
+	private String  start;
 	
 	//Basic Constructor
 	public AdvisorPanel(Map map) {
@@ -59,6 +63,7 @@ public class AdvisorPanel extends JPanel {
 		    public void actionPerformed(ActionEvent e) {
 		    	comboBox.setSelectedItem(comboBox.getSelectedItem());
 		    	map.setStart((String) comboBox.getSelectedItem());
+		    	start = (String) comboBox.getSelectedItem();
 		    }
 		});
 		
@@ -72,8 +77,21 @@ public class AdvisorPanel extends JPanel {
 		this.add(textField, gbc_textField);
 		textField.setColumns(5);
 		
-		input = textField.getText();
-		
+		textField.addFocusListener(new FocusListener() {
+			@Override
+		    public void focusGained(FocusEvent e) {
+		        textField.setText(null); // Empty the text field when it receives focus
+		    }
+			
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+		});
+		 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Distance");
 		GridBagConstraints gbc_rdbtnNewRadioButton = new GridBagConstraints();
 		gbc_rdbtnNewRadioButton.insets = new Insets(0, 0, 0, 5);
@@ -104,7 +122,19 @@ public class AdvisorPanel extends JPanel {
 		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	
+		    	input = textField.getText();
+		    	if(input != "") {
+		    		try {
+					 	dist = Integer.parseInt(input);
+					 	System.out.println(dist);
+					  } catch (NumberFormatException e1) {
+							  System.out.println("not a number");
+					  }
+		    	}
+				
+		    	if(dist != 0) {
+		    		map.g.travelPlannerDistance(dist, start);
+		    	}
 		    }
 		});
 	}
