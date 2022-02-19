@@ -219,6 +219,17 @@ public class Map extends ImagePanel implements MouseListener {
 		repaint();
 		return temp;
 	}
+	
+	public Graph.Path pathBetweenTime() {
+		g.reset(start, des);
+		Graph.Path temp = g.pathBetweenTime(start, des);
+		Iterator<GraphNode> ite = temp.iterator();
+		while(ite.hasNext()) {
+			ite.next().setSelected();
+		}
+		repaint();
+		return temp;
+	}
 
 	public String toString() {
 		return g.toString();

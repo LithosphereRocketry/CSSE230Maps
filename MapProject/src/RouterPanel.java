@@ -134,7 +134,6 @@ public class RouterPanel extends JPanel {
 					rdbtnTimeRadioButton_1.setSelected(false);
 					selectedTime = false;
 				}
-				switchButtons(selectedDistance, selectedTime);
 			}
 		});
 		
@@ -147,7 +146,6 @@ public class RouterPanel extends JPanel {
 					rdbtnDistanceRadioButton.setSelected(false);
 					selectedDistance = false;
 				}
-				switchButtons(selectedDistance, selectedTime);
 			}
 		});
 		
@@ -164,8 +162,13 @@ public class RouterPanel extends JPanel {
 		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	cost = map.pathBetweenDist().getCost();
-		    	lblCostLabel_2.setText(cost + " Parsecs");
+		    	if(selectedDistance = true && selectedTime == false) {
+		    		cost = map.pathBetweenDist().getCost();
+		    		lblCostLabel_2.setText(cost + " Parsecs");
+				} else {
+					cost = map.pathBetweenTime().getCost();
+					lblCostLabel_2.setText(cost + " Standard Time Units");
+				}
 		    }
 		});
 		
@@ -192,15 +195,7 @@ public class RouterPanel extends JPanel {
     	comboBoxEnd.setSelectedItem(name);
     	map.setDes((String) name);
 	}
-	
-	public void switchButtons (boolean distance, boolean time) {
-		if(distance = true && time == false) {
-			
-		} else {
-			
-		}
-	}
-	
+
 	
 //	
 //	public String getSelectedStart() {
