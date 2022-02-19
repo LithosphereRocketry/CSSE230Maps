@@ -8,6 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -23,9 +27,17 @@ import javax.swing.JTextField;
 public class AdvisorPanel extends JPanel {
 	boolean selectedTime = false;
 	boolean selectedDistance = true;
+	private Map map;
+	public String cost;
+	private String input;
 	
 	//Basic Constructor
-	public AdvisorPanel(Map panel) {
+	public AdvisorPanel(Map map) {
+		this.map = map;
+		
+		Collection<String> list = map.getNodeNames();
+		Object[] nodes = list.toArray();
+		
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -56,9 +68,11 @@ public class AdvisorPanel extends JPanel {
 		gbc_textField.anchor = GridBagConstraints.EAST;
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField.gridx = 5;
-		gbc_textField.gridy = 1;
+		gbc_textField.gridy = 3;
 		this.add(textField, gbc_textField);
 		textField.setColumns(5);
+		
+		input = textField.getText();
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Distance");
 		GridBagConstraints gbc_rdbtnNewRadioButton = new GridBagConstraints();
@@ -93,6 +107,5 @@ public class AdvisorPanel extends JPanel {
 		    	
 		    }
 		});
-		
 	}
 }
