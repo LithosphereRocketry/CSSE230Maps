@@ -95,22 +95,48 @@ public class AdvisorPanel extends JPanel {
 
 		});
 		 
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Distance");
-		GridBagConstraints gbc_rdbtnNewRadioButton = new GridBagConstraints();
-		gbc_rdbtnNewRadioButton.insets = new Insets(0, 0, 0, 5);
-		gbc_rdbtnNewRadioButton.fill = GridBagConstraints.HORIZONTAL;
-		gbc_rdbtnNewRadioButton.gridx = 4;
-		gbc_rdbtnNewRadioButton.gridy = 4;
-		this.add(rdbtnNewRadioButton, gbc_rdbtnNewRadioButton);
+		JRadioButton rdbtnDistanceRadioButton = new JRadioButton("Distance");
+		GridBagConstraints gbc_rdbtnDistanceRadioButton = new GridBagConstraints();
+		gbc_rdbtnDistanceRadioButton.insets = new Insets(0, 0, 0, 5);
+		gbc_rdbtnDistanceRadioButton.fill = GridBagConstraints.HORIZONTAL;
+		gbc_rdbtnDistanceRadioButton.gridx = 4;
+		gbc_rdbtnDistanceRadioButton.gridy = 4;
+		this.add(rdbtnDistanceRadioButton, gbc_rdbtnDistanceRadioButton);
 		
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Time");
-		GridBagConstraints gbc_rdbtnNewRadioButton_1 = new GridBagConstraints();
-		gbc_rdbtnNewRadioButton_1.insets = new Insets(0, 0, 0, 5);
-		gbc_rdbtnNewRadioButton.fill = GridBagConstraints.HORIZONTAL;
-		gbc_rdbtnNewRadioButton_1.gridx = 8;
-		gbc_rdbtnNewRadioButton_1.gridy = 4;
-		this.add(rdbtnNewRadioButton_1, gbc_rdbtnNewRadioButton_1);
+		JRadioButton rdbtnTimeRadioButton_1 = new JRadioButton("Time");
+		GridBagConstraints gbc_rdbtnTimeRadioButton_1 = new GridBagConstraints();
+		gbc_rdbtnTimeRadioButton_1.insets = new Insets(0, 0, 0, 5);
+		gbc_rdbtnDistanceRadioButton.fill = GridBagConstraints.HORIZONTAL;
+		gbc_rdbtnTimeRadioButton_1.gridx = 8;
+		gbc_rdbtnTimeRadioButton_1.gridy = 4;
+		this.add(rdbtnTimeRadioButton_1, gbc_rdbtnTimeRadioButton_1);
+		
+		rdbtnDistanceRadioButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				selectedDistance = rdbtnDistanceRadioButton.isSelected();
+				if(rdbtnDistanceRadioButton.isSelected()) {
+					rdbtnTimeRadioButton_1.setSelected(false);
+					selectedTime = false;
+				}
+				switchButtons(selectedDistance, selectedTime);
+			}
+		});
+		
+		rdbtnTimeRadioButton_1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				selectedTime = rdbtnTimeRadioButton_1.isSelected();
+				if(rdbtnTimeRadioButton_1.isSelected()) {
+					rdbtnDistanceRadioButton.setSelected(false);
+					selectedDistance = false;
+				}
+				switchButtons(selectedDistance, selectedTime);
+			}
+		});
 		
 		
 		JButton btnGOButton = new JButton("      GO      ");
@@ -148,5 +174,13 @@ public class AdvisorPanel extends JPanel {
 		    	}
 		    }
 		});
+	}
+	
+	public void switchButtons (boolean distance, boolean time) {
+		if(distance = true && time == false) {
+			
+		} else {
+			
+		}
 	}
 }

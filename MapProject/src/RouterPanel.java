@@ -134,6 +134,7 @@ public class RouterPanel extends JPanel {
 					rdbtnTimeRadioButton_1.setSelected(false);
 					selectedTime = false;
 				}
+				switchButtons(selectedDistance, selectedTime);
 			}
 		});
 		
@@ -146,6 +147,7 @@ public class RouterPanel extends JPanel {
 					rdbtnDistanceRadioButton.setSelected(false);
 					selectedDistance = false;
 				}
+				switchButtons(selectedDistance, selectedTime);
 			}
 		});
 		
@@ -192,7 +194,11 @@ public class RouterPanel extends JPanel {
 	}
 	
 	public void switchButtons (boolean distance, boolean time) {
-		
+		if(distance = true && time == false) {
+			
+		} else {
+			
+		}
 	}
 	
 	
