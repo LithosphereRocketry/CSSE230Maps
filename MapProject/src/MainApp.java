@@ -218,15 +218,20 @@ public class MainApp {
 			//https://stackoverflow.com/questions/15526255/best-way-to-get-sound-on-button-press-for-a-java-calculator
 			// for this method
 			private void music() {
-				String soundName = "src/backgroundmusic.wav";    
+				String soundName = "src/backgroundmusic.wav";  
+				
 				try {
+					
 					AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
 					Clip clip = AudioSystem.getClip();
 					clip.open(audioInputStream);
 					clip.start();
+					clip.loop(Clip.LOOP_CONTINUOUSLY);
 				} catch(IOException | LineUnavailableException | UnsupportedAudioFileException e) {
 					System.out.println("music file not found, program will run without music");
 				}
+				
+				
 				
 			}
 	
