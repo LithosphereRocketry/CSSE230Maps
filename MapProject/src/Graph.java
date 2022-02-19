@@ -210,6 +210,42 @@ public class Graph{
 		return p;
 	}
 	
+	public Path pathBetweenTime(String start, String end) {
+		for(GraphNode n : nodes.values()) {
+			n.sethValue(Double.POSITIVE_INFINITY);
+		}
+		
+		GraphNode startNode = nodes.get(start);
+		GraphNode endNode = nodes.get(end);
+		
+		startNode.setLastNode(null);
+		startNode.sethValue(startNode.heuristicTime(endNode));
+		PriorityQueue<GraphNode> queue = new PriorityQueue<>();
+		
+		queue.add(startNode);
+		
+		GraphNode current;
+		while((current = queue.poll()) != endNode) {
+			for(Edge e : current.getNeighbors().values()) {
+				GraphNode n = e.otherEnd;
+				double newH = current.gethValue()-current.heuristicTime(endNode)+n.heuristicTime(endNode)+e.getTCost();
+				if(newH < n.gethValue()) {
+					n.setLastNode(current);
+					n.sethValue(newH);
+					queue.add(n);
+				}
+			}
+		}
+		Path p = new Path();
+		p.cost = endNode.gethValue();
+		p.push(endNode);
+		GraphNode retrace = endNode;
+		while(retrace.getLastNode() != null) {
+			retrace = retrace.getLastNode();
+			p.push(retrace);
+		}
+		return p;
+	}
 
 	class Path extends Stack<GraphNode> {
 

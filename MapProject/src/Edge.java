@@ -26,7 +26,6 @@ public class Edge{
 			g2d.setColor(Color.RED);
 			g2d.drawLine(otherEnd.getX(), otherEnd.getY(), x, y);
 		}
-		
 	}
 	
 	public double getDCost() {return dCost;}
