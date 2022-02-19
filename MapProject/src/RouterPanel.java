@@ -18,12 +18,15 @@ import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.SwingWorker;
 
 public class RouterPanel extends JPanel {
 
 	private Map map;
 	public String cost;
+	boolean selectedTime = false;
+	boolean selectedDistance = true;
 	
 	private JComboBox<String> comboBoxStart, comboBoxEnd;
 	
@@ -33,9 +36,9 @@ public class RouterPanel extends JPanel {
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
+		gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
 		gbl_panel_1.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 3.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0,  0.0, Double.MIN_VALUE};
 		this.setLayout(gbl_panel_1);
 		
 		JLabel lbStartLabel = new JLabel("Start:");
@@ -94,30 +97,75 @@ public class RouterPanel extends JPanel {
 		gbc_lblCostLabel.anchor = GridBagConstraints.SOUTHEAST;
 		gbc_lblCostLabel.insets = new Insets(10, 0, 5, 5);
 		gbc_lblCostLabel.gridx = 4;
-		gbc_lblCostLabel.gridy = 4;
+		gbc_lblCostLabel.gridy = 5;
 		this.add(lblCostLabel, gbc_lblCostLabel);
 		
-		JLabel lblNewLabel_2 = new JLabel(cost);
-		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
-		gbc_lblNewLabel_2.anchor = GridBagConstraints.SOUTHWEST;
-		gbc_lblNewLabel_2.insets = new Insets(10, 0, 5, 5);
-		gbc_lblNewLabel_2.gridx = 5;
-		gbc_lblNewLabel_2.gridy = 4;
-		this.add(lblNewLabel_2, gbc_lblNewLabel_2);
+		JLabel lblCostLabel_2 = new JLabel(cost);
+		GridBagConstraints gbc_lblCostLabel_2 = new GridBagConstraints();
+		gbc_lblCostLabel_2.anchor = GridBagConstraints.SOUTHWEST;
+		gbc_lblCostLabel_2.insets = new Insets(10, 0, 5, 5);
+		gbc_lblCostLabel_2.gridx = 5;
+		gbc_lblCostLabel_2.gridy = 5;
+		this.add(lblCostLabel_2, gbc_lblCostLabel_2);
+		
+		JRadioButton rdbtnDistanceRadioButton = new JRadioButton("Distance");
+		GridBagConstraints gbc_rdbtnDistanceRadioButton = new GridBagConstraints();
+		gbc_rdbtnDistanceRadioButton.insets = new Insets(0, 0, 0, 10);
+		gbc_rdbtnDistanceRadioButton.anchor = GridBagConstraints.WEST;
+		gbc_rdbtnDistanceRadioButton.gridx = 5;
+		gbc_rdbtnDistanceRadioButton.gridy = 4;
+		this.add(rdbtnDistanceRadioButton, gbc_rdbtnDistanceRadioButton);
+		
+		
+		JRadioButton rdbtnTimeRadioButton_1 = new JRadioButton("Time");
+		GridBagConstraints gbc_rdbtnTimeRadioButton_1 = new GridBagConstraints();
+		gbc_rdbtnTimeRadioButton_1.insets = new Insets(0, 0, 0, 15);
+		gbc_rdbtnTimeRadioButton_1.anchor = GridBagConstraints.EAST;
+		gbc_rdbtnTimeRadioButton_1.gridx = 5;
+		gbc_rdbtnTimeRadioButton_1.gridy = 4;
+		this.add(rdbtnTimeRadioButton_1, gbc_rdbtnTimeRadioButton_1);
+		
+		rdbtnDistanceRadioButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				selectedDistance = rdbtnDistanceRadioButton.isSelected();
+				if(rdbtnDistanceRadioButton.isSelected()) {
+					rdbtnTimeRadioButton_1.setSelected(false);
+					selectedTime = false;
+				}
+				switchButtons(selectedDistance, selectedTime);
+			}
+		});
+		
+		rdbtnTimeRadioButton_1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				selectedTime = rdbtnTimeRadioButton_1.isSelected();
+				if(rdbtnTimeRadioButton_1.isSelected()) {
+					rdbtnDistanceRadioButton.setSelected(false);
+					selectedDistance = false;
+				}
+				switchButtons(selectedDistance, selectedTime);
+			}
+		});
+		
+		
 		
 		JButton btnGOButton = new JButton("GO");
 		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
 		gbc_btnGOButton.insets = new Insets(0, 0, 0, 60);
 		gbc_btnGOButton.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnGOButton.gridx = 5;
-		gbc_btnGOButton.gridy = 5;
+		gbc_btnGOButton.gridy = 6;
 		this.add(btnGOButton, gbc_btnGOButton);
 		
 		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
 		    	cost = map.pathBetweenDist().getCost();
-		    	lblNewLabel_2.setText(cost + " Parsecs");
+		    	lblCostLabel_2.setText(cost + " Parsecs");
 		    }
 		});
 		
@@ -126,7 +174,7 @@ public class RouterPanel extends JPanel {
 		gbc_drawAllButton.insets = new Insets(0, 0, 0, 60);
 		gbc_drawAllButton.fill = GridBagConstraints.HORIZONTAL;
 		gbc_drawAllButton.gridx = 5;
-		gbc_drawAllButton.gridy = 6;
+		gbc_drawAllButton.gridy = 7;
 		this.add(drawAllButton, gbc_drawAllButton);
 		
 		drawAllButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
@@ -143,6 +191,14 @@ public class RouterPanel extends JPanel {
 	public void setDest(Object name) {
     	comboBoxEnd.setSelectedItem(name);
     	map.setDes((String) name);
+	}
+	
+	public void switchButtons (boolean distance, boolean time) {
+		if(distance = true && time == false) {
+			
+		} else {
+			
+		}
 	}
 	
 	

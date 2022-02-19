@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Map extends ImagePanel implements MouseListener {
 	public Graph g;
@@ -176,6 +177,36 @@ public class Map extends ImagePanel implements MouseListener {
 		if(displayAll) displayAll = false;
 		else displayAll = true;
 		repaint();
+	}
+	
+	public ArrayList<LinkedList<GraphNode>> returnThreeRandomPaths(ArrayList<LinkedList<GraphNode>> paths) {
+		Random rand = new Random();
+		ArrayList<LinkedList<GraphNode>> returnList = new ArrayList<LinkedList<GraphNode>>();
+		if (paths.size() <= 3) {
+			return paths;
+		}
+		while (true) {
+			int firstPathIndex = rand.nextInt(paths.size());
+			int secondPathIndex = rand.nextInt(paths.size());
+			int thirdPathIndex = rand.nextInt(paths.size());
+			if (firstPathIndex != secondPathIndex && firstPathIndex != thirdPathIndex
+					&& secondPathIndex != thirdPathIndex) {
+				returnList.add(paths.get(firstPathIndex));
+				returnList.add(paths.get(secondPathIndex));
+				returnList.add(paths.get(thirdPathIndex));
+				return returnList;
+			}
+		}
+
+	}
+
+	public String pathsToStrings(ArrayList<LinkedList<GraphNode>> paths) {
+		String pathsString = "";
+		for (int i = 0; i < paths.size(); i++) {
+			pathsString = pathsString + paths.get(i).toString();
+			pathsString = pathsString + "\n";
+		}
+		return pathsString;
 	}
 	
 	public Graph.Path pathBetweenDist() {
