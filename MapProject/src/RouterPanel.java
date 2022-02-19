@@ -92,7 +92,7 @@ public class RouterPanel extends JPanel {
 		});
 		comboBoxEnd.setSelectedItem(nodes[1]);//set as default selected item
 		
-		JLabel lblCostLabel = new JLabel("Cost:");
+		JLabel lblCostLabel = new JLabel();
 		GridBagConstraints gbc_lblCostLabel = new GridBagConstraints();
 		gbc_lblCostLabel.anchor = GridBagConstraints.SOUTHEAST;
 		gbc_lblCostLabel.insets = new Insets(10, 0, 5, 5);
@@ -164,9 +164,11 @@ public class RouterPanel extends JPanel {
 		    public void actionPerformed(ActionEvent e) {
 		    	if(selectedDistance = true && selectedTime == false) {
 		    		cost = map.pathBetweenDist().getCost();
+		    		lblCostLabel.setText("Distance:");
 		    		lblCostLabel_2.setText(cost + " Parsecs");
 				} else {
 					cost = map.pathBetweenTime().getCost();
+					lblCostLabel.setText("Time:");
 					lblCostLabel_2.setText(cost + " Standard Time Units");
 				}
 		    }
