@@ -151,8 +151,9 @@ public class RouterPanel extends JPanel {
 		
 		JButton btnGOButton = new JButton("GO");
 		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
-		gbc_btnGOButton.insets = new Insets(0, 0, 0, 60);
+		gbc_btnGOButton.insets = new Insets(0, 0, 0, 15);
 		gbc_btnGOButton.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnGOButton.anchor = GridBagConstraints.CENTER;
 		gbc_btnGOButton.gridx = 5;
 		gbc_btnGOButton.gridy = 6;
 		this.add(btnGOButton, gbc_btnGOButton);
@@ -172,12 +173,16 @@ public class RouterPanel extends JPanel {
 		    }
 		});
 		
-		JButton drawAllButton = new JButton("All paths");
+		ImageIcon routeIcon = new ImageIcon("src/4474360.png");
+		Image routeimage = routeIcon.getImage();
+		routeimage = routeimage.getScaledInstance(30, 20, Image.SCALE_SMOOTH);
+		routeIcon = new ImageIcon(routeimage);
+		JButton drawAllButton = new JButton(routeIcon);
+		
 		GridBagConstraints gbc_drawAllButton = new GridBagConstraints();
-		gbc_drawAllButton.insets = new Insets(0, 0, 0, 60);
-		gbc_drawAllButton.fill = GridBagConstraints.HORIZONTAL;
-		gbc_drawAllButton.gridx = 5;
-		gbc_drawAllButton.gridy = 7;
+		gbc_drawAllButton.insets = new Insets(0, 0, 0, 5);
+		gbc_drawAllButton.gridx = 6;
+		gbc_drawAllButton.gridy = 6;
 		this.add(drawAllButton, gbc_drawAllButton);
 		
 		drawAllButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
