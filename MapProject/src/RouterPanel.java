@@ -66,7 +66,7 @@ public class RouterPanel extends JPanel {
 		    	setStart(comboBoxStart.getSelectedItem());
 		    }
 		});
-		comboBoxStart.setSelectedItem(nodes[0]);//set as default selected item
+		comboBoxStart.setSelectedItem(nodes[23]);//set as default selected item
 		
 		JLabel lbDestLabel = new JLabel("Destination:");
 		GridBagConstraints gbc_lbDestLabel = new GridBagConstraints();
