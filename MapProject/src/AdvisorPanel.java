@@ -206,6 +206,7 @@ public class AdvisorPanel extends JPanel {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
 		    	pathSelected = path1;
+		    	System.out.println("Selected: " + pathSelected);
 		    }
 		});
 		
@@ -221,6 +222,7 @@ public class AdvisorPanel extends JPanel {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
 		    	pathSelected = path2;
+		    	System.out.println("Selected: " + pathSelected);
 		    }
 		});
 		
@@ -236,6 +238,7 @@ public class AdvisorPanel extends JPanel {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
 		    	pathSelected = path3;
+		    	System.out.println("Selected: " + pathSelected);
 		    }
 		});
 	}
