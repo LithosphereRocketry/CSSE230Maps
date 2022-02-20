@@ -40,10 +40,11 @@ public class RouterPanel extends JPanel {
 		
 		JLabel lbStartLabel = new JLabel("Start:");
 		GridBagConstraints gbc_lbStartLabel = new GridBagConstraints();
-		gbc_lbStartLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_lbStartLabel.insets = new Insets(0, 15, 5, 5);
 		gbc_lbStartLabel.anchor = GridBagConstraints.EAST;
 		gbc_lbStartLabel.gridx = 4;
 		gbc_lbStartLabel.gridy = 1;
+		lbStartLabel.setForeground(Color.WHITE);
 		lbStartLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(lbStartLabel, gbc_lbStartLabel);
 		
@@ -52,7 +53,7 @@ public class RouterPanel extends JPanel {
 		
 		comboBoxStart = new JComboBox<>(nodes);
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.insets = new Insets(5, 0, 5, 5);
+		gbc_comboBox.insets = new Insets(5, 30, 5, 5);
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridx = 5;
 		gbc_comboBox.gridy = 1;
@@ -71,16 +72,17 @@ public class RouterPanel extends JPanel {
 		
 		JLabel lbDestLabel = new JLabel("Destination:");
 		GridBagConstraints gbc_lbDestLabel = new GridBagConstraints();
-		gbc_lbDestLabel.insets = new Insets(0, 0, 10, 5);
+		gbc_lbDestLabel.insets = new Insets(0, 15, 10, 5);
 		gbc_lbDestLabel.anchor = GridBagConstraints.EAST;
 		gbc_lbDestLabel.gridx = 4;
 		gbc_lbDestLabel.gridy = 3;
+		lbDestLabel.setForeground(Color.WHITE);
 		lbDestLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(lbDestLabel, gbc_lbDestLabel);
 		
 		comboBoxEnd = new JComboBox<>(nodes);
 		GridBagConstraints gbc_comboBoxEnd = new GridBagConstraints();
-		gbc_comboBoxEnd.insets = new Insets(0, 0, 5, 5);
+		gbc_comboBoxEnd.insets = new Insets(0, 30, 5, 5);
 		gbc_comboBoxEnd.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBoxEnd.gridx = 5;
 		gbc_comboBoxEnd.gridy = 3;
@@ -103,6 +105,7 @@ public class RouterPanel extends JPanel {
 		gbc_lblCostLabel.insets = new Insets(10, 0, 5, 5);
 		gbc_lblCostLabel.gridx = 4;
 		gbc_lblCostLabel.gridy = 5;
+		lblCostLabel.setForeground(Color.WHITE);
 		lblCostLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 16));
 		this.add(lblCostLabel, gbc_lblCostLabel);
 		
@@ -112,6 +115,7 @@ public class RouterPanel extends JPanel {
 		gbc_lblCostLabel_2.insets = new Insets(10, 0, 5, 5);
 		gbc_lblCostLabel_2.gridx = 5;
 		gbc_lblCostLabel_2.gridy = 5;
+		lblCostLabel_2.setForeground(Color.WHITE);
 		lblCostLabel_2.setFont(new Font("Apple Chancery", Font.PLAIN, 16));
 		this.add(lblCostLabel_2, gbc_lblCostLabel_2);
 		
@@ -122,16 +126,18 @@ public class RouterPanel extends JPanel {
 		gbc_rdbtnDistanceRadioButton.gridx = 5;
 		gbc_rdbtnDistanceRadioButton.gridy = 4;
 		rdbtnDistanceRadioButton.doClick();
+		rdbtnDistanceRadioButton.setForeground(Color.WHITE);
 		rdbtnDistanceRadioButton.setFont(new Font("Apple Chancery", Font.PLAIN, 15));
 		this.add(rdbtnDistanceRadioButton, gbc_rdbtnDistanceRadioButton);
 		
 		
 		JRadioButton rdbtnTimeRadioButton_1 = new JRadioButton("Time");
 		GridBagConstraints gbc_rdbtnTimeRadioButton_1 = new GridBagConstraints();
-		gbc_rdbtnTimeRadioButton_1.insets = new Insets(0, 0, 0, 15);
+		gbc_rdbtnTimeRadioButton_1.insets = new Insets(0, 20, 0, 0);
 		gbc_rdbtnTimeRadioButton_1.anchor = GridBagConstraints.EAST;
 		gbc_rdbtnTimeRadioButton_1.gridx = 5;
 		gbc_rdbtnTimeRadioButton_1.gridy = 4;
+		rdbtnTimeRadioButton_1.setForeground(Color.WHITE);
 		rdbtnTimeRadioButton_1.setFont(new Font("Apple Chancery", Font.PLAIN, 15));
 		this.add(rdbtnTimeRadioButton_1, gbc_rdbtnTimeRadioButton_1);
 		
@@ -163,7 +169,7 @@ public class RouterPanel extends JPanel {
 		
 		JButton btnGOButton = new JButton("GO");
 		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
-		gbc_btnGOButton.insets = new Insets(0, 0, 0, 15);
+		gbc_btnGOButton.insets = new Insets(0, 25, 0, 0);
 		gbc_btnGOButton.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnGOButton.anchor = GridBagConstraints.CENTER;
 		gbc_btnGOButton.gridx = 5;
@@ -198,7 +204,7 @@ public class RouterPanel extends JPanel {
 		gbc_drawAllButton.gridx = 6;
 		gbc_drawAllButton.gridy = 5;
 		this.add(drawAllButton, gbc_drawAllButton);
-		
+
 		drawAllButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
@@ -212,6 +218,7 @@ public class RouterPanel extends JPanel {
 		gbc_drawAllLabel.anchor = GridBagConstraints.EAST;
 		gbc_drawAllLabel.gridx = 7;
 		gbc_drawAllLabel.gridy = 5;
+		drawAllLabel.setForeground(Color.WHITE);
 		drawAllLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 14));
 		this.add(drawAllLabel, gbc_drawAllLabel);
 	}

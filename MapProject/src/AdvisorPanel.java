@@ -45,6 +45,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_lbStartLabel.anchor = GridBagConstraints.EAST;
 		gbc_lbStartLabel.gridx = 4;
 		gbc_lbStartLabel.gridy = 1;
+		lbStartLabel.setForeground(Color.WHITE);
 		lbStartLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(lbStartLabel, gbc_lbStartLabel);
 		
@@ -74,6 +75,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_lbDestLabel.anchor = GridBagConstraints.EAST;
 		gbc_lbDestLabel.gridx = 4;
 		gbc_lbDestLabel.gridy = 3;
+		lbDestLabel.setForeground(Color.WHITE);
 		lbDestLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(lbDestLabel, gbc_lbDestLabel);
 		
@@ -115,21 +117,23 @@ public class AdvisorPanel extends JPanel {
 		 
 		JRadioButton rdbtnDistanceRadioButton = new JRadioButton("Distance");
 		GridBagConstraints gbc_rdbtnDistanceRadioButton = new GridBagConstraints();
-		gbc_rdbtnDistanceRadioButton.insets = new Insets(0, 0, 0, 10);
+		gbc_rdbtnDistanceRadioButton.insets = new Insets(0, 0, 0, 100);
 		gbc_rdbtnDistanceRadioButton.anchor = GridBagConstraints.WEST;
-		gbc_rdbtnDistanceRadioButton.gridx = 4;
+		gbc_rdbtnDistanceRadioButton.gridx = 5;
 		gbc_rdbtnDistanceRadioButton.gridy = 4;
 		rdbtnDistanceRadioButton.doClick();
+		rdbtnDistanceRadioButton.setForeground(Color.WHITE);
 		rdbtnDistanceRadioButton.setFont(new Font("Apple Chancery", Font.PLAIN, 15));
 		this.add(rdbtnDistanceRadioButton, gbc_rdbtnDistanceRadioButton);
 		
 		
 		JRadioButton rdbtnTimeRadioButton_1 = new JRadioButton("Time");
 		GridBagConstraints gbc_rdbtnTimeRadioButton_1 = new GridBagConstraints();
-		gbc_rdbtnTimeRadioButton_1.insets = new Insets(0, 0, 0, 15);
+		gbc_rdbtnTimeRadioButton_1.insets = new Insets(0, 100, 0, 15);
 		gbc_rdbtnTimeRadioButton_1.anchor = GridBagConstraints.EAST;
 		gbc_rdbtnTimeRadioButton_1.gridx = 5;
 		gbc_rdbtnTimeRadioButton_1.gridy = 4;
+		rdbtnTimeRadioButton_1.setForeground(Color.WHITE);
 		rdbtnTimeRadioButton_1.setFont(new Font("Apple Chancery", Font.PLAIN, 15));
 		this.add(rdbtnTimeRadioButton_1, gbc_rdbtnTimeRadioButton_1);
 
@@ -206,6 +210,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_goDestLabel.anchor = GridBagConstraints.EAST;
 		gbc_goDestLabel.gridx = 7;
 		gbc_goDestLabel.gridy = 3;
+		goDestLabel.setForeground(Color.WHITE);
 		goDestLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(goDestLabel, gbc_goDestLabel);
 		
@@ -227,7 +232,7 @@ public class AdvisorPanel extends JPanel {
 		
 		JButton btnPath2Button = new JButton("Path2");
 		GridBagConstraints gbc_btnPath2Button = new GridBagConstraints();
-		gbc_btnPath2Button.insets = new Insets(15, 0, 0, 0);
+		gbc_btnPath2Button.insets = new Insets(3, 0, 0, 0);
 		gbc_btnPath2Button.anchor = GridBagConstraints.CENTER;
 		gbc_btnPath2Button.gridx = 5;
 		gbc_btnPath2Button.gridy = 8;

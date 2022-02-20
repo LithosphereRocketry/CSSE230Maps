@@ -1,6 +1,7 @@
 
 import javax.swing.JFrame;
 import java.awt.GridBagLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import javax.swing.JTabbedPane;
@@ -188,8 +189,11 @@ public class MainApp {
 		
 		AdvisorPanel tabPanel2 = new AdvisorPanel(panel);
 		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
+		tabPanel1.setBackground(new Color(50, 100, 150));
+		tabPanel2.setBackground(new Color(50, 100, 150));
 		tabbedPane.addChangeListener(new ChangeListener(){
 
+			
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				// TODO Auto-generated method stub
