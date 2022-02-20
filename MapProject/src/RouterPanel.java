@@ -149,8 +149,6 @@ public class RouterPanel extends JPanel {
 			}
 		});
 		
-		
-		
 		JButton btnGOButton = new JButton("GO");
 		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
 		gbc_btnGOButton.insets = new Insets(0, 0, 0, 60);

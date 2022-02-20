@@ -39,6 +39,11 @@ public class AdvisorPanel extends JPanel {
 	private String  start;
 	ArrayList<LinkedList<GraphNode>>  pathlist;
 	ArrayList<LinkedList<GraphNode>> paths;
+	LinkedList<GraphNode> path1;
+	LinkedList<GraphNode> path2;
+	LinkedList<GraphNode> path3;
+	LinkedList<GraphNode> pathSelected;
+	
 	
 	//Basic Constructor
 	public AdvisorPanel(Map map) {
@@ -179,6 +184,9 @@ public class AdvisorPanel extends JPanel {
 		    	
 		    	if(pathlist != null) {
 		    		paths = map.returnThreeRandomPaths(pathlist);
+		    		path1 = paths.get(0);
+		    		path2 = paths.get(1);
+		    		path3 = paths.get(2);
 		    	}
 		    	
 		    	if(paths != null) {
@@ -194,6 +202,12 @@ public class AdvisorPanel extends JPanel {
 		gbc_btnPath1Button.gridx = 5;
 		gbc_btnPath1Button.gridy = 7;
 		this.add(btnPath1Button, gbc_btnPath1Button);
+		btnPath1Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	pathSelected = path1;
+		    }
+		});
 		
 
 		JButton btnPath2Button = new JButton("2");
@@ -203,6 +217,12 @@ public class AdvisorPanel extends JPanel {
 		gbc_btnPath2Button.gridx = 5;
 		gbc_btnPath2Button.gridy = 7;
 		this.add(btnPath2Button, gbc_btnPath2Button);
+		btnPath2Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	pathSelected = path2;
+		    }
+		});
 		
 
 		JButton btnPath3Button = new JButton("3");
@@ -212,5 +232,11 @@ public class AdvisorPanel extends JPanel {
 		gbc_btnPath3Button.gridx = 5;
 		gbc_btnPath3Button.gridy = 7;
 		this.add(btnPath3Button, gbc_btnPath3Button);
+		btnPath3Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	pathSelected = path3;
+		    }
+		});
 	}
 }
