@@ -211,7 +211,6 @@ public class AdvisorPanel extends JPanel {
 		
 		JButton btnPath1Button = new JButton("Path1");
 		GridBagConstraints gbc_btnPath1Button = new GridBagConstraints();
-		btnPath1Button.setBackground(Color.GREEN);
 		gbc_btnPath1Button.insets = new Insets(80, 0, 0, 0);
 		gbc_btnPath1Button.anchor = GridBagConstraints.CENTER;
 		gbc_btnPath1Button.gridx = 5;
@@ -228,8 +227,7 @@ public class AdvisorPanel extends JPanel {
 		
 		JButton btnPath2Button = new JButton("Path2");
 		GridBagConstraints gbc_btnPath2Button = new GridBagConstraints();
-		btnPath2Button.setBackground(Color.MAGENTA);
-		gbc_btnPath2Button.insets = new Insets(11, 0, 0, 0);
+		gbc_btnPath2Button.insets = new Insets(15, 0, 0, 0);
 		gbc_btnPath2Button.anchor = GridBagConstraints.CENTER;
 		gbc_btnPath2Button.gridx = 5;
 		gbc_btnPath2Button.gridy = 8;
@@ -246,8 +244,7 @@ public class AdvisorPanel extends JPanel {
 
 		JButton btnPath3Button = new JButton("Path3");
 		GridBagConstraints gbc_btnPath3Button = new GridBagConstraints();
-		btnPath3Button.setBackground(Color.CYAN);
-		gbc_btnPath3Button.insets = new Insets(0, 0, 270, 0);
+		gbc_btnPath3Button.insets = new Insets(0, 0, 300, 0);
 		gbc_btnPath3Button.anchor = GridBagConstraints.CENTER;
 		gbc_btnPath3Button.gridx = 5;
 		gbc_btnPath3Button.gridy = 9;
