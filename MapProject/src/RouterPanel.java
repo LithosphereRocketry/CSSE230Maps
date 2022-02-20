@@ -7,8 +7,12 @@ import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -221,6 +225,24 @@ public class RouterPanel extends JPanel {
 		drawAllLabel.setForeground(Color.WHITE);
 		drawAllLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 14));
 		this.add(drawAllLabel, gbc_drawAllLabel);
+		
+		Image compass = null;
+		try {
+			compass = ImageIO.read(new File("src/3e9f6c3cee7acee07c84fc9cf57af011-modified.png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		compass = compass.getScaledInstance(100, 100, Image.SCALE_SMOOTH); 
+		
+		JLabel compassLabel = new JLabel(new ImageIcon(compass));
+		GridBagConstraints gbc_compassLabel = new GridBagConstraints();
+		gbc_compassLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_compassLabel.anchor = GridBagConstraints.WEST;
+		gbc_compassLabel.gridx = 7;
+		gbc_compassLabel.gridy = 7;
+		this.add(compassLabel, gbc_compassLabel);
 	}
 	public void setStart(Object name) {
 		comboBoxStart.setSelectedItem(name);
