@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -16,6 +17,7 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -49,7 +51,7 @@ public class AdvisorPanel extends JPanel {
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel_2.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel_2.columnWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, Double.MIN_VALUE};
+		gbl_panel_2.columnWeights = new double[]{1.0, 0.0, 1.0, 2.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, Double.MIN_VALUE};
 		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,Double.MIN_VALUE};
 		this.setLayout(gbl_panel_2);
 		
@@ -73,7 +75,7 @@ public class AdvisorPanel extends JPanel {
 		
 		JFormattedTextField textField = new JFormattedTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.insets = new Insets(0, 0, 5, 25);
+		gbc_textField.insets = new Insets(5, 0, 5, 25);
 		gbc_textField.anchor = GridBagConstraints.EAST;
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField.gridx = 5;
@@ -137,14 +139,18 @@ public class AdvisorPanel extends JPanel {
 			}
 		});
 		
+		ImageIcon routeIcon = new ImageIcon("src/router.png");
+		Image routeimage = routeIcon.getImage();
+		routeimage = routeimage.getScaledInstance(40, 20, Image.SCALE_SMOOTH);
+		routeIcon = new ImageIcon(routeimage);
+		JButton btnGOButton = new JButton();
+		btnGOButton.setIcon(routeIcon);
 		
-		JButton btnGOButton = new JButton("GO");
 		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
-		gbc_btnGOButton.insets = new Insets(150, 0, 0, 5);
-		gbc_btnGOButton.anchor = GridBagConstraints.EAST;
-		gbc_btnGOButton.fill = GridBagConstraints.HORIZONTAL;
-		gbc_btnGOButton.gridx = 5;
-		gbc_btnGOButton.gridy = 6;
+		gbc_btnGOButton.insets = new Insets(0, 0, 0, 5);
+		gbc_btnGOButton.anchor = GridBagConstraints.CENTER;
+		gbc_btnGOButton.gridx = 6;
+		gbc_btnGOButton.gridy = 3;
 		this.add(btnGOButton, gbc_btnGOButton);
 		
 		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
