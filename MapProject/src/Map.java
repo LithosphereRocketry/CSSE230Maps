@@ -25,6 +25,9 @@ public class Map extends ImagePanel implements MouseListener {
 	static final Color FIRST_PATH = Color.GREEN;
 	static final Color SECOND_PATH = Color.PINK;
 	static final Color THIRD_PATH = Color.ORANGE;
+	private LinkedList<GraphNode> path1;
+	private LinkedList<GraphNode> path2;
+	private LinkedList<GraphNode> path3;
 	
 	//Basic Constructor
 	public Map() throws Exception{
@@ -35,6 +38,9 @@ public class Map extends ImagePanel implements MouseListener {
 		drawFirst = false;
 		drawSecond = false;
 		drawThird = false;
+		path1 = new LinkedList<GraphNode>();
+		path2 = new LinkedList<GraphNode>();
+		path3 = new LinkedList<GraphNode>();
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -137,12 +143,18 @@ public class Map extends ImagePanel implements MouseListener {
 		repaint();
 	}
 	
-	public ArrayList<LinkedList<GraphNode>> travelPlannerDistance(){
-		return g.travelPlannerDistance(dis, start);
+	public void travelPlannerDistance() {	
+		setPaths(g.travelPlannerDistance(dis, start));
 	}
 	
-	public ArrayList<LinkedList<GraphNode>> travelPlannerTime(){
-		return g.travelPlannerTime(time, start);
+	public void travelPlannerTime(){
+		setPaths(g.travelPlannerTime(time, start));
+	}
+	
+	private void setPaths(ArrayList<LinkedList<GraphNode>> temp) {
+		path1 = temp.get(0);
+		path2 = temp.get(1);
+		path3 = temp.get(2);
 	}
 	
 	public Collection<String> getNodeNames(){
@@ -299,4 +311,18 @@ public class Map extends ImagePanel implements MouseListener {
 		router = r;
 		addMouseListener(this);
 	}
+
+	public LinkedList<GraphNode> getPath1() {
+		return path1;
+	}
+
+	public LinkedList<GraphNode> getPath2() {
+		return path2;
+	}
+
+	public LinkedList<GraphNode> getPath3() {
+		return path3;
+	}
+	
+	
 }
