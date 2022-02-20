@@ -9,8 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -34,9 +37,9 @@ public class AdvisorPanel extends JPanel {
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel_2.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_panel_2.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel_2.columnWeights = new double[]{1.0, 0.0, 1.0, 2.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, Double.MIN_VALUE};
-		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,Double.MIN_VALUE};
+		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,Double.MIN_VALUE};
 		this.setLayout(gbl_panel_2);
 		
 		JLabel lbStartLabel = new JLabel("Start:");
@@ -262,6 +265,24 @@ public class AdvisorPanel extends JPanel {
 		    	if(map.getPath3().size() > 0)map.setDrawThird();
 		    }
 		});
+		
+		Image pathImage = null;
+		try {
+			pathImage = ImageIO.read(new File("src/3e9f6c3cee7acee07c84fc9cf57af011-modified (1).png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		pathImage = pathImage.getScaledInstance(200, 100, Image.SCALE_SMOOTH); 
+		
+		JLabel pathImageLabel = new JLabel(new ImageIcon(pathImage));
+		GridBagConstraints gbc_pathImageLabel = new GridBagConstraints();
+		gbc_pathImageLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_pathImageLabel.anchor = GridBagConstraints.WEST;
+		gbc_pathImageLabel.gridx = 5;
+		gbc_pathImageLabel.gridy = 10;
+		this.add(pathImageLabel, gbc_pathImageLabel);
 	}
 
 	public String getSelectedStart() {
