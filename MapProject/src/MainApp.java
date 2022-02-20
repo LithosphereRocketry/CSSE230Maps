@@ -1,32 +1,16 @@
-import java.awt.Graphics;
 
-import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import java.awt.Dimension;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Image;
-
-import javax.swing.JPanel;
-import javax.swing.JScrollBar;
-
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import java.awt.Insets;
-import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Hashtable;
-import java.util.Timer;
 
-import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -37,7 +21,6 @@ import javax.swing.JScrollPane;
 public class MainApp {
 	public static final int DELAY = 50;
 	static JFrame frame = new JFrame("Hyerspace Route");
-	private Image bgImage;
 	
 	MainApp() {
 		
@@ -51,7 +34,7 @@ public class MainApp {
 	private void runApp() throws Exception {
 
 		// Frame
-		frame.setSize(500, 500);
+//		frame.setSize(500, 500);
 
 		// Component
 		initialize();
@@ -83,7 +66,7 @@ public class MainApp {
 		GraphicsComponent component = new GraphicsComponent();
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1050, 600);
+		frame.setBounds(100, 100, 1250, 700);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 750, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200 };
@@ -195,6 +178,7 @@ public class MainApp {
 		gbc_tabbedPane.gridheight = 5;
 		gbc_tabbedPane.gridx = 10;
 		gbc_tabbedPane.gridy = 0;
+		tabbedPane.setFont(new Font("Apple Chancery", Font.PLAIN, 14));
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 
 		RouterPanel tabPanel1 = new RouterPanel(panel);
