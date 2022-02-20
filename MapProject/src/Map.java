@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.Random;
 
 public class Map extends ImagePanel implements MouseListener {
 	public Graph g;
@@ -23,8 +22,8 @@ public class Map extends ImagePanel implements MouseListener {
 	private boolean drawThird;
 	private RouterPanel router;
 	static final Color FIRST_PATH = Color.GREEN;
-	static final Color SECOND_PATH = Color.PINK;
-	static final Color THIRD_PATH = Color.ORANGE;
+	static final Color SECOND_PATH = Color.MAGENTA;
+	static final Color THIRD_PATH = Color.CYAN;
 	private LinkedList<GraphNode> path1;
 	private LinkedList<GraphNode> path2;
 	private LinkedList<GraphNode> path3;
@@ -53,6 +52,16 @@ public class Map extends ImagePanel implements MouseListener {
 		if(drawThird) drawThird(g2d);
 	}
 	
+	public void drawOn(Graphics2D g2d) {
+		for(GraphNode g: g.getNodeList()) {
+			if(g.getSelected()) {
+				g.drawOn(g2d, SELECTED_NODE, false);
+			} else{
+				g.drawOn(g2d, NORMAL_COLOR, false);
+			}
+		}
+	}
+	
 	public void drawAll(Graphics2D g2d) {
 		for(GraphNode g: g.getNodeList()) {
 			if(g.getSelected()) {
@@ -64,29 +73,39 @@ public class Map extends ImagePanel implements MouseListener {
 	}
 	
 	public void drawFirst(Graphics2D g2d) {
-		
+		drawHelper(g2d, path1, FIRST_PATH);
 	}
 	
 	public void drawSecond(Graphics2D g2d) {
-		
+		drawHelper(g2d, path2, SECOND_PATH);
 	}
 
 	public void drawThird(Graphics2D g2d) {
-	
+		drawHelper(g2d, path3, THIRD_PATH);
 	}
-
-	/**
-	 * 
-	 * @param g2d used to draw all nodes and edges
-	 */
-	public void drawOn(Graphics2D g2d) {
-		for(GraphNode g: g.getNodeList()) {
-			if(g.getSelected()) {
-				g.drawOn(g2d, SELECTED_NODE, false);
-			} else{
-				g.drawOn(g2d, NORMAL_COLOR, false);
-			}
+	
+	private void drawHelper(Graphics2D g2d, LinkedList<GraphNode> path, Color color) {
+		int[] x = new int[path.size()];
+		int[] y = new int[path.size()];
+		
+		Iterator<GraphNode> ite = path.iterator();
+		int index = 0;
+		while(ite.hasNext()) {
+			GraphNode temp = ite.next();
+			x[index] = temp.getX();
+			y[index] = temp.getY();
+			index++;
 		}
+		
+		g2d.setColor(Color.RED);
+		g2d.fillOval(x[1] - 5, y[1] - 5, 10, 10);
+		for(int i = 0; i < x.length - 1; i++) {
+			g2d.setColor(color);
+			g2d.drawLine(x[i], y[i], x[i+1], y[i+1]);
+			g2d.setColor(Color.RED);
+			g2d.fillOval(x[i + 1] - 5, y[i + 1] - 5, 10, 10);
+		}
+
 	}
 	
 	/**
@@ -121,26 +140,6 @@ public class Map extends ImagePanel implements MouseListener {
 	 */
 	public void clear() throws Exception {
 		g.clear();
-	}
-	
-	public void setStart(String name) {
-		g.reset(start, des);
-		start = name;
-		g.getNode(start).setSelected();
-		if(des != null)g.getNode(des).setSelected();
-		repaint();
-	}
-	
-	public void setDes(String name) {
-		if(start == "") {
-			System.out.println("No starting planet selected");
-			return;
-		}
-		g.reset(start, des);
-		des = name;
-		g.getNode(des).setSelected();
-		g.getNode(start).setSelected();
-		repaint();
 	}
 	
 	public void travelPlannerDistance() {	
@@ -178,7 +177,8 @@ public class Map extends ImagePanel implements MouseListener {
 	}
 	
 	private ArrayList<ArrayList<String>> helper(ArrayList<LinkedList<GraphNode>> temp){
-		g.reset(start, null);
+		g.reset();
+		g.getNode(start).setSelected();
 		ArrayList<ArrayList<String>> temp1 = new ArrayList<ArrayList<String>>();
 		
 		for(LinkedList<GraphNode> list: temp) {
@@ -188,7 +188,7 @@ public class Map extends ImagePanel implements MouseListener {
 			while(ite.hasNext()) {
 				GraphNode n = ite.next();
 				n.setSelected();
-				str.add(n.name);
+				str.add(n.getName());
 			}
 			temp1.add(str);
 		}
@@ -213,7 +213,9 @@ public class Map extends ImagePanel implements MouseListener {
 	}
 	
 	public Graph.Path pathBetweenDist() {
-		g.reset(start, des);
+		g.reset();
+		g.getNode(start).setSelected();
+		g.getNode(des).setSelected();
 		Graph.Path temp = g.pathBetweenDist(start, des);
 		Iterator<GraphNode> ite = temp.iterator();
 		while(ite.hasNext()) {
@@ -224,7 +226,9 @@ public class Map extends ImagePanel implements MouseListener {
 	}
 	
 	public Graph.Path pathBetweenTime() {
-		g.reset(start, des);
+		g.reset();
+		g.getNode(start).setSelected();
+		g.getNode(des).setSelected();
 		Graph.Path temp = g.pathBetweenTime(start, des);
 		Iterator<GraphNode> ite = temp.iterator();
 		while(ite.hasNext()) {
@@ -247,29 +251,94 @@ public class Map extends ImagePanel implements MouseListener {
 	}
 	
 	public void setDrawFirst() {
-		if(drawFirst) drawFirst = false;
-		else this.drawFirst = true;
-		setDrawSecond();
-		setDrawThird();
+		
+			this.drawFirst = true;
+			this.drawSecond = false;
+			this.drawThird = false;
+		
+		
 		repaint();
 	}
 
 	public void setDrawSecond() {
-		if(drawSecond) drawSecond = false;
-		else this.drawSecond = true;
-		setDrawFirst();
-		setDrawThird();
+		
+			this.drawFirst = false;
+			this.drawSecond = true;
+			this.drawThird = false;
+		
+		
 		repaint();
 	}
 
 	public void setDrawThird() {
-		if(drawThird) drawThird = false;
-		else this.drawThird = true;
-		setDrawFirst();
-		setDrawSecond();
+		
+			this.drawFirst = false;
+			this.drawSecond = false;
+			this.drawThird = true;
+		
+		
+		repaint();
+	}
+	
+	public void setStart(String name) {
+		g.reset();
+		start = name;
+		g.getNode(start).setSelected();
+		if(des != null)g.getNode(des).setSelected();
+		repaint();
+	}
+	
+	public void setDes(String name) {
+		if(start == "") {
+			System.out.println("No starting planet selected");
+			return;
+		}
+		g.reset();
+		des = name;
+		g.getNode(des).setSelected();
+		g.getNode(start).setSelected();
+		repaint();
+	}
+	
+	public void drawThreePaths() {
+		drawFirst = true;
+		drawSecond = true;
+		drawThird = true;
+		repaint();
+	}
+	
+	public void reset() {
+		displayAll = false;
+		drawFirst = false;
+		drawSecond = false;
+		drawThird = false;
+		g.reset();
+		g.getNode(start).setSelected();
+		if(des != null) g.getNode(des).setSelected();
+		repaint();
+	}
+	
+	public void selectRecon(String start, String des) {
+		this.setStart(start);
+		this.setDes(des);
+	}
+	
+	public void selectAd(String name) {
+		g.reset();
+		start = name;
+		g.getNode(start).setSelected();
+		des = null;
 		repaint();
 	}
 
+	public void setAdStart(String name) {
+		g.reset();
+		g.getNode(start).reset();
+		start = name;
+		if(name != null) g.getNode(name).setSelected();
+		repaint();
+	}
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		for(GraphNode n : g.nodes.values()) {

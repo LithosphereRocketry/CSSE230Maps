@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
@@ -29,15 +30,12 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class AdvisorPanel extends JPanel {
-	boolean selectedTime = false;
-	boolean selectedDistance = true;
-	private Map map;
-	
+	private boolean selectedTime = false;
+	private boolean selectedDistance = true;
+	private String selectedStart;
 	
 	//Basic Constructor
 	public AdvisorPanel(Map map) {
-		this.map = map;
-		
 		Collection<String> list = map.getNodeNames();
 		Object[] nodes = list.toArray();
 		
@@ -49,19 +47,22 @@ public class AdvisorPanel extends JPanel {
 		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,Double.MIN_VALUE};
 		this.setLayout(gbl_panel_2);
 		
-		JComboBox comboBox = new JComboBox(nodes);
+		JComboBox<Object> comboBox = new JComboBox<>(nodes);
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
 		gbc_comboBox.insets = new Insets(5, 0, 5, 0);
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridx = 5;
 		gbc_comboBox.gridy = 1;
 		this.add(comboBox, gbc_comboBox);
+		selectedStart = (String) comboBox.getSelectedItem();
 		
 		comboBox.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	comboBox.setSelectedItem(comboBox.getSelectedItem());
-		    	map.setStart((String) comboBox.getSelectedItem());
+		    	map.reset();
+		    	selectedStart = (String) comboBox.getSelectedItem();
+		    	comboBox.setSelectedItem(selectedStart);
+		    	map.setAdStart((String) selectedStart);
 		    }
 		});
 		
@@ -105,6 +106,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_rdbtnDistanceRadioButton.anchor = GridBagConstraints.WEST;
 		gbc_rdbtnDistanceRadioButton.gridx = 4;
 		gbc_rdbtnDistanceRadioButton.gridy = 4;
+		rdbtnDistanceRadioButton.doClick();
 		this.add(rdbtnDistanceRadioButton, gbc_rdbtnDistanceRadioButton);
 		
 		
@@ -124,6 +126,7 @@ public class AdvisorPanel extends JPanel {
 				if(rdbtnDistanceRadioButton.isSelected()) {
 					rdbtnTimeRadioButton_1.setSelected(false);
 					selectedTime = false;
+					map.reset();
 				}
 			}
 		});
@@ -136,6 +139,7 @@ public class AdvisorPanel extends JPanel {
 				if(rdbtnTimeRadioButton_1.isSelected()) {
 					rdbtnDistanceRadioButton.setSelected(false);
 					selectedDistance = false;
+					map.reset();
 				}
 			}
 		});
@@ -166,19 +170,21 @@ public class AdvisorPanel extends JPanel {
 						lbINVALIDLabel.setText("Invalid Input");
 				  }
 
-		    	if(selectedDistance = true && selectedTime == false) {
+		    	if(selectedDistance && !selectedTime) {
 		    		map.setDis(temp);
 		    		map.travelPlannerDistance();
 			    } else {
 			    	map.setTime(temp);
 			    	map.travelPlannerTime();
 			    }
-			}
+		    	map.drawThreePaths();
+		    	}
 		    }
 		});
 		
-		JButton btnPath1Button = new JButton("1");
+		JButton btnPath1Button = new JButton("Path1");
 		GridBagConstraints gbc_btnPath1Button = new GridBagConstraints();
+		btnPath1Button.setBackground(Color.GREEN);
 		gbc_btnPath1Button.insets = new Insets(0, 0, 0, 20);
 		gbc_btnPath1Button.anchor = GridBagConstraints.WEST;
 		gbc_btnPath1Button.gridx = 5;
@@ -187,12 +193,11 @@ public class AdvisorPanel extends JPanel {
 		btnPath1Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-//		    	System.out.println("Selected: " + map.getPath1());
-		    	map.setDrawFirst();
+		    	if(map.getPath1().size() > 0) map.setDrawFirst();
 		    }
 		});
 		
-		JButton btnPath2Button = new JButton("2");
+		JButton btnPath2Button = new JButton("Path2");
 		GridBagConstraints gbc_btnPath2Button = new GridBagConstraints();
 		gbc_btnPath2Button.insets = new Insets(0, 10, 0, 10);
 		gbc_btnPath2Button.anchor = GridBagConstraints.CENTER;
@@ -202,13 +207,12 @@ public class AdvisorPanel extends JPanel {
 		btnPath2Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-//		    	System.out.println("Selected: " + map.getPath2());
-		    	map.setDrawSecond();
+		    	if(map.getPath2().size() > 0)map.setDrawSecond();
 		    }
 		});
 		
 
-		JButton btnPath3Button = new JButton("3");
+		JButton btnPath3Button = new JButton("Path3");
 		GridBagConstraints gbc_btnPath3Button = new GridBagConstraints();
 		gbc_btnPath3Button.insets = new Insets(0, 20, 0, 0);
 		gbc_btnPath3Button.anchor = GridBagConstraints.EAST;
@@ -218,9 +222,12 @@ public class AdvisorPanel extends JPanel {
 		btnPath3Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-//		    	System.out.println("Selected: " + map.getPath3());
-		    	map.setDrawThird();
+		    	if(map.getPath3().size() > 0)map.setDrawThird();
 		    }
 		});
+	}
+
+	public String getSelectedStart() {
+		return selectedStart;
 	}
 }

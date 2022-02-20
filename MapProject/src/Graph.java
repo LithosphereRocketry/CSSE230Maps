@@ -54,31 +54,6 @@ public class Graph{
 	}
 	
 	/**
-	 * give a new name to an existing planet without changing the graph (haven't tested, don't use it yet)
-	 * @param oldName for planet to be replaced
-	 * @param newName that's to be given
-	 * @return true if update successfully, false otherwise
-	 * @throws Exception 
-	 */
-	public boolean updateNodeName(String oldName, String newName) throws Exception{
-		if(!nodes.containsKey(oldName) || nodes.containsKey(newName)) return false;
-		GraphNode temp = nodes.get(oldName);
-		temp.setName(newName);
-		nodes.remove(oldName);
-		nodes.put(newName, temp);
-		write(nodes);
-		return true;
-	}
-	
-	public boolean updateNodePos(String name, int x, int y) throws Exception{
-		if(!nodes.containsKey(name)) return false;
-		nodes.get(name).setX(x);
-		nodes.get(name).setY(y);
-		write(nodes);
-		return true;
-	}
-	
-	/**
 	 * erase all data in xml file
 	 * @throws Exception ignore it
 	 */
@@ -116,22 +91,12 @@ public class Graph{
 	        return ll;
 	    }
 	 
-	 public void reset(String start, String end) {
+	 public void reset() {
 		 for(String key: nodes.keySet()) {
-			 if((start != null && !key.equals(start)) || (end != null && !key.equals(end))) {
-				 nodes.get(key).reset();
-			 }
+			nodes.get(key).reset();
 		 }
 	 }
 	 
-	 public String toString() {
-		 String s = "";
-		 for(String key: nodes.keySet()) {
-			 s += nodes.get(key).testString();
-		 }
-		 return s;
-	 }
-	
 	public Collection<GraphNode> getNodeList(){
 		return nodes.values();
 	}
@@ -144,6 +109,10 @@ public class Graph{
 		return nodes.get(n);
 	}
 	
+	public Hashtable<String, GraphNode> getNodes() {
+		return nodes;
+	}
+
 	public void setNodes(Hashtable<String, GraphNode> nodes) {
 		this.nodes = nodes;
 	}
@@ -213,7 +182,7 @@ public class Graph{
 		GraphNode current;
 		while((current = queue.poll()) != endNode) {
 			for(Edge e : current.getNeighbors().values()) {
-				GraphNode n = e.otherEnd;
+				GraphNode n = e.getOtherEnd();
 				double newH = current.gethValue()-current.heuristicDist(endNode)+n.heuristicDist(endNode)+e.getDCost();
 				if(newH < n.gethValue()) {
 					n.setLastNode(current);
@@ -250,7 +219,7 @@ public class Graph{
 		GraphNode current;
 		while((current = queue.poll()) != endNode) {
 			for(Edge e : current.getNeighbors().values()) {
-				GraphNode n = e.otherEnd;
+				GraphNode n = e.getOtherEnd();
 				double newH = current.gethValue()-current.heuristicTime(endNode)+n.heuristicTime(endNode)+e.getTCost();
 				if(newH < n.gethValue()) {
 					n.setLastNode(current);

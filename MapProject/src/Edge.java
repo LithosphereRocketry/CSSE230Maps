@@ -2,22 +2,20 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 public class Edge{
-	private double dCost; 		//distance cost of the edge
-	private double tCost; 		//time cost of the edge
+	private double dCost; 
+	private double tCost; 	
 		
-	GraphNode otherEnd;		//two ends of the edge. can be modified if the use separated nodes needed
+	private GraphNode otherEnd;		
 				
 	public Edge() {}
 		
-	//Edge Basic Constructor
 	public Edge(GraphNode end, double distanceCost, double timeCost) {
 		dCost = distanceCost;
 		tCost = timeCost;
 		otherEnd = end;
 	}
 	
-	public void drawOn(Graphics2D g2d, int x, int y, boolean selected, boolean draw) {
-		
+	public void drawOn(Graphics2D g2d, int x, int y, boolean selected,boolean draw) {	
 		if(draw) {
 			g2d.setColor(Color.YELLOW);
 			g2d.drawLine(otherEnd.getX(), otherEnd.getY(), x, y);
@@ -36,16 +34,25 @@ public class Edge{
 	
 	public void setTCost(double tCost) {this.tCost = tCost;}
 
-	public String toString() {
-		String s = "";
-		s += "      Time: " + tCost + "\n";
-		s += "      Distance: " + dCost + "\n";
-		return s;
-	}
-
 	public GraphNode getOtherEnd() { return otherEnd; }
 
 	public void setOtherEnd(GraphNode otherEnd) {this.otherEnd = otherEnd;}
+
+	public double getdCost() {
+		return dCost;
+	}
+
+	public void setdCost(double dCost) {
+		this.dCost = dCost;
+	}
+
+	public double gettCost() {
+		return tCost;
+	}
+
+	public void settCost(double tCost) {
+		this.tCost = tCost;
+	}
 
 }
 

@@ -1,4 +1,3 @@
-import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -6,27 +5,23 @@ import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.Collection;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.SwingWorker;
 
 public class RouterPanel extends JPanel {
 
 	private Map map;
-	public String cost;
-	boolean selectedTime = false;
-	boolean selectedDistance = true;
+	private String cost;
+	private boolean selectedTime = false;
+	private boolean selectedDistance = true;
+	private String selectedStart;
+	private String selectedDest;
 	
 	private JComboBox<String> comboBoxStart, comboBoxEnd;
 	
@@ -63,10 +58,12 @@ public class RouterPanel extends JPanel {
 		comboBoxStart.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	setStart(comboBoxStart.getSelectedItem());
+		    	selectedStart = (String) comboBoxStart.getSelectedItem();
+		    	setStart(selectedStart);
+		    	map.reset();
 		    }
 		});
-		comboBoxStart.setSelectedItem(nodes[23]);//set as default selected item
+		comboBoxStart.setSelectedItem(nodes[23]);//set as default selected item 
 		
 		JLabel lbDestLabel = new JLabel("Destination:");
 		GridBagConstraints gbc_lbDestLabel = new GridBagConstraints();
@@ -87,7 +84,9 @@ public class RouterPanel extends JPanel {
 		comboBoxEnd.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	setDest(comboBoxEnd.getSelectedItem());
+		    	selectedDest = (String) comboBoxEnd.getSelectedItem();
+		    	setDest(selectedDest);
+		    	map.reset();
 		    }
 		});
 		comboBoxEnd.setSelectedItem(nodes[1]);//set as default selected item
@@ -114,6 +113,7 @@ public class RouterPanel extends JPanel {
 		gbc_rdbtnDistanceRadioButton.anchor = GridBagConstraints.WEST;
 		gbc_rdbtnDistanceRadioButton.gridx = 5;
 		gbc_rdbtnDistanceRadioButton.gridy = 4;
+		rdbtnDistanceRadioButton.doClick();
 		this.add(rdbtnDistanceRadioButton, gbc_rdbtnDistanceRadioButton);
 		
 		
@@ -133,6 +133,7 @@ public class RouterPanel extends JPanel {
 				if(rdbtnDistanceRadioButton.isSelected()) {
 					rdbtnTimeRadioButton_1.setSelected(false);
 					selectedTime = false;
+					map.reset();
 				}
 			}
 		});
@@ -145,6 +146,7 @@ public class RouterPanel extends JPanel {
 				if(rdbtnTimeRadioButton_1.isSelected()) {
 					rdbtnDistanceRadioButton.setSelected(false);
 					selectedDistance = false;
+					map.reset();
 				}
 			}
 		});
@@ -161,7 +163,7 @@ public class RouterPanel extends JPanel {
 		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	if(selectedDistance = true && selectedTime == false) {
+		    	if(selectedDistance && !selectedTime) {
 		    		cost = map.pathBetweenDist().getCost();
 		    		lblCostLabel.setText("Distance:");
 		    		lblCostLabel_2.setText(cost + " Parsecs");
@@ -200,14 +202,12 @@ public class RouterPanel extends JPanel {
     	comboBoxEnd.setSelectedItem(name);
     	map.setDes((String) name);
 	}
-
 	
-//	
-//	public String getSelectedStart() {
-//		return selectedStart;
-//	}
-//	
-//	public String getSelectedDest() {
-//		return selectedDest;
-//	}
+	public String getSelectedStart() {
+		return selectedStart;
+	}
+	
+	public String getSelectedDest() {
+		return selectedDest;
+	}
 }

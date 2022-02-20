@@ -76,8 +76,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		}
 		
 		public void drawOn(Graphics2D g2d, Color color, boolean draw) {
-//			g2d.setColor(Color.RED);
-//			g2d.drawString(name, x + 5, y + 5);
+
 			g2d.setColor(color);
 			
 			if(this.selected || draw) {
@@ -98,21 +97,29 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		public void setName(String name) {
 			this.name = name;
 		}
-		
-		public int getX() {
-			return x;
+
+		public void setNeighbors(Hashtable<String, Edge> neighbors) {
+			this.neighbors = neighbors;
 		}
 
 		public void setX(int x) {
 			this.x = x;
 		}
 
-		public int getY() {
-			return y;
-		}
-
 		public void setY(int y) {
 			this.y = y;
+		}
+
+		public void setSelected(boolean selected) {
+			this.selected = selected;
+		}
+
+		public int getX() {
+			return x;
+		}
+
+		public int getY() {
+			return y;
 		}
 
 		public double gethValue() {
@@ -127,41 +134,9 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 			return neighbors;
 		}
 
-		public void setNeighbors(Hashtable<String, Edge> neighbors) {
-			this.neighbors = neighbors;
-		}
-		
-		//for test/debug use
-		public String testString() {
-			String s = "";
-			s += "    Planet: " + name +" H: " + hValue;
-			s += "\nCurrent location (" + x + ", " + y + ")\n\n"
-					+ "       Edges\n\n";
-			for(String key: neighbors.keySet()) {
-				s += "From " + this.name + " to " + key + "\n";
-				s += neighbors.get(key) + "\n";
-			}
-			return s;
-		}
-		
-		//for xml use, don't use for testing
-		public String toString() {
-			String s = "";
-//			s += "Planet: " + name;
-			s += name;
-//			s += "\nCurrent location (" + x + ", " + y + ")\n\n"
-//					+ "       Edges\n\n";
-//			for(String key: neighbors.keySet()) {
-//				s += "From " + this.name + " to " + key + "\n";
-//				s += neighbors.get(key) + "\n";
-//			}
-			return s;
-		}
-		
 		public int compareTo(GraphNode o) {
 			return ((Double) hValue).compareTo((Double) o.hValue);
 		}
-
 
 		public GraphNode getLastNode() {
 			return lastNode;
@@ -196,7 +171,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		for(String key: this.neighbors.keySet()) {
 			Edge neighborEdge = this.getNeighbors().get(key);
 			if(!firstPathEdited) {
-				if(!list.contains(neighborEdge.otherEnd)) {
+				if(!list.contains(neighborEdge.getOtherEnd())) {
 					if(neighborEdge.getDCost() + totalCost <= distanceConstraint) {
 						list.add(neighborEdge.getOtherEnd());
 						firstPathEdited = true;
@@ -205,7 +180,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 				}
 			} else { //create a new LinkedList for a new path
 				LinkedList<GraphNode> anotherList = (LinkedList<GraphNode>) listCopy.clone();
-				if(!listCopy.contains(neighborEdge.otherEnd)) {
+				if(!listCopy.contains(neighborEdge.getOtherEnd())) {
 					if(neighborEdge.getDCost() + totalCost <= distanceConstraint) {
 						anotherList.add(neighborEdge.getOtherEnd());
 						totalCost += neighborEdge.getDCost();
@@ -223,7 +198,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 		for(String key: this.neighbors.keySet()) {
 			Edge neighborEdge = this.getNeighbors().get(key);
 			if(!firstPathEdited) {
-				if(!list.contains(neighborEdge.otherEnd)) {
+				if(!list.contains(neighborEdge.getOtherEnd())) {
 					if(neighborEdge.getTCost() + totalCost <= timeConstraint) {
 						list.add(neighborEdge.getOtherEnd());
 						firstPathEdited = true;
@@ -232,7 +207,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 				}
 			} else { //create a new LinkedList for a new path
 				LinkedList<GraphNode> anotherList = (LinkedList<GraphNode>) listCopy.clone();
-				if(!listCopy.contains(neighborEdge.otherEnd)) {
+				if(!listCopy.contains(neighborEdge.getOtherEnd())) {
 					if(neighborEdge.getTCost() + totalCost <= timeConstraint) {
 						anotherList.add(neighborEdge.getOtherEnd());
 						totalCost += neighborEdge.getTCost();

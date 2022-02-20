@@ -15,6 +15,8 @@ import javax.swing.JScrollBar;
 
 import java.awt.GridBagConstraints;
 import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import java.awt.Insets;
 import java.awt.event.MouseListener;
@@ -120,8 +122,7 @@ public class MainApp {
 //		panel.addNode("Thyferra", 239, 527);
 //		panel.addNode("Umbara", 747, 378);
 //		panel.addNode("Honoghr", 1101, 533);
-//		panel.addNode("Byss", 383, 278);
-//		
+//		panel.addNode("Byss", 383, 278);	
 //		
 //		panel.addEdge("Tatooine", "Geonosis");
 //		panel.addEdge("Reecee", "Aphran");
@@ -177,10 +178,6 @@ public class MainApp {
 //		panel.addEdge("Ord Mantell", "Vortex");
 //		panel.addEdge("Ord Mantell", "Glee Anselm");
 		
-		
-		
-//		Graph graph = panel.g;
-		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.gridwidth = 10;
@@ -201,15 +198,28 @@ public class MainApp {
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 
 		RouterPanel tabPanel1 = new RouterPanel(panel);
-//		String start = tabPanel1.getSelectedStart();
-//		panel.setStart(start);
-//		String dest = tabPanel1.getSelectedDest();
-//		panel.setDes(dest);
+		panel.selectRecon(tabPanel1.getSelectedStart(), tabPanel1.getSelectedDest());
 		tabbedPane.addTab("Recommended Route", null, tabPanel1, null);
 		panel.setPanels(tabPanel1);
 		
 		AdvisorPanel tabPanel2 = new AdvisorPanel(panel);
 		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
+		tabbedPane.addChangeListener(new ChangeListener(){
+
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				// TODO Auto-generated method stub
+				if(tabbedPane.getSelectedIndex() == 1) {
+					panel.reset();
+					panel.selectAd(tabPanel2.getSelectedStart());
+				}
+				if(tabbedPane.getSelectedIndex() == 0) {
+					panel.reset();
+					panel.selectRecon(tabPanel1.getSelectedStart(), tabPanel1.getSelectedDest());
+				}
+			}
+			
+		});
 //		music();
 	}
 	
