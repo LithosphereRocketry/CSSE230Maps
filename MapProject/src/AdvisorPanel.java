@@ -75,10 +75,19 @@ public class AdvisorPanel extends JPanel {
 		this.add(textField, gbc_textField);
 		textField.setColumns(5);
 		
+		JLabel lbINVALIDLabel = new JLabel();
+		GridBagConstraints gbc_lbINVALIDLabel = new GridBagConstraints();
+		gbc_lbINVALIDLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_lbINVALIDLabel.anchor = GridBagConstraints.CENTER;
+		gbc_lbINVALIDLabel.gridx = 5;
+		gbc_lbINVALIDLabel.gridy = 6;
+		this.add(lbINVALIDLabel, gbc_lbINVALIDLabel);
+		
 		textField.addFocusListener(new FocusListener() {
 			@Override
 		    public void focusGained(FocusEvent e) {
 		        textField.setText(null); // Empty the text field when it receives focus
+		        lbINVALIDLabel.setText(null);
 		    }
 			
 
@@ -154,7 +163,7 @@ public class AdvisorPanel extends JPanel {
 		    		try {
 		    			temp = Integer.parseInt(input);
 		    		}catch (NumberFormatException e1) {
-						System.out.println("not a number");
+						lbINVALIDLabel.setText("Invalid Input");
 				  }
 
 		    	if(selectedDistance = true && selectedTime == false) {
@@ -183,7 +192,6 @@ public class AdvisorPanel extends JPanel {
 		    }
 		});
 		
-
 		JButton btnPath2Button = new JButton("2");
 		GridBagConstraints gbc_btnPath2Button = new GridBagConstraints();
 		gbc_btnPath2Button.insets = new Insets(0, 10, 0, 10);
