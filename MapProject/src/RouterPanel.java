@@ -103,7 +103,7 @@ public class RouterPanel extends JPanel {
 		gbc_lblCostLabel.insets = new Insets(10, 0, 5, 5);
 		gbc_lblCostLabel.gridx = 4;
 		gbc_lblCostLabel.gridy = 5;
-		lblCostLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
+		lblCostLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 16));
 		this.add(lblCostLabel, gbc_lblCostLabel);
 		
 		JLabel lblCostLabel_2 = new JLabel(cost);
@@ -112,7 +112,7 @@ public class RouterPanel extends JPanel {
 		gbc_lblCostLabel_2.insets = new Insets(10, 0, 5, 5);
 		gbc_lblCostLabel_2.gridx = 5;
 		gbc_lblCostLabel_2.gridy = 5;
-		lblCostLabel_2.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
+		lblCostLabel_2.setFont(new Font("Apple Chancery", Font.PLAIN, 16));
 		this.add(lblCostLabel_2, gbc_lblCostLabel_2);
 		
 		JRadioButton rdbtnDistanceRadioButton = new JRadioButton("Distance");
@@ -210,7 +210,7 @@ public class RouterPanel extends JPanel {
 		GridBagConstraints gbc_drawAllLabel = new GridBagConstraints();
 		gbc_drawAllLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_drawAllLabel.anchor = GridBagConstraints.EAST;
-		gbc_drawAllLabel.gridx = 5;
+		gbc_drawAllLabel.gridx = 7;
 		gbc_drawAllLabel.gridy = 5;
 		drawAllLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 14));
 		this.add(drawAllLabel, gbc_drawAllLabel);
