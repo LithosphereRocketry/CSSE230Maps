@@ -16,10 +16,10 @@
       <string>Ruusan</string>
       <object class="Edge">
        <void property="DCost">
-        <double>63.7808748764079</double>
+        <double>2.12602916254693</double>
        </void>
        <void property="TCost">
-        <double>7.986292937052077</double>
+        <double>1.4580909308225363</double>
        </void>
        <void property="otherEnd">
         <object class="GraphNode" id="GraphNode1">
@@ -35,10 +35,10 @@
            <string>Roche Asteroids</string>
            <object class="Edge">
             <void property="DCost">
-             <double>209.2868844433401</double>
+             <double>6.976229481444671</double>
             </void>
             <void property="TCost">
-             <double>14.466750998179934</double>
+             <double>2.641255285171176</double>
             </void>
             <void property="otherEnd">
              <object class="GraphNode" id="GraphNode2">
@@ -54,10 +54,10 @@
                 <string>Yavin</string>
                 <object class="Edge">
                  <void property="DCost">
-                  <double>247.226616690032</double>
+                  <double>8.240887223001065</double>
                  </void>
                  <void property="TCost">
-                  <double>15.723441629936875</double>
+                  <double>2.8706945541107407</double>
                  </void>
                  <void property="otherEnd">
                   <object class="GraphNode" id="GraphNode3">
@@ -73,10 +73,10 @@
                      <string>Roche Asteroids</string>
                      <object class="Edge">
                       <void property="DCost">
-                       <double>247.226616690032</double>
+                       <double>8.240887223001065</double>
                       </void>
                       <void property="TCost">
-                       <double>15.723441629936875</double>
+                       <double>2.8706945541107407</double>
                       </void>
                       <void property="otherEnd">
                        <object idref="GraphNode2"/>
@@ -87,10 +87,10 @@
                      <string>Kessel</string>
                      <object class="Edge">
                       <void property="DCost">
-                       <double>365.44356609468446</double>
+                       <double>12.181452203156148</double>
                       </void>
                       <void property="TCost">
-                       <double>19.116578305091224</double>
+                       <double>3.490193720004113</double>
                       </void>
                       <void property="otherEnd">
                        <object class="GraphNode" id="GraphNode4">
@@ -106,10 +106,10 @@
                           <string>Yavin</string>
                           <object class="Edge">
                            <void property="DCost">
-                            <double>365.44356609468446</double>
+                            <double>12.181452203156148</double>
                            </void>
                            <void property="TCost">
-                            <double>19.116578305091224</double>
+                            <double>3.490193720004113</double>
                            </void>
                            <void property="otherEnd">
                             <object idref="GraphNode3"/>
@@ -120,10 +120,10 @@
                           <string>Honoghr</string>
                           <object class="Edge">
                            <void property="DCost">
-                            <double>72.69112738154499</double>
+                            <double>2.423037579384833</double>
                            </void>
                            <void property="TCost">
-                            <double>8.525909182107501</double>
+                            <double>1.5566109274268998</double>
                            </void>
                            <void property="otherEnd">
                             <object class="GraphNode" id="GraphNode5">
@@ -139,10 +139,10 @@
                                <string>Gamorr</string>
                                <object class="Edge">
                                 <void property="DCost">
-                                 <double>381.27811371753296</double>
+                                 <double>12.7092704572511</double>
                                 </void>
                                 <void property="TCost">
-                                 <double>19.526344095030513</double>
+                                 <double>3.565006375485337</double>
                                 </void>
                                 <void property="otherEnd">
                                  <object class="GraphNode" id="GraphNode6">
@@ -158,10 +158,10 @@
                                     <string>Kamino</string>
                                     <object class="Edge">
                                      <void property="DCost">
-                                      <double>105.26157893552613</double>
+                                      <double>3.508719297850871</double>
                                      </void>
                                      <void property="TCost">
-                                      <double>10.259706571609449</double>
+                                      <double>1.8731575742181625</double>
                                      </void>
                                      <void property="otherEnd">
                                       <object class="GraphNode" id="GraphNode7">
@@ -177,10 +177,10 @@
                                          <string>Ruusan</string>
                                          <object class="Edge">
                                           <void property="DCost">
-                                           <double>372.58019271024057</double>
+                                           <double>12.41933975700802</double>
                                           </void>
                                           <void property="TCost">
-                                           <double>19.30233645728518</double>
+                                           <double>3.524108363403149</double>
                                           </void>
                                           <void property="otherEnd">
                                            <object idref="GraphNode1"/>
@@ -191,10 +191,10 @@
                                          <string>Tatooine</string>
                                          <object class="Edge">
                                           <void property="DCost">
-                                           <double>218.93606372637652</double>
+                                           <double>7.2978687908792175</double>
                                           </void>
                                           <void property="TCost">
-                                           <double>14.796488222763417</double>
+                                           <double>2.7014567904890163</double>
                                           </void>
                                           <void property="otherEnd">
                                            <object class="GraphNode" id="GraphNode8">
@@ -210,10 +210,10 @@
                                               <string>Geonosis</string>
                                               <object class="Edge">
                                                <void property="DCost">
-                                                <double>27.459060435491963</double>
+                                                <double>0.9153020145163988</double>
                                                </void>
                                                <void property="TCost">
-                                                <double>5.2401393526787015</double>
+                                                <double>0.956714175977548</double>
                                                </void>
                                                <void property="otherEnd">
                                                 <object class="GraphNode" id="GraphNode9">
@@ -229,10 +229,10 @@
                                                    <string>Dagobah</string>
                                                    <object class="Edge">
                                                     <void property="DCost">
-                                                     <double>441.0181402164768</double>
+                                                     <double>14.70060467388256</double>
                                                     </void>
                                                     <void property="TCost">
-                                                     <double>21.00043190547463</double>
+                                                     <double>3.8341367573265512</double>
                                                     </void>
                                                     <void property="otherEnd">
                                                      <object class="GraphNode" id="GraphNode10">
@@ -248,10 +248,10 @@
                                                         <string>Geonosis</string>
                                                         <object class="Edge">
                                                          <void property="DCost">
-                                                          <double>441.0181402164768</double>
+                                                          <double>14.70060467388256</double>
                                                          </void>
                                                          <void property="TCost">
-                                                          <double>21.00043190547463</double>
+                                                          <double>3.8341367573265512</double>
                                                          </void>
                                                          <void property="otherEnd">
                                                           <object idref="GraphNode9"/>
@@ -262,10 +262,10 @@
                                                         <string>Thyferra</string>
                                                         <object class="Edge">
                                                          <void property="DCost">
-                                                          <double>437.35226076927967</double>
+                                                          <double>14.578408692309322</double>
                                                          </void>
                                                          <void property="TCost">
-                                                          <double>20.912968722046127</double>
+                                                          <double>3.8181682378215505</double>
                                                          </void>
                                                          <void property="otherEnd">
                                                           <object class="GraphNode" id="GraphNode11">
@@ -281,10 +281,10 @@
                                                              <string>Dagobah</string>
                                                              <object class="Edge">
                                                               <void property="DCost">
-                                                               <double>437.35226076927967</double>
+                                                               <double>14.578408692309322</double>
                                                               </void>
                                                               <void property="TCost">
-                                                               <double>20.912968722046127</double>
+                                                               <double>3.8181682378215505</double>
                                                               </void>
                                                               <void property="otherEnd">
                                                                <object idref="GraphNode10"/>
@@ -295,10 +295,10 @@
                                                              <string>Byss</string>
                                                              <object class="Edge">
                                                               <void property="DCost">
-                                                               <double>287.64040050034697</double>
+                                                               <double>9.588013350011567</double>
                                                               </void>
                                                               <void property="TCost">
-                                                               <double>16.959964637355437</double>
+                                                               <double>3.0964517354564993</double>
                                                               </void>
                                                               <void property="otherEnd">
                                                                <object class="GraphNode" id="GraphNode12">
@@ -314,10 +314,10 @@
                                                                   <string>Selvaris</string>
                                                                   <object class="Edge">
                                                                    <void property="DCost">
-                                                                    <double>166.20770138594662</double>
+                                                                    <double>5.540256712864887</double>
                                                                    </void>
                                                                    <void property="TCost">
-                                                                    <double>12.892156583983404</double>
+                                                                    <double>2.3537749919788187</double>
                                                                    </void>
                                                                    <void property="otherEnd">
                                                                     <object class="GraphNode" id="GraphNode13">
@@ -333,10 +333,10 @@
                                                                        <string>Byss</string>
                                                                        <object class="Edge">
                                                                         <void property="DCost">
-                                                                         <double>166.20770138594662</double>
+                                                                         <double>5.540256712864887</double>
                                                                         </void>
                                                                         <void property="TCost">
-                                                                         <double>12.892156583983404</double>
+                                                                         <double>2.3537749919788187</double>
                                                                         </void>
                                                                         <void property="otherEnd">
                                                                          <object idref="GraphNode12"/>
@@ -347,10 +347,10 @@
                                                                        <string>Reecee</string>
                                                                        <object class="Edge">
                                                                         <void property="DCost">
-                                                                         <double>54.45181356024793</double>
+                                                                         <double>1.8150604520082643</double>
                                                                         </void>
                                                                         <void property="TCost">
-                                                                         <double>7.37914721090777</double>
+                                                                         <double>1.3472417941885058</double>
                                                                         </void>
                                                                         <void property="otherEnd">
                                                                          <object class="GraphNode" id="GraphNode14">
@@ -366,10 +366,10 @@
                                                                             <string>Corratos</string>
                                                                             <object class="Edge">
                                                                              <void property="DCost">
-                                                                              <double>80.06247560499239</double>
+                                                                              <double>2.6687491868330797</double>
                                                                              </void>
                                                                              <void property="TCost">
-                                                                              <double>8.947763720896544</double>
+                                                                              <double>1.6336306763871324</double>
                                                                              </void>
                                                                              <void property="otherEnd">
                                                                               <object class="GraphNode" id="GraphNode15">
@@ -385,10 +385,10 @@
                                                                                  <string>Reecee</string>
                                                                                  <object class="Edge">
                                                                                   <void property="DCost">
-                                                                                   <double>80.06247560499239</double>
+                                                                                   <double>2.6687491868330797</double>
                                                                                   </void>
                                                                                   <void property="TCost">
-                                                                                   <double>8.947763720896544</double>
+                                                                                   <double>1.6336306763871324</double>
                                                                                   </void>
                                                                                   <void property="otherEnd">
                                                                                    <object idref="GraphNode14"/>
@@ -399,10 +399,10 @@
                                                                                  <string>Coruscant</string>
                                                                                  <object class="Edge">
                                                                                   <void property="DCost">
-                                                                                   <double>76.55063683601855</double>
+                                                                                   <double>2.5516878945339516</double>
                                                                                   </void>
                                                                                   <void property="TCost">
-                                                                                   <double>8.749322078653783</double>
+                                                                                   <double>1.5974003551188887</double>
                                                                                   </void>
                                                                                   <void property="otherEnd">
                                                                                    <object class="GraphNode" id="GraphNode16">
@@ -418,10 +418,10 @@
                                                                                       <string>Corratos</string>
                                                                                       <object class="Edge">
                                                                                        <void property="DCost">
-                                                                                        <double>76.55063683601855</double>
+                                                                                        <double>2.5516878945339516</double>
                                                                                        </void>
                                                                                        <void property="TCost">
-                                                                                        <double>8.749322078653783</double>
+                                                                                        <double>1.5974003551188887</double>
                                                                                        </void>
                                                                                        <void property="otherEnd">
                                                                                         <object idref="GraphNode15"/>
@@ -432,10 +432,10 @@
                                                                                       <string>Byss</string>
                                                                                       <object class="Edge">
                                                                                        <void property="DCost">
-                                                                                        <double>146.48549416239138</double>
+                                                                                        <double>4.882849805413046</double>
                                                                                        </void>
                                                                                        <void property="TCost">
-                                                                                        <double>12.103119191447773</double>
+                                                                                        <double>2.2097171324432106</double>
                                                                                        </void>
                                                                                        <void property="otherEnd">
                                                                                         <object idref="GraphNode12"/>
@@ -446,10 +446,10 @@
                                                                                       <string>Reecee</string>
                                                                                       <object class="Edge">
                                                                                        <void property="DCost">
-                                                                                        <double>100.16985574512923</double>
+                                                                                        <double>3.3389951915043077</double>
                                                                                        </void>
                                                                                        <void property="TCost">
-                                                                                        <double>10.00848918394426</double>
+                                                                                        <double>1.827291764197581</double>
                                                                                        </void>
                                                                                        <void property="otherEnd">
                                                                                         <object idref="GraphNode14"/>
@@ -460,10 +460,10 @@
                                                                                       <string>Alderaan</string>
                                                                                       <object class="Edge">
                                                                                        <void property="DCost">
-                                                                                        <double>93.03762679690406</double>
+                                                                                        <double>3.101254226563469</double>
                                                                                        </void>
                                                                                        <void property="TCost">
-                                                                                        <double>9.645601422249628</double>
+                                                                                        <double>1.7610378265566782</double>
                                                                                        </void>
                                                                                        <void property="otherEnd">
                                                                                         <object class="GraphNode" id="GraphNode17">
@@ -479,10 +479,10 @@
                                                                                            <string>Umbara</string>
                                                                                            <object class="Edge">
                                                                                             <void property="DCost">
-                                                                                             <double>202.72641663088706</double>
+                                                                                             <double>6.757547221029569</double>
                                                                                             </void>
                                                                                             <void property="TCost">
-                                                                                             <double>14.238202717719926</double>
+                                                                                             <double>2.599528268942188</double>
                                                                                             </void>
                                                                                             <void property="otherEnd">
                                                                                              <object class="GraphNode" id="GraphNode18">
@@ -498,10 +498,10 @@
                                                                                                 <string>Roche Asteroids</string>
                                                                                                 <object class="Edge">
                                                                                                  <void property="DCost">
-                                                                                                  <double>188.8200201249857</double>
+                                                                                                  <double>6.294000670832856</double>
                                                                                                  </void>
                                                                                                  <void property="TCost">
-                                                                                                  <double>13.741179721005969</double>
+                                                                                                  <double>2.508784699975838</double>
                                                                                                  </void>
                                                                                                  <void property="otherEnd">
                                                                                                   <object idref="GraphNode2"/>
@@ -512,10 +512,10 @@
                                                                                                 <string>Tholatin</string>
                                                                                                 <object class="Edge">
                                                                                                  <void property="DCost">
-                                                                                                  <double>66.60330322138685</double>
+                                                                                                  <double>2.2201101073795617</double>
                                                                                                  </void>
                                                                                                  <void property="TCost">
-                                                                                                  <double>8.16108468412054</double>
+                                                                                                  <double>1.4900033917342477</double>
                                                                                                  </void>
                                                                                                  <void property="otherEnd">
                                                                                                   <object idref="GraphNode0"/>
@@ -526,10 +526,10 @@
                                                                                                 <string>Tarhassan</string>
                                                                                                 <object class="Edge">
                                                                                                  <void property="DCost">
-                                                                                                  <double>46.8187996428785</double>
+                                                                                                  <double>1.5606266547626169</double>
                                                                                                  </void>
                                                                                                  <void property="TCost">
-                                                                                                  <double>6.842426444097043</double>
+                                                                                                  <double>1.2492504371672706</double>
                                                                                                  </void>
                                                                                                  <void property="otherEnd">
                                                                                                   <object class="GraphNode" id="GraphNode19">
@@ -545,10 +545,10 @@
                                                                                                      <string>Ruusan</string>
                                                                                                      <object class="Edge">
                                                                                                       <void property="DCost">
-                                                                                                       <double>115.41230437002807</double>
+                                                                                                       <double>3.847076812334269</double>
                                                                                                       </void>
                                                                                                       <void property="TCost">
-                                                                                                       <double>10.743011885408489</double>
+                                                                                                       <double>1.9613966483947782</double>
                                                                                                       </void>
                                                                                                       <void property="otherEnd">
                                                                                                        <object idref="GraphNode1"/>
@@ -559,10 +559,10 @@
                                                                                                      <string>Umbara</string>
                                                                                                      <object class="Edge">
                                                                                                       <void property="DCost">
-                                                                                                       <double>46.8187996428785</double>
+                                                                                                       <double>1.5606266547626169</double>
                                                                                                       </void>
                                                                                                       <void property="TCost">
-                                                                                                       <double>6.842426444097043</double>
+                                                                                                       <double>1.2492504371672706</double>
                                                                                                       </void>
                                                                                                       <void property="otherEnd">
                                                                                                        <object idref="GraphNode18"/>
@@ -573,10 +573,10 @@
                                                                                                      <string>Corelia</string>
                                                                                                      <object class="Edge">
                                                                                                       <void property="DCost">
-                                                                                                       <double>222.80484734403782</double>
+                                                                                                       <double>7.426828244801261</double>
                                                                                                       </void>
                                                                                                       <void property="TCost">
-                                                                                                       <double>14.926648898665695</double>
+                                                                                                       <double>2.7252207699196154</double>
                                                                                                       </void>
                                                                                                       <void property="otherEnd">
                                                                                                        <object class="GraphNode" id="GraphNode20">
@@ -592,10 +592,10 @@
                                                                                                           <string>Byss</string>
                                                                                                           <object class="Edge">
                                                                                                            <void property="DCost">
-                                                                                                            <double>165.07574019219177</double>
+                                                                                                            <double>5.502524673073059</double>
                                                                                                            </void>
                                                                                                            <void property="TCost">
-                                                                                                            <double>12.848180423398162</double>
+                                                                                                            <double>2.345746080263816</double>
                                                                                                            </void>
                                                                                                            <void property="otherEnd">
                                                                                                             <object idref="GraphNode12"/>
@@ -606,10 +606,10 @@
                                                                                                           <string>Naboo</string>
                                                                                                           <object class="Edge">
                                                                                                            <void property="DCost">
-                                                                                                            <double>466.47615158762403</double>
+                                                                                                            <double>15.5492050529208</double>
                                                                                                            </void>
                                                                                                            <void property="TCost">
-                                                                                                            <double>21.598058977316086</double>
+                                                                                                            <double>3.943248033400993</double>
                                                                                                            </void>
                                                                                                            <void property="otherEnd">
                                                                                                             <object class="GraphNode" id="GraphNode21">
@@ -625,10 +625,10 @@
                                                                                                                <string>Geonosis</string>
                                                                                                                <object class="Edge">
                                                                                                                 <void property="DCost">
-                                                                                                                 <double>242.1425200166216</double>
+                                                                                                                 <double>8.071417333887387</double>
                                                                                                                 </void>
                                                                                                                 <void property="TCost">
-                                                                                                                 <double>15.560929278697389</double>
+                                                                                                                 <double>2.841023993895051</double>
                                                                                                                 </void>
                                                                                                                 <void property="otherEnd">
                                                                                                                  <object idref="GraphNode9"/>
@@ -639,10 +639,10 @@
                                                                                                                <string>Dagobah</string>
                                                                                                                <object class="Edge">
                                                                                                                 <void property="DCost">
-                                                                                                                 <double>270.2369330791038</double>
+                                                                                                                 <double>9.00789776930346</double>
                                                                                                                 </void>
                                                                                                                 <void property="TCost">
-                                                                                                                 <double>16.438884788181458</double>
+                                                                                                                 <double>3.0013160062385067</double>
                                                                                                                 </void>
                                                                                                                 <void property="otherEnd">
                                                                                                                  <object idref="GraphNode10"/>
@@ -653,10 +653,10 @@
                                                                                                                <string>Tatooine</string>
                                                                                                                <object class="Edge">
                                                                                                                 <void property="DCost">
-                                                                                                                 <double>224.1182723474371</double>
+                                                                                                                 <double>7.470609078247904</double>
                                                                                                                 </void>
                                                                                                                 <void property="TCost">
-                                                                                                                 <double>14.970580227480735</double>
+                                                                                                                 <double>2.733241496510673</double>
                                                                                                                 </void>
                                                                                                                 <void property="otherEnd">
                                                                                                                  <object idref="GraphNode8"/>
@@ -667,10 +667,10 @@
                                                                                                                <string>Thyferra</string>
                                                                                                                <object class="Edge">
                                                                                                                 <void property="DCost">
-                                                                                                                 <double>302.00165562460086</double>
+                                                                                                                 <double>10.066721854153363</double>
                                                                                                                 </void>
                                                                                                                 <void property="TCost">
-                                                                                                                 <double>17.378194832162542</double>
+                                                                                                                 <double>3.1728097727650426</double>
                                                                                                                 </void>
                                                                                                                 <void property="otherEnd">
                                                                                                                  <object idref="GraphNode11"/>
@@ -681,10 +681,10 @@
                                                                                                                <string>Corelia</string>
                                                                                                                <object class="Edge">
                                                                                                                 <void property="DCost">
-                                                                                                                 <double>466.47615158762403</double>
+                                                                                                                 <double>15.5492050529208</double>
                                                                                                                 </void>
                                                                                                                 <void property="TCost">
-                                                                                                                 <double>21.598058977316086</double>
+                                                                                                                 <double>3.943248033400993</double>
                                                                                                                 </void>
                                                                                                                 <void property="otherEnd">
                                                                                                                  <object idref="GraphNode20"/>
@@ -706,10 +706,10 @@
                                                                                                           <string>Thyferra</string>
                                                                                                           <object class="Edge">
                                                                                                            <void property="DCost">
-                                                                                                            <double>309.58843647655834</double>
+                                                                                                            <double>10.319614549218612</double>
                                                                                                            </void>
                                                                                                            <void property="TCost">
-                                                                                                            <double>17.595125361206108</double>
+                                                                                                            <double>3.2124156874879395</double>
                                                                                                            </void>
                                                                                                            <void property="otherEnd">
                                                                                                             <object idref="GraphNode11"/>
@@ -720,10 +720,10 @@
                                                                                                           <string>Tarhassan</string>
                                                                                                           <object class="Edge">
                                                                                                            <void property="DCost">
-                                                                                                            <double>222.80484734403782</double>
+                                                                                                            <double>7.426828244801261</double>
                                                                                                            </void>
                                                                                                            <void property="TCost">
-                                                                                                            <double>14.926648898665695</double>
+                                                                                                            <double>2.7252207699196154</double>
                                                                                                            </void>
                                                                                                            <void property="otherEnd">
                                                                                                             <object idref="GraphNode19"/>
@@ -734,10 +734,10 @@
                                                                                                           <string>Coruscant</string>
                                                                                                           <object class="Edge">
                                                                                                            <void property="DCost">
-                                                                                                            <double>176.0113632695344</double>
+                                                                                                            <double>5.8670454423178136</double>
                                                                                                            </void>
                                                                                                            <void property="TCost">
-                                                                                                            <double>13.266927423843638</double>
+                                                                                                            <double>2.422198472941021</double>
                                                                                                            </void>
                                                                                                            <void property="otherEnd">
                                                                                                             <object idref="GraphNode16"/>
@@ -748,10 +748,10 @@
                                                                                                           <string>Alderaan</string>
                                                                                                           <object class="Edge">
                                                                                                            <void property="DCost">
-                                                                                                            <double>158.80806024884254</double>
+                                                                                                            <double>5.2936020082947515</double>
                                                                                                            </void>
                                                                                                            <void property="TCost">
-                                                                                                            <double>12.601907008419104</double>
+                                                                                                            <double>2.3007829120311962</double>
                                                                                                            </void>
                                                                                                            <void property="otherEnd">
                                                                                                             <object idref="GraphNode17"/>
@@ -784,10 +784,10 @@
                                                                                                 <string>Alderaan</string>
                                                                                                 <object class="Edge">
                                                                                                  <void property="DCost">
-                                                                                                  <double>202.72641663088706</double>
+                                                                                                  <double>6.757547221029569</double>
                                                                                                  </void>
                                                                                                  <void property="TCost">
-                                                                                                  <double>14.238202717719926</double>
+                                                                                                  <double>2.599528268942188</double>
                                                                                                  </void>
                                                                                                  <void property="otherEnd">
                                                                                                   <object idref="GraphNode17"/>
@@ -809,10 +809,10 @@
                                                                                            <string>Coruscant</string>
                                                                                            <object class="Edge">
                                                                                             <void property="DCost">
-                                                                                             <double>93.03762679690406</double>
+                                                                                             <double>3.101254226563469</double>
                                                                                             </void>
                                                                                             <void property="TCost">
-                                                                                             <double>9.645601422249628</double>
+                                                                                             <double>1.7610378265566782</double>
                                                                                             </void>
                                                                                             <void property="otherEnd">
                                                                                              <object idref="GraphNode16"/>
@@ -823,10 +823,10 @@
                                                                                            <string>Null</string>
                                                                                            <object class="Edge">
                                                                                             <void property="DCost">
-                                                                                             <double>264.6828290615015</double>
+                                                                                             <double>8.822760968716716</double>
                                                                                             </void>
                                                                                             <void property="TCost">
-                                                                                             <double>16.269075851488967</double>
+                                                                                             <double>2.9703132778743586</double>
                                                                                             </void>
                                                                                             <void property="otherEnd">
                                                                                              <object class="GraphNode" id="GraphNode22">
@@ -842,10 +842,10 @@
                                                                                                 <string>Yavin</string>
                                                                                                 <object class="Edge">
                                                                                                  <void property="DCost">
-                                                                                                  <double>255.12545933324648</double>
+                                                                                                  <double>8.504181977774882</double>
                                                                                                  </void>
                                                                                                  <void property="TCost">
-                                                                                                  <double>15.972647223714874</double>
+                                                                                                  <double>2.9161930625003007</double>
                                                                                                  </void>
                                                                                                  <void property="otherEnd">
                                                                                                   <object idref="GraphNode3"/>
@@ -856,10 +856,10 @@
                                                                                                 <string>Ord Mantell</string>
                                                                                                 <object class="Edge">
                                                                                                  <void property="DCost">
-                                                                                                  <double>128.87590930814028</double>
+                                                                                                  <double>4.295863643604676</double>
                                                                                                  </void>
                                                                                                  <void property="TCost">
-                                                                                                  <double>11.35235258913941</double>
+                                                                                                  <double>2.0726465312746107</double>
                                                                                                  </void>
                                                                                                  <void property="otherEnd">
                                                                                                   <object class="GraphNode" id="GraphNode23">
@@ -875,10 +875,10 @@
                                                                                                      <string>Vortex</string>
                                                                                                      <object class="Edge">
                                                                                                       <void property="DCost">
-                                                                                                       <double>114.58621208504974</double>
+                                                                                                       <double>3.819540402834991</double>
                                                                                                       </void>
                                                                                                       <void property="TCost">
-                                                                                                       <double>10.704494947686683</double>
+                                                                                                       <double>1.95436444984936</double>
                                                                                                       </void>
                                                                                                       <void property="otherEnd">
                                                                                                        <object class="GraphNode" id="GraphNode24">
@@ -894,10 +894,10 @@
                                                                                                           <string>Dorin</string>
                                                                                                           <object class="Edge">
                                                                                                            <void property="DCost">
-                                                                                                            <double>43.0</double>
+                                                                                                            <double>1.4333333333333333</double>
                                                                                                            </void>
                                                                                                            <void property="TCost">
-                                                                                                            <double>6.557438524302</double>
+                                                                                                            <double>1.1972189997378648</double>
                                                                                                            </void>
                                                                                                            <void property="otherEnd">
                                                                                                             <object class="GraphNode" id="GraphNode25">
@@ -913,10 +913,10 @@
                                                                                                                <string>Vortex</string>
                                                                                                                <object class="Edge">
                                                                                                                 <void property="DCost">
-                                                                                                                 <double>43.0</double>
+                                                                                                                 <double>1.4333333333333333</double>
                                                                                                                 </void>
                                                                                                                 <void property="TCost">
-                                                                                                                 <double>6.557438524302</double>
+                                                                                                                 <double>1.1972189997378648</double>
                                                                                                                 </void>
                                                                                                                 <void property="otherEnd">
                                                                                                                  <object idref="GraphNode24"/>
@@ -927,10 +927,10 @@
                                                                                                                <string>Glee Anselm</string>
                                                                                                                <object class="Edge">
                                                                                                                 <void property="DCost">
-                                                                                                                 <double>49.25444142409901</double>
+                                                                                                                 <double>1.6418147141366335</double>
                                                                                                                 </void>
                                                                                                                 <void property="TCost">
-                                                                                                                 <double>7.018150855040023</double>
+                                                                                                                 <double>1.2813331784265298</double>
                                                                                                                 </void>
                                                                                                                 <void property="otherEnd">
                                                                                                                  <object class="GraphNode" id="GraphNode26">
@@ -946,10 +946,10 @@
                                                                                                                     <string>Vortex</string>
                                                                                                                     <object class="Edge">
                                                                                                                      <void property="DCost">
-                                                                                                                      <double>62.00806399170998</double>
+                                                                                                                      <double>2.0669354663903325</double>
                                                                                                                      </void>
                                                                                                                      <void property="TCost">
-                                                                                                                      <double>7.87451992134822</double>
+                                                                                                                      <double>1.4376840634820756</double>
                                                                                                                      </void>
                                                                                                                      <void property="otherEnd">
                                                                                                                       <object idref="GraphNode24"/>
@@ -960,10 +960,10 @@
                                                                                                                     <string>Dorin</string>
                                                                                                                     <object class="Edge">
                                                                                                                      <void property="DCost">
-                                                                                                                      <double>49.25444142409901</double>
+                                                                                                                      <double>1.6418147141366335</double>
                                                                                                                      </void>
                                                                                                                      <void property="TCost">
-                                                                                                                      <double>7.018150855040023</double>
+                                                                                                                      <double>1.2813331784265298</double>
                                                                                                                      </void>
                                                                                                                      <void property="otherEnd">
                                                                                                                       <object idref="GraphNode25"/>
@@ -974,10 +974,10 @@
                                                                                                                     <string>Ord Mantell</string>
                                                                                                                     <object class="Edge">
                                                                                                                      <void property="DCost">
-                                                                                                                      <double>153.95129099815955</double>
+                                                                                                                      <double>5.131709699938652</double>
                                                                                                                      </void>
                                                                                                                      <void property="TCost">
-                                                                                                                      <double>12.40771094917026</double>
+                                                                                                                      <double>2.2653277246214625</double>
                                                                                                                      </void>
                                                                                                                      <void property="otherEnd">
                                                                                                                       <object idref="GraphNode23"/>
@@ -988,10 +988,10 @@
                                                                                                                     <string>Mobus</string>
                                                                                                                     <object class="Edge">
                                                                                                                      <void property="DCost">
-                                                                                                                      <double>292.2892403082946</double>
+                                                                                                                      <double>9.742974676943154</double>
                                                                                                                      </void>
                                                                                                                      <void property="TCost">
-                                                                                                                      <double>17.096468650229923</double>
+                                                                                                                      <double>3.1213738444702765</double>
                                                                                                                      </void>
                                                                                                                      <void property="otherEnd">
                                                                                                                       <object class="GraphNode" id="GraphNode27">
@@ -1007,10 +1007,10 @@
                                                                                                                          <string>Selvaris</string>
                                                                                                                          <object class="Edge">
                                                                                                                           <void property="DCost">
-                                                                                                                           <double>178.05897899291685</double>
+                                                                                                                           <double>5.935299299763895</double>
                                                                                                                           </void>
                                                                                                                           <void property="TCost">
-                                                                                                                           <double>13.343874212271219</double>
+                                                                                                                           <double>2.4362469701908087</double>
                                                                                                                           </void>
                                                                                                                           <void property="otherEnd">
                                                                                                                            <object idref="GraphNode13"/>
@@ -1021,10 +1021,10 @@
                                                                                                                          <string>Glee Anselm</string>
                                                                                                                          <object class="Edge">
                                                                                                                           <void property="DCost">
-                                                                                                                           <double>292.2892403082946</double>
+                                                                                                                           <double>9.742974676943154</double>
                                                                                                                           </void>
                                                                                                                           <void property="TCost">
-                                                                                                                           <double>17.096468650229923</double>
+                                                                                                                           <double>3.1213738444702765</double>
                                                                                                                           </void>
                                                                                                                           <void property="otherEnd">
                                                                                                                            <object idref="GraphNode26"/>
@@ -1057,10 +1057,10 @@
                                                                                                                <string>Bilbringi</string>
                                                                                                                <object class="Edge">
                                                                                                                 <void property="DCost">
-                                                                                                                 <double>25.495097567963924</double>
+                                                                                                                 <double>0.8498365855987975</double>
                                                                                                                 </void>
                                                                                                                 <void property="TCost">
-                                                                                                                 <double>5.049267032744845</double>
+                                                                                                                 <double>0.9218658175671758</double>
                                                                                                                 </void>
                                                                                                                 <void property="otherEnd">
                                                                                                                  <object class="GraphNode" id="GraphNode28">
@@ -1076,10 +1076,10 @@
                                                                                                                     <string>Dorin</string>
                                                                                                                     <object class="Edge">
                                                                                                                      <void property="DCost">
-                                                                                                                      <double>25.495097567963924</double>
+                                                                                                                      <double>0.8498365855987975</double>
                                                                                                                      </void>
                                                                                                                      <void property="TCost">
-                                                                                                                      <double>5.049267032744845</double>
+                                                                                                                      <double>0.9218658175671758</double>
                                                                                                                      </void>
                                                                                                                      <void property="otherEnd">
                                                                                                                       <object idref="GraphNode25"/>
@@ -1090,10 +1090,10 @@
                                                                                                                     <string>Reecee</string>
                                                                                                                     <object class="Edge">
                                                                                                                      <void property="DCost">
-                                                                                                                      <double>76.92203845452875</double>
+                                                                                                                      <double>2.5640679484842916</double>
                                                                                                                      </void>
                                                                                                                      <void property="TCost">
-                                                                                                                      <double>8.770520991054564</double>
+                                                                                                                      <double>1.6012707292910502</double>
                                                                                                                      </void>
                                                                                                                      <void property="otherEnd">
                                                                                                                       <object idref="GraphNode14"/>
@@ -1104,10 +1104,10 @@
                                                                                                                     <string>Aphran</string>
                                                                                                                     <object class="Edge">
                                                                                                                      <void property="DCost">
-                                                                                                                      <double>18.867962264113206</double>
+                                                                                                                      <double>0.6289320754704402</double>
                                                                                                                      </void>
                                                                                                                      <void property="TCost">
-                                                                                                                      <double>4.3437267713466055</double>
+                                                                                                                      <double>0.7930523787685402</double>
                                                                                                                      </void>
                                                                                                                      <void property="otherEnd">
                                                                                                                       <object class="GraphNode" id="GraphNode29">
@@ -1123,10 +1123,10 @@
                                                                                                                          <string>Corratos</string>
                                                                                                                          <object class="Edge">
                                                                                                                           <void property="DCost">
-                                                                                                                           <double>18.681541692269406</double>
+                                                                                                                           <double>0.6227180564089801</double>
                                                                                                                           </void>
                                                                                                                           <void property="TCost">
-                                                                                                                           <double>4.322214905840454</double>
+                                                                                                                           <double>0.7891248674379614</double>
                                                                                                                           </void>
                                                                                                                           <void property="otherEnd">
                                                                                                                            <object idref="GraphNode15"/>
@@ -1137,10 +1137,10 @@
                                                                                                                          <string>Reecee</string>
                                                                                                                          <object class="Edge">
                                                                                                                           <void property="DCost">
-                                                                                                                           <double>84.1486779456457</double>
+                                                                                                                           <double>2.8049559315215236</double>
                                                                                                                           </void>
                                                                                                                           <void property="TCost">
-                                                                                                                           <double>9.173258850901663</double>
+                                                                                                                           <double>1.6748002661575867</double>
                                                                                                                           </void>
                                                                                                                           <void property="otherEnd">
                                                                                                                            <object idref="GraphNode14"/>
@@ -1151,10 +1151,10 @@
                                                                                                                          <string>Bilbringi</string>
                                                                                                                          <object class="Edge">
                                                                                                                           <void property="DCost">
-                                                                                                                           <double>18.867962264113206</double>
+                                                                                                                           <double>0.6289320754704402</double>
                                                                                                                           </void>
                                                                                                                           <void property="TCost">
-                                                                                                                           <double>4.3437267713466055</double>
+                                                                                                                           <double>0.7930523787685402</double>
                                                                                                                           </void>
                                                                                                                           <void property="otherEnd">
                                                                                                                            <object idref="GraphNode28"/>
@@ -1198,10 +1198,10 @@
                                                                                                           <string>Ord Mantell</string>
                                                                                                           <object class="Edge">
                                                                                                            <void property="DCost">
-                                                                                                            <double>114.58621208504974</double>
+                                                                                                            <double>3.819540402834991</double>
                                                                                                            </void>
                                                                                                            <void property="TCost">
-                                                                                                            <double>10.704494947686683</double>
+                                                                                                            <double>1.95436444984936</double>
                                                                                                            </void>
                                                                                                            <void property="otherEnd">
                                                                                                             <object idref="GraphNode23"/>
@@ -1212,10 +1212,10 @@
                                                                                                           <string>Glee Anselm</string>
                                                                                                           <object class="Edge">
                                                                                                            <void property="DCost">
-                                                                                                            <double>62.00806399170998</double>
+                                                                                                            <double>2.0669354663903325</double>
                                                                                                            </void>
                                                                                                            <void property="TCost">
-                                                                                                            <double>7.87451992134822</double>
+                                                                                                            <double>1.4376840634820756</double>
                                                                                                            </void>
                                                                                                            <void property="otherEnd">
                                                                                                             <object idref="GraphNode26"/>
@@ -1237,10 +1237,10 @@
                                                                                                      <string>Glee Anselm</string>
                                                                                                      <object class="Edge">
                                                                                                       <void property="DCost">
-                                                                                                       <double>153.95129099815955</double>
+                                                                                                       <double>5.131709699938652</double>
                                                                                                       </void>
                                                                                                       <void property="TCost">
-                                                                                                       <double>12.40771094917026</double>
+                                                                                                       <double>2.2653277246214625</double>
                                                                                                       </void>
                                                                                                       <void property="otherEnd">
                                                                                                        <object idref="GraphNode26"/>
@@ -1251,10 +1251,10 @@
                                                                                                      <string>Null</string>
                                                                                                      <object class="Edge">
                                                                                                       <void property="DCost">
-                                                                                                       <double>128.87590930814028</double>
+                                                                                                       <double>4.295863643604676</double>
                                                                                                       </void>
                                                                                                       <void property="TCost">
-                                                                                                       <double>11.35235258913941</double>
+                                                                                                       <double>2.0726465312746107</double>
                                                                                                       </void>
                                                                                                       <void property="otherEnd">
                                                                                                        <object idref="GraphNode22"/>
@@ -1276,10 +1276,10 @@
                                                                                                 <string>Alderaan</string>
                                                                                                 <object class="Edge">
                                                                                                  <void property="DCost">
-                                                                                                  <double>264.6828290615015</double>
+                                                                                                  <double>8.822760968716716</double>
                                                                                                  </void>
                                                                                                  <void property="TCost">
-                                                                                                  <double>16.269075851488967</double>
+                                                                                                  <double>2.9703132778743586</double>
                                                                                                  </void>
                                                                                                  <void property="otherEnd">
                                                                                                   <object idref="GraphNode17"/>
@@ -1301,10 +1301,10 @@
                                                                                            <string>Corelia</string>
                                                                                            <object class="Edge">
                                                                                             <void property="DCost">
-                                                                                             <double>158.80806024884254</double>
+                                                                                             <double>5.2936020082947515</double>
                                                                                             </void>
                                                                                             <void property="TCost">
-                                                                                             <double>12.601907008419104</double>
+                                                                                             <double>2.3007829120311962</double>
                                                                                             </void>
                                                                                             <void property="otherEnd">
                                                                                              <object idref="GraphNode20"/>
@@ -1326,10 +1326,10 @@
                                                                                       <string>Corelia</string>
                                                                                       <object class="Edge">
                                                                                        <void property="DCost">
-                                                                                        <double>176.0113632695344</double>
+                                                                                        <double>5.8670454423178136</double>
                                                                                        </void>
                                                                                        <void property="TCost">
-                                                                                        <double>13.266927423843638</double>
+                                                                                        <double>2.422198472941021</double>
                                                                                        </void>
                                                                                        <void property="otherEnd">
                                                                                         <object idref="GraphNode20"/>
@@ -1351,10 +1351,10 @@
                                                                                  <string>Aphran</string>
                                                                                  <object class="Edge">
                                                                                   <void property="DCost">
-                                                                                   <double>18.681541692269406</double>
+                                                                                   <double>0.6227180564089801</double>
                                                                                   </void>
                                                                                   <void property="TCost">
-                                                                                   <double>4.322214905840454</double>
+                                                                                   <double>0.7891248674379614</double>
                                                                                   </void>
                                                                                   <void property="otherEnd">
                                                                                    <object idref="GraphNode29"/>
@@ -1376,10 +1376,10 @@
                                                                             <string>Selvaris</string>
                                                                             <object class="Edge">
                                                                              <void property="DCost">
-                                                                              <double>54.45181356024793</double>
+                                                                              <double>1.8150604520082643</double>
                                                                              </void>
                                                                              <void property="TCost">
-                                                                              <double>7.37914721090777</double>
+                                                                              <double>1.3472417941885058</double>
                                                                              </void>
                                                                              <void property="otherEnd">
                                                                               <object idref="GraphNode13"/>
@@ -1390,10 +1390,10 @@
                                                                             <string>Coruscant</string>
                                                                             <object class="Edge">
                                                                              <void property="DCost">
-                                                                              <double>100.16985574512923</double>
+                                                                              <double>3.3389951915043077</double>
                                                                              </void>
                                                                              <void property="TCost">
-                                                                              <double>10.00848918394426</double>
+                                                                              <double>1.827291764197581</double>
                                                                              </void>
                                                                              <void property="otherEnd">
                                                                               <object idref="GraphNode16"/>
@@ -1404,10 +1404,10 @@
                                                                             <string>Bilbringi</string>
                                                                             <object class="Edge">
                                                                              <void property="DCost">
-                                                                              <double>76.92203845452875</double>
+                                                                              <double>2.5640679484842916</double>
                                                                              </void>
                                                                              <void property="TCost">
-                                                                              <double>8.770520991054564</double>
+                                                                              <double>1.6012707292910502</double>
                                                                              </void>
                                                                              <void property="otherEnd">
                                                                               <object idref="GraphNode28"/>
@@ -1418,10 +1418,10 @@
                                                                             <string>Aphran</string>
                                                                             <object class="Edge">
                                                                              <void property="DCost">
-                                                                              <double>84.1486779456457</double>
+                                                                              <double>2.8049559315215236</double>
                                                                              </void>
                                                                              <void property="TCost">
-                                                                              <double>9.173258850901663</double>
+                                                                              <double>1.6748002661575867</double>
                                                                              </void>
                                                                              <void property="otherEnd">
                                                                               <object idref="GraphNode29"/>
@@ -1443,10 +1443,10 @@
                                                                        <string>Mobus</string>
                                                                        <object class="Edge">
                                                                         <void property="DCost">
-                                                                         <double>178.05897899291685</double>
+                                                                         <double>5.935299299763895</double>
                                                                         </void>
                                                                         <void property="TCost">
-                                                                         <double>13.343874212271219</double>
+                                                                         <double>2.4362469701908087</double>
                                                                         </void>
                                                                         <void property="otherEnd">
                                                                          <object idref="GraphNode27"/>
@@ -1468,10 +1468,10 @@
                                                                   <string>Thyferra</string>
                                                                   <object class="Edge">
                                                                    <void property="DCost">
-                                                                    <double>287.64040050034697</double>
+                                                                    <double>9.588013350011567</double>
                                                                    </void>
                                                                    <void property="TCost">
-                                                                    <double>16.959964637355437</double>
+                                                                    <double>3.0964517354564993</double>
                                                                    </void>
                                                                    <void property="otherEnd">
                                                                     <object idref="GraphNode11"/>
@@ -1482,10 +1482,10 @@
                                                                   <string>Coruscant</string>
                                                                   <object class="Edge">
                                                                    <void property="DCost">
-                                                                    <double>146.48549416239138</double>
+                                                                    <double>4.882849805413046</double>
                                                                    </void>
                                                                    <void property="TCost">
-                                                                    <double>12.103119191447773</double>
+                                                                    <double>2.2097171324432106</double>
                                                                    </void>
                                                                    <void property="otherEnd">
                                                                     <object idref="GraphNode16"/>
@@ -1496,10 +1496,10 @@
                                                                   <string>Corelia</string>
                                                                   <object class="Edge">
                                                                    <void property="DCost">
-                                                                    <double>165.07574019219177</double>
+                                                                    <double>5.502524673073059</double>
                                                                    </void>
                                                                    <void property="TCost">
-                                                                    <double>12.848180423398162</double>
+                                                                    <double>2.345746080263816</double>
                                                                    </void>
                                                                    <void property="otherEnd">
                                                                     <object idref="GraphNode20"/>
@@ -1521,10 +1521,10 @@
                                                              <string>Naboo</string>
                                                              <object class="Edge">
                                                               <void property="DCost">
-                                                               <double>302.00165562460086</double>
+                                                               <double>10.066721854153363</double>
                                                               </void>
                                                               <void property="TCost">
-                                                               <double>17.378194832162542</double>
+                                                               <double>3.1728097727650426</double>
                                                               </void>
                                                               <void property="otherEnd">
                                                                <object idref="GraphNode21"/>
@@ -1535,10 +1535,10 @@
                                                              <string>Corelia</string>
                                                              <object class="Edge">
                                                               <void property="DCost">
-                                                               <double>309.58843647655834</double>
+                                                               <double>10.319614549218612</double>
                                                               </void>
                                                               <void property="TCost">
-                                                               <double>17.595125361206108</double>
+                                                               <double>3.2124156874879395</double>
                                                               </void>
                                                               <void property="otherEnd">
                                                                <object idref="GraphNode20"/>
@@ -1560,10 +1560,10 @@
                                                         <string>Naboo</string>
                                                         <object class="Edge">
                                                          <void property="DCost">
-                                                          <double>270.2369330791038</double>
+                                                          <double>9.00789776930346</double>
                                                          </void>
                                                          <void property="TCost">
-                                                          <double>16.438884788181458</double>
+                                                          <double>3.0013160062385067</double>
                                                          </void>
                                                          <void property="otherEnd">
                                                           <object idref="GraphNode21"/>
@@ -1585,10 +1585,10 @@
                                                    <string>Naboo</string>
                                                    <object class="Edge">
                                                     <void property="DCost">
-                                                     <double>242.1425200166216</double>
+                                                     <double>8.071417333887387</double>
                                                     </void>
                                                     <void property="TCost">
-                                                     <double>15.560929278697389</double>
+                                                     <double>2.841023993895051</double>
                                                     </void>
                                                     <void property="otherEnd">
                                                      <object idref="GraphNode21"/>
@@ -1599,10 +1599,10 @@
                                                    <string>Tatooine</string>
                                                    <object class="Edge">
                                                     <void property="DCost">
-                                                     <double>27.459060435491963</double>
+                                                     <double>0.9153020145163988</double>
                                                     </void>
                                                     <void property="TCost">
-                                                     <double>5.2401393526787015</double>
+                                                     <double>0.956714175977548</double>
                                                     </void>
                                                     <void property="otherEnd">
                                                      <object idref="GraphNode8"/>
@@ -1624,10 +1624,10 @@
                                               <string>Kamino</string>
                                               <object class="Edge">
                                                <void property="DCost">
-                                                <double>218.93606372637652</double>
+                                                <double>7.2978687908792175</double>
                                                </void>
                                                <void property="TCost">
-                                                <double>14.796488222763417</double>
+                                                <double>2.7014567904890163</double>
                                                </void>
                                                <void property="otherEnd">
                                                 <object idref="GraphNode7"/>
@@ -1638,10 +1638,10 @@
                                               <string>Naboo</string>
                                               <object class="Edge">
                                                <void property="DCost">
-                                                <double>224.1182723474371</double>
+                                                <double>7.470609078247904</double>
                                                </void>
                                                <void property="TCost">
-                                                <double>14.970580227480735</double>
+                                                <double>2.733241496510673</double>
                                                </void>
                                                <void property="otherEnd">
                                                 <object idref="GraphNode21"/>
@@ -1663,10 +1663,10 @@
                                          <string>Gamorr</string>
                                          <object class="Edge">
                                           <void property="DCost">
-                                           <double>105.26157893552613</double>
+                                           <double>3.508719297850871</double>
                                           </void>
                                           <void property="TCost">
-                                           <double>10.259706571609449</double>
+                                           <double>1.8731575742181625</double>
                                           </void>
                                           <void property="otherEnd">
                                            <object idref="GraphNode6"/>
@@ -1688,10 +1688,10 @@
                                     <string>Honoghr</string>
                                     <object class="Edge">
                                      <void property="DCost">
-                                      <double>381.27811371753296</double>
+                                      <double>12.7092704572511</double>
                                      </void>
                                      <void property="TCost">
-                                      <double>19.526344095030513</double>
+                                      <double>3.565006375485337</double>
                                      </void>
                                      <void property="otherEnd">
                                       <object idref="GraphNode5"/>
@@ -1702,10 +1702,10 @@
                                     <string>Ruusan</string>
                                     <object class="Edge">
                                      <void property="DCost">
-                                      <double>334.0538878684096</double>
+                                      <double>11.135129595613654</double>
                                      </void>
                                      <void property="TCost">
-                                      <double>18.27714112952049</double>
+                                      <double>3.336934161114608</double>
                                      </void>
                                      <void property="otherEnd">
                                       <object idref="GraphNode1"/>
@@ -1727,10 +1727,10 @@
                                <string>Kessel</string>
                                <object class="Edge">
                                 <void property="DCost">
-                                 <double>72.69112738154499</double>
+                                 <double>2.423037579384833</double>
                                 </void>
                                 <void property="TCost">
-                                 <double>8.525909182107501</double>
+                                 <double>1.5566109274268998</double>
                                 </void>
                                 <void property="otherEnd">
                                  <object idref="GraphNode4"/>
@@ -1752,10 +1752,10 @@
                           <string>Ruusan</string>
                           <object class="Edge">
                            <void property="DCost">
-                            <double>258.43567865138124</double>
+                            <double>8.614522621712707</double>
                            </void>
                            <void property="TCost">
-                            <double>16.075934767576697</double>
+                            <double>2.9350507017277754</double>
                            </void>
                            <void property="otherEnd">
                             <object idref="GraphNode1"/>
@@ -1777,10 +1777,10 @@
                      <string>Null</string>
                      <object class="Edge">
                       <void property="DCost">
-                       <double>255.12545933324648</double>
+                       <double>8.504181977774882</double>
                       </void>
                       <void property="TCost">
-                       <double>15.972647223714874</double>
+                       <double>2.9161930625003007</double>
                       </void>
                       <void property="otherEnd">
                        <object idref="GraphNode22"/>
@@ -1802,10 +1802,10 @@
                 <string>Ruusan</string>
                 <object class="Edge">
                  <void property="DCost">
-                  <double>209.2868844433401</double>
+                  <double>6.976229481444671</double>
                  </void>
                  <void property="TCost">
-                  <double>14.466750998179934</double>
+                  <double>2.641255285171176</double>
                  </void>
                  <void property="otherEnd">
                   <object idref="GraphNode1"/>
@@ -1816,10 +1816,10 @@
                 <string>Umbara</string>
                 <object class="Edge">
                  <void property="DCost">
-                  <double>188.8200201249857</double>
+                  <double>6.294000670832856</double>
                  </void>
                  <void property="TCost">
-                  <double>13.741179721005969</double>
+                  <double>2.508784699975838</double>
                  </void>
                  <void property="otherEnd">
                   <object idref="GraphNode18"/>
@@ -1841,10 +1841,10 @@
            <string>Tholatin</string>
            <object class="Edge">
             <void property="DCost">
-             <double>63.7808748764079</double>
+             <double>2.12602916254693</double>
             </void>
             <void property="TCost">
-             <double>7.986292937052077</double>
+             <double>1.4580909308225363</double>
             </void>
             <void property="otherEnd">
              <object idref="GraphNode0"/>
@@ -1855,10 +1855,10 @@
            <string>Kamino</string>
            <object class="Edge">
             <void property="DCost">
-             <double>372.58019271024057</double>
+             <double>12.41933975700802</double>
             </void>
             <void property="TCost">
-             <double>19.30233645728518</double>
+             <double>3.524108363403149</double>
             </void>
             <void property="otherEnd">
              <object idref="GraphNode7"/>
@@ -1869,10 +1869,10 @@
            <string>Gamorr</string>
            <object class="Edge">
             <void property="DCost">
-             <double>334.0538878684096</double>
+             <double>11.135129595613654</double>
             </void>
             <void property="TCost">
-             <double>18.27714112952049</double>
+             <double>3.336934161114608</double>
             </void>
             <void property="otherEnd">
              <object idref="GraphNode6"/>
@@ -1883,10 +1883,10 @@
            <string>Kessel</string>
            <object class="Edge">
             <void property="DCost">
-             <double>258.43567865138124</double>
+             <double>8.614522621712707</double>
             </void>
             <void property="TCost">
-             <double>16.075934767576697</double>
+             <double>2.9350507017277754</double>
             </void>
             <void property="otherEnd">
              <object idref="GraphNode4"/>
@@ -1897,10 +1897,10 @@
            <string>Tarhassan</string>
            <object class="Edge">
             <void property="DCost">
-             <double>115.41230437002807</double>
+             <double>3.847076812334269</double>
             </void>
             <void property="TCost">
-             <double>10.743011885408489</double>
+             <double>1.9613966483947782</double>
             </void>
             <void property="otherEnd">
              <object idref="GraphNode19"/>
@@ -1922,10 +1922,10 @@
       <string>Umbara</string>
       <object class="Edge">
        <void property="DCost">
-        <double>66.60330322138685</double>
+        <double>2.2201101073795617</double>
        </void>
        <void property="TCost">
-        <double>8.16108468412054</double>
+        <double>1.4900033917342477</double>
        </void>
        <void property="otherEnd">
         <object idref="GraphNode18"/>

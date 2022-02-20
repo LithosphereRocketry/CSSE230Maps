@@ -44,7 +44,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 				return false;
 			}
 						
-			this.neighbors.put(o.name, new Edge(o, heuristicDist(o),heuristicTime(o)));
+			this.neighbors.put(o.name, new Edge(o, heuristicDist(o), heuristicTime(o)));
 
 			return true;
 		}
@@ -174,7 +174,7 @@ public class GraphNode implements Serializable, Comparable<GraphNode>{
 
 	public double heuristicDist(GraphNode dest) {
 		double straightLineDistance = Math.sqrt(Math.pow(this.x-dest.x, 2) + Math.pow(this.y - dest.y, 2));
-		return straightLineDistance;
+		return straightLineDistance/30.0;
 	}
 	public double heuristicTime(GraphNode dest) {
 		return Math.sqrt(this.heuristicDist(dest));
