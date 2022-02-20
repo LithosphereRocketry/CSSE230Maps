@@ -57,7 +57,7 @@ public class AdvisorPanel extends JPanel {
 		
 		JComboBox comboBox = new JComboBox(nodes);
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.insets = new Insets(5, 0, 5, 5);
+		gbc_comboBox.insets = new Insets(5, 0, 5, 0);
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridx = 5;
 		gbc_comboBox.gridy = 1;
@@ -75,7 +75,7 @@ public class AdvisorPanel extends JPanel {
 		
 		JFormattedTextField textField = new JFormattedTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.insets = new Insets(5, 0, 5, 25);
+		gbc_textField.insets = new Insets(5, 0, 5, 20);
 		gbc_textField.anchor = GridBagConstraints.EAST;
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField.gridx = 5;
@@ -147,7 +147,7 @@ public class AdvisorPanel extends JPanel {
 		btnGOButton.setIcon(routeIcon);
 		
 		GridBagConstraints gbc_btnGOButton = new GridBagConstraints();
-		gbc_btnGOButton.insets = new Insets(0, 0, 0, 5);
+		gbc_btnGOButton.insets = new Insets(0, 0, 0, 10);
 		gbc_btnGOButton.anchor = GridBagConstraints.CENTER;
 		gbc_btnGOButton.gridx = 6;
 		gbc_btnGOButton.gridy = 3;
