@@ -210,7 +210,7 @@ public class MainApp {
 		
 		AdvisorPanel tabPanel2 = new AdvisorPanel(panel);
 		tabbedPane.addTab("Trip Advisor", null, tabPanel2, null);
-		music();
+//		music();
 	}
 	
 	

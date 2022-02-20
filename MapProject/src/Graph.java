@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.Random;
 import java.util.Set;
 import java.util.Stack;
 
@@ -153,7 +154,29 @@ public class Graph{
 		list.add(nodes.get(startingNode));
 		pathList.add(list);
 		nodes.get(startingNode).getNodesWithinDistance(distanceConstraint, list, 0, false, pathList);
-		return pathList;
+		
+		return returnThreeRandomPaths(pathList);
+
+	}
+	
+	public ArrayList<LinkedList<GraphNode>> returnThreeRandomPaths(ArrayList<LinkedList<GraphNode>> paths) {
+		Random rand = new Random();
+		ArrayList<LinkedList<GraphNode>> returnList = new ArrayList<LinkedList<GraphNode>>();
+		if (paths.size() <= 3) {
+			return paths;
+		}
+		while (true) {
+			int firstPathIndex = rand.nextInt(paths.size());
+			int secondPathIndex = rand.nextInt(paths.size());
+			int thirdPathIndex = rand.nextInt(paths.size());
+			if (firstPathIndex != secondPathIndex && firstPathIndex != thirdPathIndex
+					&& secondPathIndex != thirdPathIndex) {
+				returnList.add(paths.get(firstPathIndex));
+				returnList.add(paths.get(secondPathIndex));
+				returnList.add(paths.get(thirdPathIndex));
+				return returnList;
+			}
+		}
 
 	}
 	
@@ -163,7 +186,7 @@ public class Graph{
 		list.add(nodes.get(startingNode));
 		pathList.add(list);
 		nodes.get(startingNode).getNodesWithinDistance(timeConstraint, list, 0, false, pathList);
-		return pathList;
+		return returnThreeRandomPaths(pathList);
 
 	}
 	

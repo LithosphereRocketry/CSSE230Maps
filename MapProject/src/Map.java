@@ -18,7 +18,13 @@ public class Map extends ImagePanel implements MouseListener {
 	static final Color NORMAL_COLOR = Color.YELLOW;
 	static final Color SELECTED_NODE = Color.RED;
 	private boolean displayAll;
+	private boolean drawFirst;
+	private boolean drawSecond;
+	private boolean drawThird;
 	private RouterPanel router;
+	static final Color FIRST_PATH = Color.GREEN;
+	static final Color SECOND_PATH = Color.PINK;
+	static final Color THIRD_PATH = Color.ORANGE;
 	
 	//Basic Constructor
 	public Map() throws Exception{
@@ -26,6 +32,9 @@ public class Map extends ImagePanel implements MouseListener {
 		g = new Graph();
 		start = "";
 		displayAll = false;
+		drawFirst = false;
+		drawSecond = false;
+		drawThird = false;
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -33,6 +42,9 @@ public class Map extends ImagePanel implements MouseListener {
 		Graphics2D g2d = (Graphics2D) g;
 		drawOn(g2d);
 		if(displayAll) drawAll(g2d);
+		if(drawFirst) drawFirst(g2d);
+		if(drawSecond) drawSecond(g2d);
+		if(drawThird) drawThird(g2d);
 	}
 	
 	public void drawAll(Graphics2D g2d) {
@@ -45,9 +57,16 @@ public class Map extends ImagePanel implements MouseListener {
 		}
 	}
 	
-	public void hideAll() {
-		displayAll = false;
-		repaint();
+	public void drawFirst(Graphics2D g2d) {
+		
+	}
+	
+	public void drawSecond(Graphics2D g2d) {
+		
+	}
+
+	public void drawThird(Graphics2D g2d) {
+	
 	}
 
 	/**
@@ -91,21 +110,6 @@ public class Map extends ImagePanel implements MouseListener {
 	
 
 	/**
-	 * update the name of a node
-	 * @param oldName of the node
-	 * @param newName of the node
-	 * @return true if updated successfully, false otherwise
-	 * @throws Exception
-	 */
-	public boolean updateNodeName(String oldName, String newName)throws Exception {
-		return g.updateNodeName(oldName, newName);
-	}
-	
-	public boolean updateNodePos(String name, int x, int y) throws Exception{
-		return g.updateNodePos(name,x, y);
-	}
-	
-	/**
 	 * erase all existing data in xml files
 	 * @throws Exception ignore it
 	 */
@@ -131,6 +135,14 @@ public class Map extends ImagePanel implements MouseListener {
 		g.getNode(des).setSelected();
 		g.getNode(start).setSelected();
 		repaint();
+	}
+	
+	public ArrayList<LinkedList<GraphNode>> travelPlannerDistance(){
+		return g.travelPlannerDistance(dis, start);
+	}
+	
+	public ArrayList<LinkedList<GraphNode>> travelPlannerTime(){
+		return g.travelPlannerTime(time, start);
 	}
 	
 	public Collection<String> getNodeNames(){
@@ -178,27 +190,6 @@ public class Map extends ImagePanel implements MouseListener {
 		else displayAll = true;
 		repaint();
 	}
-	
-	public ArrayList<LinkedList<GraphNode>> returnThreeRandomPaths(ArrayList<LinkedList<GraphNode>> paths) {
-		Random rand = new Random();
-		ArrayList<LinkedList<GraphNode>> returnList = new ArrayList<LinkedList<GraphNode>>();
-		if (paths.size() <= 3) {
-			return paths;
-		}
-		while (true) {
-			int firstPathIndex = rand.nextInt(paths.size());
-			int secondPathIndex = rand.nextInt(paths.size());
-			int thirdPathIndex = rand.nextInt(paths.size());
-			if (firstPathIndex != secondPathIndex && firstPathIndex != thirdPathIndex
-					&& secondPathIndex != thirdPathIndex) {
-				returnList.add(paths.get(firstPathIndex));
-				returnList.add(paths.get(secondPathIndex));
-				returnList.add(paths.get(thirdPathIndex));
-				return returnList;
-			}
-		}
-
-	}
 
 	public String pathsToStrings(ArrayList<LinkedList<GraphNode>> paths) {
 		String pathsString = "";
@@ -241,6 +232,30 @@ public class Map extends ImagePanel implements MouseListener {
 
 	public void setG(Graph g) {
 		this.g = g;
+	}
+	
+	public void setDrawFirst() {
+		if(drawFirst) drawFirst = false;
+		else this.drawFirst = true;
+		setDrawSecond();
+		setDrawThird();
+		repaint();
+	}
+
+	public void setDrawSecond() {
+		if(drawSecond) drawSecond = false;
+		else this.drawSecond = true;
+		setDrawFirst();
+		setDrawThird();
+		repaint();
+	}
+
+	public void setDrawThird() {
+		if(drawThird) drawThird = false;
+		else this.drawThird = true;
+		setDrawFirst();
+		setDrawSecond();
+		repaint();
 	}
 
 	@Override

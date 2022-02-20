@@ -34,8 +34,8 @@ public class AdvisorPanel extends JPanel {
 	private Map map;
 	public String cost;
 	private String input;
-	private int dist;
-	private int time;
+//	private int dist;
+//	private int time;
 	private String  start;
 	ArrayList<LinkedList<GraphNode>>  pathlist;
 	ArrayList<LinkedList<GraphNode>> paths;
@@ -159,31 +159,25 @@ public class AdvisorPanel extends JPanel {
 		    	input = textField.getText();
 		    	if(input != "") {
 		    		try {
+		    			int temp = Integer.parseInt(input);
+		    		}catch (NumberFormatException e1) {
+						  System.out.println("not a number");
+				  }
+
 		    			if(selectedDistance = true && selectedTime == false) {
-		    				dist = Integer.parseInt(input);
+//		    				dist = Integer.parseInt(input);
+		    				map.setDis(Integer.parseInt(input));
+		    				paths = map.travelPlannerDistance();
 			    		} else {
-			    			time = Integer.parseInt(input);
+//			    			time = Integer.parseInt(input);
+			    			map.setTime(Integer.parseInt(input));
+			    			paths = map.travelPlannerDistance();
 			    		}
-					  } catch (NumberFormatException e1) {
-							  System.out.println("not a number");
 					  }
-		    	}
-				
-		    	if(dist != 0) {
-		    		if(selectedDistance = true && selectedTime == false) {
-		    			pathlist = map.g.travelPlannerDistance(dist, start);
-		    		} else {
-		    			pathlist = map.g.travelPlannerTime(time, start);
-		    		}
-		    	}
 		    	
-		    	if(pathlist != null) {
-		    		paths = map.returnThreeRandomPaths(pathlist);
-		    	}
-		    	
-		    	if(paths != null) {
-		    		System.out.println(map.pathsToStrings(paths));
-		    	}
+			
+		    	System.out.println(map.pathsToStrings(paths));
+//		    	
 		    }
 		});
 		
