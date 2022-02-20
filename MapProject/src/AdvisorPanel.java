@@ -42,9 +42,9 @@ public class AdvisorPanel extends JPanel {
 		this.setLayout(new GridLayout());
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel_2.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_panel_2.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel_2.columnWeights = new double[]{1.0, 0.0, 1.0, 2.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, Double.MIN_VALUE};
-		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,Double.MIN_VALUE};
+		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,Double.MIN_VALUE};
 		this.setLayout(gbl_panel_2);
 		
 		JComboBox<Object> comboBox = new JComboBox<>(nodes);
@@ -185,8 +185,8 @@ public class AdvisorPanel extends JPanel {
 		JButton btnPath1Button = new JButton("Path1");
 		GridBagConstraints gbc_btnPath1Button = new GridBagConstraints();
 		btnPath1Button.setBackground(Color.GREEN);
-		gbc_btnPath1Button.insets = new Insets(0, 0, 0, 20);
-		gbc_btnPath1Button.anchor = GridBagConstraints.WEST;
+		gbc_btnPath1Button.insets = new Insets(100, 0, 0, 0);
+		gbc_btnPath1Button.anchor = GridBagConstraints.CENTER;
 		gbc_btnPath1Button.gridx = 5;
 		gbc_btnPath1Button.gridy = 7;
 		this.add(btnPath1Button, gbc_btnPath1Button);
@@ -199,10 +199,11 @@ public class AdvisorPanel extends JPanel {
 		
 		JButton btnPath2Button = new JButton("Path2");
 		GridBagConstraints gbc_btnPath2Button = new GridBagConstraints();
-		gbc_btnPath2Button.insets = new Insets(0, 10, 0, 10);
+		btnPath2Button.setBackground(Color.MAGENTA);
+		gbc_btnPath2Button.insets = new Insets(10, 0, 0, 0);
 		gbc_btnPath2Button.anchor = GridBagConstraints.CENTER;
 		gbc_btnPath2Button.gridx = 5;
-		gbc_btnPath2Button.gridy = 7;
+		gbc_btnPath2Button.gridy = 8;
 		this.add(btnPath2Button, gbc_btnPath2Button);
 		btnPath2Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
@@ -214,10 +215,11 @@ public class AdvisorPanel extends JPanel {
 
 		JButton btnPath3Button = new JButton("Path3");
 		GridBagConstraints gbc_btnPath3Button = new GridBagConstraints();
-		gbc_btnPath3Button.insets = new Insets(0, 20, 0, 0);
-		gbc_btnPath3Button.anchor = GridBagConstraints.EAST;
+		btnPath3Button.setBackground(Color.CYAN);
+		gbc_btnPath3Button.insets = new Insets(0, 0, 230, 0);
+		gbc_btnPath3Button.anchor = GridBagConstraints.CENTER;
 		gbc_btnPath3Button.gridx = 5;
-		gbc_btnPath3Button.gridy = 7;
+		gbc_btnPath3Button.gridy = 9;
 		this.add(btnPath3Button, gbc_btnPath3Button);
 		btnPath3Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
