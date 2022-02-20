@@ -48,7 +48,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_lbStartLabel.anchor = GridBagConstraints.EAST;
 		gbc_lbStartLabel.gridx = 4;
 		gbc_lbStartLabel.gridy = 1;
-		lbStartLabel.setForeground(Color.WHITE);
+		lbStartLabel.setForeground(Color.ORANGE);
 		lbStartLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(lbStartLabel, gbc_lbStartLabel);
 		
@@ -78,7 +78,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_lbDestLabel.anchor = GridBagConstraints.EAST;
 		gbc_lbDestLabel.gridx = 4;
 		gbc_lbDestLabel.gridy = 3;
-		lbDestLabel.setForeground(Color.WHITE);
+		lbDestLabel.setForeground(Color.ORANGE);
 		lbDestLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(lbDestLabel, gbc_lbDestLabel);
 		
@@ -125,8 +125,8 @@ public class AdvisorPanel extends JPanel {
 		gbc_rdbtnDistanceRadioButton.gridx = 5;
 		gbc_rdbtnDistanceRadioButton.gridy = 4;
 		rdbtnDistanceRadioButton.doClick();
-		rdbtnDistanceRadioButton.setForeground(Color.WHITE);
-		rdbtnDistanceRadioButton.setFont(new Font("Apple Chancery", Font.PLAIN, 15));
+		rdbtnDistanceRadioButton.setForeground(Color.ORANGE);
+		rdbtnDistanceRadioButton.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(rdbtnDistanceRadioButton, gbc_rdbtnDistanceRadioButton);
 		
 		
@@ -136,8 +136,8 @@ public class AdvisorPanel extends JPanel {
 		gbc_rdbtnTimeRadioButton_1.anchor = GridBagConstraints.EAST;
 		gbc_rdbtnTimeRadioButton_1.gridx = 5;
 		gbc_rdbtnTimeRadioButton_1.gridy = 4;
-		rdbtnTimeRadioButton_1.setForeground(Color.WHITE);
-		rdbtnTimeRadioButton_1.setFont(new Font("Apple Chancery", Font.PLAIN, 15));
+		rdbtnTimeRadioButton_1.setForeground(Color.ORANGE);
+		rdbtnTimeRadioButton_1.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(rdbtnTimeRadioButton_1, gbc_rdbtnTimeRadioButton_1);
 
 		rdbtnDistanceRadioButton.addActionListener(new ActionListener() {
@@ -213,7 +213,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_goDestLabel.anchor = GridBagConstraints.EAST;
 		gbc_goDestLabel.gridx = 7;
 		gbc_goDestLabel.gridy = 3;
-		goDestLabel.setForeground(Color.WHITE);
+		goDestLabel.setForeground(Color.ORANGE);
 		goDestLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(goDestLabel, gbc_goDestLabel);
 		
@@ -281,7 +281,7 @@ public class AdvisorPanel extends JPanel {
 		gbc_pathImageLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_pathImageLabel.anchor = GridBagConstraints.WEST;
 		gbc_pathImageLabel.gridx = 5;
-		gbc_pathImageLabel.gridy = 10;
+		gbc_pathImageLabel.gridy = 9;
 		this.add(pathImageLabel, gbc_pathImageLabel);
 	}
 

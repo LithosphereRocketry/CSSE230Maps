@@ -48,7 +48,7 @@ public class RouterPanel extends JPanel {
 		gbc_lbStartLabel.anchor = GridBagConstraints.EAST;
 		gbc_lbStartLabel.gridx = 4;
 		gbc_lbStartLabel.gridy = 1;
-		lbStartLabel.setForeground(Color.WHITE);
+		lbStartLabel.setForeground(Color.ORANGE);
 		lbStartLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(lbStartLabel, gbc_lbStartLabel);
 		
@@ -80,7 +80,7 @@ public class RouterPanel extends JPanel {
 		gbc_lbDestLabel.anchor = GridBagConstraints.EAST;
 		gbc_lbDestLabel.gridx = 4;
 		gbc_lbDestLabel.gridy = 3;
-		lbDestLabel.setForeground(Color.WHITE);
+		lbDestLabel.setForeground(Color.ORANGE);
 		lbDestLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(lbDestLabel, gbc_lbDestLabel);
 		
@@ -109,7 +109,7 @@ public class RouterPanel extends JPanel {
 		gbc_lblCostLabel.insets = new Insets(10, 0, 5, 5);
 		gbc_lblCostLabel.gridx = 4;
 		gbc_lblCostLabel.gridy = 5;
-		lblCostLabel.setForeground(Color.WHITE);
+		lblCostLabel.setForeground(Color.ORANGE);
 		lblCostLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 16));
 		this.add(lblCostLabel, gbc_lblCostLabel);
 		
@@ -119,7 +119,7 @@ public class RouterPanel extends JPanel {
 		gbc_lblCostLabel_2.insets = new Insets(10, 0, 5, 5);
 		gbc_lblCostLabel_2.gridx = 5;
 		gbc_lblCostLabel_2.gridy = 5;
-		lblCostLabel_2.setForeground(Color.WHITE);
+		lblCostLabel_2.setForeground(Color.ORANGE);
 		lblCostLabel_2.setFont(new Font("Apple Chancery", Font.PLAIN, 16));
 		this.add(lblCostLabel_2, gbc_lblCostLabel_2);
 		
@@ -130,8 +130,8 @@ public class RouterPanel extends JPanel {
 		gbc_rdbtnDistanceRadioButton.gridx = 5;
 		gbc_rdbtnDistanceRadioButton.gridy = 4;
 		rdbtnDistanceRadioButton.doClick();
-		rdbtnDistanceRadioButton.setForeground(Color.WHITE);
-		rdbtnDistanceRadioButton.setFont(new Font("Apple Chancery", Font.PLAIN, 15));
+		rdbtnDistanceRadioButton.setForeground(Color.ORANGE);
+		rdbtnDistanceRadioButton.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(rdbtnDistanceRadioButton, gbc_rdbtnDistanceRadioButton);
 		
 		
@@ -141,8 +141,8 @@ public class RouterPanel extends JPanel {
 		gbc_rdbtnTimeRadioButton_1.anchor = GridBagConstraints.EAST;
 		gbc_rdbtnTimeRadioButton_1.gridx = 5;
 		gbc_rdbtnTimeRadioButton_1.gridy = 4;
-		rdbtnTimeRadioButton_1.setForeground(Color.WHITE);
-		rdbtnTimeRadioButton_1.setFont(new Font("Apple Chancery", Font.PLAIN, 15));
+		rdbtnTimeRadioButton_1.setForeground(Color.ORANGE);
+		rdbtnTimeRadioButton_1.setFont(new Font("Apple Chancery", Font.PLAIN, 18));
 		this.add(rdbtnTimeRadioButton_1, gbc_rdbtnTimeRadioButton_1);
 		
 		rdbtnDistanceRadioButton.addActionListener(new ActionListener() {
@@ -219,10 +219,10 @@ public class RouterPanel extends JPanel {
 		JLabel drawAllLabel = new JLabel("Display/Hide");
 		GridBagConstraints gbc_drawAllLabel = new GridBagConstraints();
 		gbc_drawAllLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_drawAllLabel.anchor = GridBagConstraints.EAST;
+		gbc_drawAllLabel.anchor = GridBagConstraints.WEST;
 		gbc_drawAllLabel.gridx = 7;
 		gbc_drawAllLabel.gridy = 5;
-		drawAllLabel.setForeground(Color.WHITE);
+		drawAllLabel.setForeground(Color.ORANGE);
 		drawAllLabel.setFont(new Font("Apple Chancery", Font.PLAIN, 14));
 		this.add(drawAllLabel, gbc_drawAllLabel);
 		

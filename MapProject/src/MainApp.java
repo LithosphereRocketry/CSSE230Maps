@@ -108,6 +108,8 @@ public class MainApp {
 //		panel.addNode("Honoghr", 1101, 533);
 //		panel.addNode("Byss", 383, 278);	
 //		
+//		panel.addNode("Vandaxa", 443, 655);
+//		
 //		panel.addEdge("Tatooine", "Geonosis");
 //		panel.addEdge("Reecee", "Aphran");
 //		panel.addEdge("Reecee", "Selvaris");
@@ -161,6 +163,8 @@ public class MainApp {
 //		panel.addEdge("Null", "Ord Mantell");
 //		panel.addEdge("Ord Mantell", "Vortex");
 //		panel.addEdge("Ord Mantell", "Glee Anselm");
+//		panel.addEdge("Corelia", "Vandaxa");
+//		panel.addEdge("Naboo", "Vandaxa");
 		
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
