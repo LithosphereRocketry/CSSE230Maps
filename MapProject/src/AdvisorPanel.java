@@ -32,17 +32,6 @@ public class AdvisorPanel extends JPanel {
 	boolean selectedTime = false;
 	boolean selectedDistance = true;
 	private Map map;
-	public String cost;
-	private String input;
-//	private int dist;
-//	private int time;
-	private String  start;
-	ArrayList<LinkedList<GraphNode>> pathlist;
-	ArrayList<LinkedList<GraphNode>> paths;
-	LinkedList<GraphNode> path1;
-	LinkedList<GraphNode> path2;
-	LinkedList<GraphNode> path3;
-	LinkedList<GraphNode> pathSelected;
 	
 	
 	//Basic Constructor
@@ -67,14 +56,12 @@ public class AdvisorPanel extends JPanel {
 		gbc_comboBox.gridx = 5;
 		gbc_comboBox.gridy = 1;
 		this.add(comboBox, gbc_comboBox);
-		start = (String) comboBox.getSelectedItem();
 		
 		comboBox.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
 		    	comboBox.setSelectedItem(comboBox.getSelectedItem());
 		    	map.setStart((String) comboBox.getSelectedItem());
-		    	start = (String) comboBox.getSelectedItem();
 		    }
 		});
 		
@@ -161,28 +148,23 @@ public class AdvisorPanel extends JPanel {
 		btnGOButton.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	input = textField.getText();
+		    	String input = textField.getText();
 		    	int temp = 0;
 		    	if(input != "") {
 		    		try {
 		    			temp = Integer.parseInt(input);
 		    		}catch (NumberFormatException e1) {
-						  System.out.println("not a number");
+						System.out.println("not a number");
 				  }
 
 		    	if(selectedDistance = true && selectedTime == false) {
 		    		map.setDis(temp);
-		    		paths = map.travelPlannerDistance();
+		    		map.travelPlannerDistance();
 			    } else {
 			    	map.setTime(temp);
-			    	paths = map.travelPlannerDistance();
+			    	map.travelPlannerTime();
 			    }
 			}
-
-		    	path1 = paths.get(0);
-		    	path2 = paths.get(1);
-		   		path3 = paths.get(2);
-		    	
 		    }
 		});
 		
@@ -196,8 +178,8 @@ public class AdvisorPanel extends JPanel {
 		btnPath1Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	pathSelected = path1;
-		    	System.out.println("Selected: " + path1);
+//		    	System.out.println("Selected: " + map.getPath1());
+		    	map.setDrawFirst();
 		    }
 		});
 		
@@ -212,8 +194,8 @@ public class AdvisorPanel extends JPanel {
 		btnPath2Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	pathSelected = path2;
-		    	System.out.println("Selected: " + pathSelected);
+//		    	System.out.println("Selected: " + map.getPath2());
+		    	map.setDrawSecond();
 		    }
 		});
 		
@@ -228,8 +210,8 @@ public class AdvisorPanel extends JPanel {
 		btnPath3Button.addActionListener(new ActionListener() {//add actionlistner to listen for change
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		    	pathSelected = path3;
-		    	System.out.println("Selected: " + pathSelected);
+//		    	System.out.println("Selected: " + map.getPath3());
+		    	map.setDrawThird();
 		    }
 		});
 	}
